@@ -1,0 +1,66 @@
+#caixaLogin {
+    height: 50%;
+}
+
+button {
+    left: -141%;
+    top: 250px
+}
+
+#comandoSelect {
+    top: 30px;
+    left: 100%;
+    text-wrap: nowrap;
+}
+
+#comandoSelectpt2 {
+    top: 260px;
+    left: -131%;
+    text-wrap: nowrap;
+}
+
+#coluna1 {
+    position: relative;
+    top: 30px;
+    left: 102%;
+}
+#coluna2 {
+    position: relative;
+    top: 30px;
+    left: 104%;
+}
+#coluna3 {
+    position: relative;
+    top: 30px;
+    left: 106%;
+}
+#coluna4 {
+    position: relative;
+    top: 90px;
+    left: 36%;
+}
+#coluna5 {
+    position: relative;
+    top: 90px;
+    left: 38%;
+}
+#coluna6 {
+    position: relative;
+    top: 90px;
+    left: 40%;
+}
+#coluna7 {
+    position: relative;
+    top: 150px;
+    left: -24%;
+}
+#coluna8 {
+    position: relative;
+    top: 210px;
+    left: -74.5%;
+}
+#coluna9 {
+    position: relative;
+    top: 210px;
+    left: -72.5%;
+}

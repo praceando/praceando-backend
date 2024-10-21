@@ -1,0 +1,29 @@
+#update1 {
+    top: 102px;
+    left: -9%;
+}
+
+#comandoUpdate {
+    top: 40px;
+    left: 24.5%;
+    text-wrap: nowrap;
+}
+
+#tabelaUpdate {
+    top: 100px;
+    left: -12%;
+}
+
+#comandoUpdatept2 {
+    top: 160px;
+    left: -43.5%;
+    text-wrap: nowrap;
+}
+
+button {
+    left: -63%;
+}
+
+.inputForm {
+    left: -40%;
+}

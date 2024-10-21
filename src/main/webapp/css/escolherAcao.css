@@ -1,0 +1,165 @@
+#caixaLogin {
+    width: 25%;
+    height: 55%;
+}
+
+#lembreteVolta {
+    top: 80px;
+    left: 80%;
+    position: absolute;
+    color: #B6AAAA;
+    max-width: 280px;
+    font-size: 30px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+#lembreteVoltaAviso {
+    top: 140px;
+    left: 83.5%;
+    position: absolute;
+    color: #B6AAAA;
+    max-width: 280px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+#voltar {
+    top: 150px;
+    left: 86%;
+    position: absolute;
+    color: #FFCC70;
+    font-size: 50px;
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+}
+
+#voltar:hover,
+#voltar:focus {
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Sombra leve */
+}
+
+button {
+    top: 0;
+}
+
+#titulo {
+    max-width: 300px;
+}
+
+@media (max-width: 1300px) {
+    #caixaLogin {
+        left: 5%;
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1050px) {
+    #caixaLogin {
+        left: 10%;
+        transition: 1s;
+    }
+
+    #textoEnfeite {
+        font-size: 70px;
+        left: 82%;
+        transition: 1s;
+    }
+
+    #titulo {
+        left: 15%;
+        font-size: 48px;
+        transition: 1s;
+    }
+}
+
+
+@media (max-width: 950px) {
+    #caixaLogin {
+        width: 35%;
+        left: 10%;
+        transition: 1s;
+    }
+
+    #textoEnfeite {
+        top: 590px;
+        font-size: 65px;
+        left: 78%;
+        transition: 1s;
+    }
+
+    #titulo {
+        left: 10%;
+        font-size: 44px;
+        transition: 1s;
+    }
+}
+
+
+@media (max-width: 850px) {
+    #caixaLogin {
+        width: 40%;
+        left: 8%;
+        transition: 1s;
+    }
+
+    #textoEnfeite {
+        top: 590px;
+        font-size: 65px;
+        left: 78%;
+        transition: 1s;
+    }
+
+    #titulo {
+        left: 5%;
+        font-size: 40px;
+        transition: 1s;
+    }
+}
+
+@media (max-width: 800px) {
+    #caixaLogin {
+        width: 45%;
+        left: 8%;
+        transition: 1s;
+    }
+
+    #textoEnfeite {
+        top: 610px;
+        font-size: 60px;
+        left: 77%;
+        transition: 1s;
+    }
+
+    #titulo {
+        left: 5%;
+        font-size: 35px;
+        transition: 1s;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 650px) {
+    #caixaLogin {
+        width: 45%;
+        height: 70%;
+        left: 11%;
+        transition: 1s;
+    }
+
+    #textoEnfeite {
+        top: 615px;
+        font-size: 55px;
+        left: 74%;
+        transition: 1s;
+    }
+
+    #titulo {
+        left: 5%;
+        top: 150px;
+        font-size: 32px;
+        transition: 1s;
+        max-width: 140px;
+    }
+}
