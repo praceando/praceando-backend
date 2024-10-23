@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.common.Constants;
 import org.common.SqlExitDML;
 import org.dao.AdminDAO;
 import org.model.Admin;
@@ -13,12 +14,9 @@ import org.model.Admin;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @WebServlet(name="CadastroAdm", value="/cadastro-adm")
 public class CadastroAdmServlet extends HttpServlet {
-    private final Pattern emailPattern = Pattern.compile("^[^._\\s\\W]{2,}\\.[^._\\s\\W]{2,}@germinare\\.org\\.br$");
-    private final Pattern senhaPattern = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$");
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
@@ -62,8 +60,8 @@ public class CadastroAdmServlet extends HttpServlet {
 
         AdminDAO adminDAO = new AdminDAO();
 
-        Matcher matcherEmail = emailPattern.matcher(email);
-        Matcher matcherSenha = senhaPattern.matcher(senha);
+        Matcher matcherEmail = Constants.emailPattern.matcher(email);
+        Matcher matcherSenha = Constants.senhaPattern.matcher(senha);
 
         return new boolean[]{!matcherSenha.find(), !matcherEmail.find(), adminDAO.usuarioExiste(email)};
 
