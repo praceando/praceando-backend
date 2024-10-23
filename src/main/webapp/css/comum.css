@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #0E0D10, #0E0D10, #121216);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#caixaLogin {
+    top: 50px;
+    width: 50%;
+    height: 40%;
+    background-color: #070709;
+    border-radius: 34px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#descricao {
+    position: relative;
+    color: #B6AAAA;
+    font-size: 30px;
+    font-family: 'DM Sans', sans-serif;
+    max-width: 80%;
+}
+
+#linhaEnfeite {
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    background-color: transparent;
+}
+
+#linhaEnfeite:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid;
+    border-image: linear-gradient(to right, #4158D0, #C850C0, #FFCC70) 1;
+    z-index: -1;
+}
+
+#fundoIrregular {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 130px;
+    background-color: #fff0f5;
+    clip-path: ellipse(61% 46% at 25% 42%);
+}
+
+img {
+    position: absolute;
+    top: 10px;
+    width: 100px;
+    left: 10px;
+}
+
+#textoEnfeite {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 70px;
+    top: 570px;
+    left: 84%;
+}
+
+.sublinhar {
+    /*GAMIBARRA MUITO FORTE*/
+    background: linear-gradient(30deg, #4158D0, #C850C0, #FFCC70);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: underline;
+
+    top: 125px;
+    left: 15%;
+    position: absolute;
+    font-size: 100px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.comando {
+    font-size: 35px;
+    font-family: 'DM Sans', sans-serif;
+    color: #B6AAAA;
+    position: relative;
+}
+
+button {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    margin-top: 60px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    background: linear-gradient(5deg, #4158D0, #C850C0, #FFCC70);
+    top: 160px;
+}
+
+button:hover {
+    transform: scale(1.01);
+}
+
+.inputForm {
+    border-radius: 10px;
+    color: #121216;
+    padding: 10px;
+    background-color: #E5E7EB;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    position: relative;
+    top: 162.5px;
+}
+
+.input-container::before {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid transparent;
+    width: 297.5px;
+    height: 39px;
+    background: linear-gradient(to right, #4158D0, #C850C0, #FFCC70);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition: box-shadow 0.3s;
+}
+
+.input-container:hover::before,
+.input-container:focus-within::before {
+    opacity: 1;
+}
+
+.inputForm:focus {
+    outline: none;
+    box-shadow:
+            0 0 10px rgba(65, 88, 208, 0.9),
+            0 0 10px rgba(200, 80, 192, 0.9),
+            0 0 10px rgba(255, 204, 112, 0.9);
+}
+
+#titulo {
+    top: 125px;
+    left: 15%;
+    position: absolute;
+    color: #B6AAAA;
+    font-size: 50px;
+    font-family: 'DM Sans', sans-serif;
+}

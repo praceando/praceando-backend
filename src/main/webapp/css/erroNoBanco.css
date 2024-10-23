@@ -1,0 +1,19 @@
+#caixaLogin {
+    left: -15%;
+    top: 80px;
+    width: 40%;
+    height: 35%;
+}
+
+.sublinhar {
+    font-size: 70px;
+    top: 185px;
+    left: 15%;
+}
+
+#erroBanco {
+    position: absolute;
+    top: 100px;
+    left: 55%;
+    width: 600px;
+}
