@@ -28,6 +28,11 @@
             <label><input type="radio" name="opcao" class="checkbox-arredondado" value="Tag"> Tag</label>
 
             <button type="submit">Confirmar</button>
+<<<<<<< HEAD
+=======
+            
+            <a href="cadastro.html">Cadastrar um administrador</a>
+>>>>>>> c5580918d96592a8c60201406ebbde11b39c3130
         </div>
     </div>
 </form>

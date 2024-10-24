@@ -41,6 +41,14 @@
             <artifactId>java-dotenv</artifactId>
             <version>5.2.2</version>
         </dependency>
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.4</version>
+        </dependency>
+>>>>>>> c5580918d96592a8c60201406ebbde11b39c3130
     </dependencies>
 
     <build>

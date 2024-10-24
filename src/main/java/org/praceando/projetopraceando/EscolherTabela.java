@@ -1,5 +1,9 @@
 package org.praceando.projetopraceando;
 
+<<<<<<< HEAD
+=======
+import jakarta.servlet.RequestDispatcher;
+>>>>>>> c5580918d96592a8c60201406ebbde11b39c3130
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,7 +17,11 @@ public class EscolherTabela extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tabelaNome =  request.getParameter("opcao");
+<<<<<<< HEAD
         request.getSession().setAttribute("tabelaNome", tabelaNome);
+=======
+        request.setAttribute("tabelaNome", tabelaNome);
+>>>>>>> c5580918d96592a8c60201406ebbde11b39c3130
 
         String[] colunas = null;
 
@@ -35,7 +43,14 @@ public class EscolherTabela extends HttpServlet {
                     "id_tag", "nome", "dt_atualizacao", "categoria"
             };
         }
+<<<<<<< HEAD
         request.getSession().setAttribute("colunas", colunas);
         response.sendRedirect("escolherAcao.jsp");
+=======
+        request.setAttribute("colunas", colunas);
+
+        RequestDispatcher rd = request.getRequestDispatcher("escolherAcao.jsp");
+        rd.forward(request, response);
+>>>>>>> c5580918d96592a8c60201406ebbde11b39c3130
     }
 }
