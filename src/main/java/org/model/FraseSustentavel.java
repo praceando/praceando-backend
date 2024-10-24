@@ -1,5 +1,4 @@
 package org.model;
-import java.util.Date;
 
 public class FraseSustentavel {
     private String ds_frase;

@@ -1,6 +1,5 @@
 package org.model;
 
-import java.util.Date;
 
 public class Avatar {
     private int id_avatar;
