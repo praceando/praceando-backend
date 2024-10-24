@@ -9,6 +9,7 @@ import java.util.List;
 public abstract class DAOGeneric<T> implements DAO<T> {
 
     public T visualizar(int id) {
+        Conexao.conectar();
         try {
             PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM ? WHERE id = ?");
             ps.setString(1, this.getNome());
@@ -19,22 +20,28 @@ public abstract class DAOGeneric<T> implements DAO<T> {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            Conexao.desconectar();
         }
         return null;
     }
 
     public List<T> visualizar() {
+        Conexao.conectar();
         List<T> retorno = new LinkedList<>();
         try {
             PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM ?");
             ps.setString(1, this.getNome());
             ResultSet rs = ps.executeQuery();
+
             while (rs.next()) {
                 retorno.add(extrairEntidade(rs));
             }
             return retorno;
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            Conexao.desconectar();
         }
         return null;
     }
