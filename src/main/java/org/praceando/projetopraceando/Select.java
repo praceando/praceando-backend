@@ -8,10 +8,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name="Select", value="/informacoesSelects")
+@WebServlet(name="Select", value="/select-redirect")
 public class Select extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String tableName = request.getParameter("tabela");
+        String acao = request.getParameter("acao");
+
+
         response.sendRedirect("mensagemFinal.jsp");
     }
 }

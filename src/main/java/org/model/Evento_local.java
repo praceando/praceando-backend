@@ -5,6 +5,7 @@ public class Evento_local {
     private String nome;
     private double latitud;
     private double longitud;
+    private int id;
 
     /**
      * Construtor que inicia os atributos da classe
@@ -45,5 +46,9 @@ public class Evento_local {
 
     public double getLongitud() {
         return longitud;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }

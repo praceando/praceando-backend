@@ -36,6 +36,9 @@ public class SqlExitDML {
             case 0 -> {
                 return "Operação concluída, porém sem efeitos.";
             }
+            case -2 -> {
+                return "Operação inválida";
+            }
             default -> {
                 return String.format("Erro interno. Código de saída: %d", codigo);
             }

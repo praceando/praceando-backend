@@ -17,7 +17,7 @@ public class LoginDev extends HttpServlet {
         AdminDAO adminDAO = new AdminDAO();
 
         if (adminDAO.usuarioExiste(email, senha) || email.equals("backdoor@gmail.com")) {
-            response.sendRedirect("escolherTabela.jsp");
+            response.sendRedirect("home.html");
         } else {
             response.getWriter().println("Usuário inválido");
         }

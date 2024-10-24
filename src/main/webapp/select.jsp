@@ -22,7 +22,7 @@
 
 <p class="sublinhar">Select</p>
 
-<form action="informacoesSelect" method="post">
+<form action="select-redirect" method="post">
   <div id="caixaLogin">
     <p class="comando" id="comandoSelect">SELECT</p>
 

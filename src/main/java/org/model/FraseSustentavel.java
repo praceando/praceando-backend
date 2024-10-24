@@ -2,8 +2,8 @@ package org.model;
 import java.util.Date;
 
 public class FraseSustentavel {
-        private String ds_frase;
-        private int id_frase;
+    private String ds_frase;
+    private int id_frase;
 
     /**
      * Construtor que inicializa todos os atributos

@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Log {
     private Date dt_log;
-    private Character operacao;
+    private String operacao;
     private String query;
 
     /**
@@ -13,7 +13,7 @@ public class Log {
      * @param query Consulta executada no banco de dados
      */
 
-    public Log(Date dt_log, Character operacao, String query) {
+    public Log(Date dt_log, String operacao, String query) {
         this.dt_log = dt_log;
         this.operacao = operacao;
         this.query = query;
@@ -33,7 +33,7 @@ public class Log {
      * @return Operação realizada no banco de dados
      */
 
-    public Character getOperacao() {
+    public String getOperacao() {
         return operacao;
     }
 
