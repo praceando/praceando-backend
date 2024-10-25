@@ -64,6 +64,15 @@ public class Evento_local implements Model {
      */
     @Override
     public String getRawHTMLRow() {
-        return "";
+        return String.format(
+                "<td>%d/td>" +
+                "<td>%s</td>" +
+                "<td>%f</td>" +
+                "<td>%f</td>" +
+                id,
+                nome,
+                latitude,
+                longitude
+        );
     }
 }

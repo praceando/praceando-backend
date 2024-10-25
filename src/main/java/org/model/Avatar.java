@@ -44,6 +44,12 @@ public class Avatar implements Model {
      */
     @Override
     public String getRawHTMLRow() {
-        return "";
+        return String.format(
+                "<td>%d/td>" +
+                "<td>%s</td>",
+                id,
+                b64_avatar
+        );
     }
 }
+

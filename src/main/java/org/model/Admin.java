@@ -67,9 +67,12 @@ public class Admin implements Model {
     @Override
     public String getRawHTMLRow() {
         return String.format(
+                "<td>%d/td>" +
                 "<td>%s</td>" +
-                "<td>*************<td>",
-                this.email
+                "<td>%s</td>",
+                id,
+                email,
+                senha
         );
     }
 

@@ -1,8 +1,10 @@
 package org.model;
+import org.model.Model;
 
 public class Tag implements Model {
     private int id;
     private String nome;
+    private String categoria;
 
     /**
      * Construtor que inicializa os atributos da classe Tag
@@ -10,9 +12,10 @@ public class Tag implements Model {
      * @param nome Nome da tag
      */
 
-    public Tag(Integer id, String nome) {
+    public Tag(Integer id, String nome, String categoria) {
         this.nome = nome;
         this.id = id;
+        this.categoria = categoria;
     }
 
     /**
@@ -22,6 +25,10 @@ public class Tag implements Model {
 
     public String getNome() {
         return nome;
+    }
+
+    public String getCategoria() {
+        return categoria;
     }
 
     /**

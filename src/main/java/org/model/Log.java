@@ -59,11 +59,21 @@ public class Log implements Model {
     }
 
     /**
+     *
      * @return
      */
     @Override
     public String getRawHTMLRow() {
-        return "";
+        return String.format(
+                "<td>%d/td>" +
+                "<td>%s</td>" +
+                "<td>%s</td>" +
+                "<td>%s</td>",
+                id,
+                operacao,
+                query,
+                dt_log
+                );
     }
 }
 

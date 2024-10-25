@@ -22,6 +22,7 @@ public class FraseSustentavel implements Model {
 
     /**
      * Getter da ds_frase
+     *
      * @return Descrição da frase sustentável
      */
 
@@ -31,6 +32,7 @@ public class FraseSustentavel implements Model {
 
     /**
      * Getter do id_frase
+     *
      * @return ID da frase sustentável
      */
 
@@ -50,6 +52,11 @@ public class FraseSustentavel implements Model {
      */
     @Override
     public String getRawHTMLRow() {
-        return "";
+        return String.format(
+                "<td>%d/td>" +
+                "<td>%s</td>",
+                id,
+                ds_frase
+        );
     }
 }
