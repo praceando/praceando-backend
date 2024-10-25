@@ -1,5 +1,7 @@
 package org.model;
 
+import java.util.Dictionary;
+
 public class Avatar implements Model {
     private int id;
     private String b64_avatar;
@@ -11,6 +13,15 @@ public class Avatar implements Model {
     public Avatar(Integer id_avatar, String b64_avatar) {
         this.b64_avatar = b64_avatar;
         this.id = id_avatar;
+    }
+
+    public Avatar(String b64_avatar) {
+        this.b64_avatar = b64_avatar;
+    }
+
+    public Avatar(Dictionary<String, Object> params) {
+        this.id = (Integer) params.get("id");
+        this.b64_avatar = (String) params.get("b64_avatar");
     }
 
     /** Getter do b64_avatar
@@ -46,4 +57,5 @@ public class Avatar implements Model {
                 b64_avatar
         );
     }
+
 }

@@ -20,6 +20,7 @@ public class EscolherTabela extends HttpServlet {
 
         request.setAttribute("colunas", colunas);
 
+
         RequestDispatcher rd = request.getRequestDispatcher("escolherAcao.jsp");
         rd.forward(request, response);
     }

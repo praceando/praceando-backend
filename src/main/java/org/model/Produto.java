@@ -1,5 +1,6 @@
 package org.model;
 import java.util.Date;
+import java.util.Dictionary;
 
 public class Produto implements Model {
     private int estoque;
@@ -30,6 +31,15 @@ public class Produto implements Model {
         this.categoria = categoria;
         this.dt_desativacao = dt_desativacao;
 
+    }
+
+    public Produto(Dictionary<String, Object> params) {
+        this.nome = (String) params.get("nome");
+        this.descricao = (String) params.get("descricao");
+        this.preco = (double) params.get("preco");
+        this.categoria = (String) params.get("categoria");
+        this.dt_desativacao = (Date) params.get("dt_desativacao");
+        this.estoque = (int) params.get("estoque");
     }
 
     /**Getter para o estoque do produto

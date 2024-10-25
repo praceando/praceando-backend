@@ -1,5 +1,7 @@
 package org.model;
 
+import java.util.Dictionary;
+
 public class FraseSustentavel implements Model {
     private String ds_frase;
     private int id;
@@ -21,6 +23,11 @@ public class FraseSustentavel implements Model {
      */
     public FraseSustentavel(String ds_frase) {
         this.ds_frase = ds_frase;
+    }
+
+    public FraseSustentavel(Dictionary<String, Object> params) {
+        this.id = (int) params.get("id");
+        this.ds_frase = (String) params.get("ds_frase");
     }
 
     /** Getter da ds_frase

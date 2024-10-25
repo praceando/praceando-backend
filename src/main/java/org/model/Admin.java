@@ -1,4 +1,5 @@
 package org.model;
+
 public class Admin implements Model {
     private int id;
     private final String nome;
@@ -96,4 +97,5 @@ public class Admin implements Model {
     public boolean matches(String email, String senha) {
         return this.senha.equals(senha) && this.email.equals(email);
     }
+
 }

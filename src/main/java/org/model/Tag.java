@@ -1,5 +1,4 @@
 package org.model;
-import org.model.Model;
 
 public class Tag implements Model {
     private int id;
@@ -52,6 +51,7 @@ public class Tag implements Model {
                 "<td>%s</td>",
                 id,
                 nome,
-                 categoria);
+                categoria
+        );
     }
 }

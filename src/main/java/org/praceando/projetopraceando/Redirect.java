@@ -16,17 +16,23 @@ import java.io.IOException;
 public class Redirect extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = getDispatcher(request);
-        rd.forward(request, response);
-    }
-
-    private RequestDispatcher getDispatcher(HttpServletRequest request) {
         String tabela = request.getParameter("tabela");
         String opcao = request.getParameter("opcao");
 
-        System.out.println(tabela);
-        System.out.println(opcao);
+        RequestDispatcher rd = getDispatcher(request, tabela, opcao);
 
+        try {
+            rd.forward(request, response);
+        } catch (UnsupportedOperationException uoe) {
+            RequestDispatcher rd2 = request.getRequestDispatcher("erroNoBancos.jsp");
+            request.setAttribute("tipoErro", "Acesso negado");
+            request.setAttribute("mensagemErro", String.format("Operação '%s' para a tabela '%s'", opcao, tabela));
+
+            rd2.forward(request, response);
+        }
+    }
+
+    private RequestDispatcher getDispatcher(HttpServletRequest request, String tabela, String opcao) {
         String[] colunas = getColunas(tabela);
         DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
 
