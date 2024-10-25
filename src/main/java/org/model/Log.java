@@ -65,7 +65,7 @@ public class Log implements Model {
     @Override
     public String getRawHTMLRow() {
         return String.format(
-                "<td>%d/td>" +
+                "<td>%d</td>" +
                 "<td>%s</td>" +
                 "<td>%s</td>" +
                 "<td>%s</td>",
@@ -73,7 +73,7 @@ public class Log implements Model {
                 operacao,
                 query,
                 dt_log
-                );
+        );
     }
 }
 

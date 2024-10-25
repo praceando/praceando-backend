@@ -1,8 +1,10 @@
 package org.model;
 public class Admin implements Model {
     private int id;
+    private final String nome;
     private final String email;
     private final String senha;
+    private final boolean isAtivo;
 
     /**
      * Construtor que inicializa todos os atributos da classe Admin
@@ -10,10 +12,9 @@ public class Admin implements Model {
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(int id, String email, String senha) {
+    public Admin(int id, String nome, String email, String senha, boolean isAtivo) {
+        this(nome, email, senha, isAtivo);
         this.id = id;
-        this.email = email;
-        this.senha = senha;
     }
 
     /**
@@ -21,9 +22,11 @@ public class Admin implements Model {
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(String email, String senha) {
+    public Admin(String nome, String email, String senha, boolean isAtivo) {
+        this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.isAtivo = isAtivo;
     }
 
     /**
@@ -53,6 +56,13 @@ public class Admin implements Model {
         return id;
     }
 
+    /** Getter do nome do administrador
+     * @return Nome do administrador
+     */
+    public String getNome() {
+        return nome;
+    }
+
     /**
      * @param id
      */
@@ -67,11 +77,13 @@ public class Admin implements Model {
     @Override
     public String getRawHTMLRow() {
         return String.format(
-                "<td>%d/td>" +
+                "<td>%d</td>" +
                 "<td>%s</td>" +
-                "<td>%s</td>",
+                "<td>%s</td" +
+                "<td>***************</td>",
                 id,
                 email,
+                isAtivo ? "SIM" : "NÃO",
                 senha
         );
     }
@@ -86,6 +98,10 @@ public class Admin implements Model {
 
     public boolean matches(String email, String senha) {
         return this.senha.equals(senha) && this.email.equals(email);
+    }
+
+    public boolean isAtivo() {
+        return isAtivo;
     }
 }
 

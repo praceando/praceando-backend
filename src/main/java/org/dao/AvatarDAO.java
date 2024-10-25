@@ -9,7 +9,7 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
     @Override
     protected Avatar extrairEntidade(ResultSet rs) throws SQLException {
         return new Avatar(
-                rs.getInt("id_avatar"),
+                rs.getInt("id"),
                 rs.getString("b64_avatar")
         );
     }

@@ -24,6 +24,9 @@ public class Redirect extends HttpServlet {
         String tabela = request.getParameter("tabela");
         String opcao = request.getParameter("opcao");
 
+        System.out.println(tabela);
+        System.out.println(opcao);
+
         String[] colunas = getColunas(tabela);
         DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
 
@@ -39,20 +42,20 @@ public class Redirect extends HttpServlet {
 
         switch (tabelaNome) {
             case "avatar" -> colunas = new String[]{
-                    "id_avatar", "url_avatar"
+                    "ID", "URL"
             };
             case "evento_local" -> colunas = new String[]{
-                    "id_local", "nome", "lat", "long"
+                    "ID", "Nome", "Latitude", "Longitude"
             };
             case "frase_sustentavel" -> colunas = new String[] {
-                    "id_frase", "dt_atualizacao", "ds_frase"
+                    "ID", "Descrição"
             };
             case "produto" -> colunas = new String[]{
-                    "id_produto", "estoque", "nome", "ds_produto", "preco",
-                    "categoria", "dt_atualizacao", "dt_desativacao"
+                    "ID", "Nome", "Descrição", "Preço", "Categoria",
+                    "Estoque", "Desativação"
             };
             case "tag" -> colunas = new String[]{
-                    "id_tag", "nome", "dt_atualizacao", "categoria"
+                    "ID", "Nome", "Categoria"
             };
         }
         return colunas;

@@ -1,4 +1,5 @@
 package org.praceando.projetopraceando;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,10 +17,24 @@ public class LoginDev extends HttpServlet {
 
         AdminDAO adminDAO = new AdminDAO();
 
-        if (adminDAO.usuarioExiste(email, senha) || email.equals("backdoor@gmail.com")) {
-            response.sendRedirect("home.html");
-        } else {
-            response.getWriter().println("Usuário inválido");
+        int saida = adminDAO.usuarioExiste(email, senha);
+
+        System.out.println(saida);
+        String pag = "erroNoBancos.jsp";
+
+        switch (saida) {
+            case 1 -> pag = "home.html";
+            case 0 -> {
+                request.setAttribute("tipoErro", "Acesso negado");
+                request.setAttribute("mensagemErro", "Login não encontrado ou inválido. Peça permissão para o grupo para realizar o cadastro de sua conta.");
+            }
+            case -1 -> {
+                request.setAttribute("tipoErro", "Erro Interno");
+                request.setAttribute("mensagemErro", "Ocorreu uma instabilidade no banco");
+            }
         }
+        RequestDispatcher rd = request.getRequestDispatcher(pag);
+
+        rd.forward(request, response);
     }
 }

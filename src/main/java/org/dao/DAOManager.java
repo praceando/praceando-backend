@@ -1,10 +1,16 @@
 package org.dao;
 import org.model.Model;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DAOManager {
-    private static List<DAOGeneric<Model>> daos = new ArrayList<>();
+    private static DAOGeneric<Model>[] daos = new DAOGeneric[]{
+            new LogDAO(),
+            new AdminDAO(),
+            new TagDAO(),
+            new AvatarDAO(),
+            new ProdutoDAO(),
+            new FraseSustentavelDAO(),
+            new Evento_localDAO()
+    };
 
     public static DAOGeneric<Model> getDAO(String nome) {
         for (DAOGeneric<Model> dao : daos) {

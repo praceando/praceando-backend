@@ -53,7 +53,7 @@ public class FraseSustentavel implements Model {
     @Override
     public String getRawHTMLRow() {
         return String.format(
-                "<td>%d/td>" +
+                "<td>%d</td>" +
                 "<td>%s</td>",
                 id,
                 ds_frase

@@ -46,7 +46,7 @@ public class Avatar implements Model {
     public String getRawHTMLRow() {
         return String.format(
                 "<td>%d/td>" +
-                "<td>%s</td>",
+                "<td><a href=\"%s\"></td>",
                 id,
                 b64_avatar
         );

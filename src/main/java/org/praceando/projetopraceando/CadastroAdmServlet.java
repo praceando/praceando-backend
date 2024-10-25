@@ -21,6 +21,7 @@ public class CadastroAdmServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
+        String nome = request.getParameter("nome");
         String access = request.getParameter("bdcod");
 
         AdminDAO adminDAO = new AdminDAO();
@@ -37,7 +38,7 @@ public class CadastroAdmServlet extends HttpServlet {
 
 
         if (Arrays.equals(status, new boolean[]{false, false, false}) && temAcessoValido) {
-            Admin admin = new Admin(email, senha);
+            Admin admin = new Admin(nome, email, senha, false);
             saida = adminDAO.inserir(admin);
         }
 

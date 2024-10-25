@@ -9,6 +9,7 @@ public class Evento_localDAO extends DAOGeneric<Evento_local> {
     @Override
     protected Evento_local extrairEntidade(ResultSet rs) throws SQLException {
         return new Evento_local(
+                rs.getInt("id_evento_local"),
                 rs.getString("nome"),
                 rs.getDouble("lat"),
                 rs.getDouble("long")
