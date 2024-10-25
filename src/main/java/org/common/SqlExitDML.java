@@ -8,6 +8,7 @@ public class SqlExitDML {
     /** Construtor padrão
      * @param codigo Código de saída
      */
+
     public SqlExitDML() {
         this.codigo = -1;
     }
