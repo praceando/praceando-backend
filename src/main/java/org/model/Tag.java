@@ -1,7 +1,6 @@
 package org.model;
-import java.util.Date;
 
-public class Tag {
+public class Tag implements Model {
     private int id;
     private String nome;
 
@@ -11,9 +10,9 @@ public class Tag {
      * @param nome Nome da tag
      */
 
-    public Tag(int id,String nome) {
-        this.id = id;
+    public Tag(Integer id, String nome) {
         this.nome = nome;
+        this.id = id;
     }
 
     /**
@@ -27,11 +26,26 @@ public class Tag {
 
     /**
      * Getter para o ID da tag
-     * @return ID da tag
      */
-
-    public int getId_tag() {
+    public int getId() {
         return id;
     }
 
+    /**
+     * Setter para o ID da tag
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+    public String getRawHTMLRow() {
+        return String.format(
+                "<td>%d</td>" +
+                "<td>%s</td>",
+                id,
+                nome);
+    }
 }

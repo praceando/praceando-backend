@@ -29,7 +29,7 @@ public class LogDAO extends DAOGeneric<Log> {
     }
 
     @Override
-    protected String getNome() {
+    public String getNome() {
         return "log";
     }
 }

@@ -27,12 +27,12 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
         PreparedStatement ps = Conexao.conn.prepareStatement("update avatar set b64_avatar = ? where id_avatar = ?");
         // SETANDO O VALOR DOS PARÂMETROS
         ps.setString(1, avatar.getB64_avatar());
-        ps.setInt(2, avatar.getId_avatar());
+        ps.setInt(2, avatar.getId());
         return ps;
     }
 
     @Override
-    protected String getNome() {
+    public String getNome() {
         return "avatar";
     }
 }

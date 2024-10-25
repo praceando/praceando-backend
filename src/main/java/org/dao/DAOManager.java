@@ -1,12 +1,13 @@
 package org.dao;
+import org.model.Model;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DAOManager {
-    List<DAOGeneric> daos = new ArrayList<>();
+    private static List<DAOGeneric<Model>> daos = new ArrayList<>();
 
-    public DAOGeneric getDAO(String nome) {
-        for (DAOGeneric dao : daos) {
+    public static DAOGeneric<Model> getDAO(String nome) {
+        for (DAOGeneric<Model> dao : daos) {
             if (dao.getNome().equals(nome)) {
                 return dao;
             }

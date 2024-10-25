@@ -16,7 +16,7 @@
             Avatar av = avatares.get(i);
     %>
         <div class="avatar-container">
-            <h2>Avatar: <%=av.getId_avatar()%></h2>
+            <h2>Avatar: <%=av.getId()%></h2>
             <img src="data:image/png;base64,<%=av.getB64_avatar()%>" alt="">
         </div>
     <%

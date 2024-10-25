@@ -1,18 +1,19 @@
 package org.dao;
 
-import org.common.SqlExitDML;
-import org.model.Evento_local;
 import org.model.Produto;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class ProdutoDAO extends DAOGeneric<Produto> {
     @Override
     protected Produto extrairEntidade(ResultSet rs) throws SQLException {
         return new Produto(
-
+                rs.getInt("id_produto"),
+                rs.getInt("estoque"),
+                rs.getString("nome"),
+                rs.getString("ds_produto"),
+                rs.getDouble("preco"),
+                rs.getString("categoria"),
+                rs.getDate("dt_desativacao")
         );
     }
 
@@ -37,13 +38,13 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         ps.setString(2, produto.getDescricao());
         ps.setDouble(3, produto.getPreco());
         ps.setString(4, produto.getCategoria());
-        ps.setInt(5, produto.getId_produto());
+        ps.setInt(5, produto.getId());
 
         return ps;
     }
 
     @Override
-    protected String getNome() {
+    public String getNome() {
         return "produto";
     }
 }

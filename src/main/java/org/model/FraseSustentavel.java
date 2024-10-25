@@ -1,18 +1,23 @@
 package org.model;
 
-public class FraseSustentavel {
+public class FraseSustentavel implements Model {
     private String ds_frase;
-    private int id_frase;
+    private int id;
 
     /**
      * Construtor que inicializa todos os atributos
-     * @param ds_frase Descrição da frase sustentável
+     *
      * @param id_frase ID da frase sustentável
+     * @param ds_frase Descrição da frase sustentável
      */
 
-    public FraseSustentavel(String ds_frase, int id_frase) {
+    public FraseSustentavel(int id_frase, String ds_frase) {
+        this(ds_frase);
+        this.id = id_frase;
+    }
+
+    public FraseSustentavel(String ds_frase) {
         this.ds_frase = ds_frase;
-        this.id_frase = id_frase;
     }
 
     /**
@@ -29,8 +34,22 @@ public class FraseSustentavel {
      * @return ID da frase sustentável
      */
 
-    public int getId_frase() {
-        return id_frase;
+    public int getId() {
+        return id;
     }
 
+    /**
+     * Setter do id da frase sustentável
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public String getRawHTMLRow() {
+        return "";
+    }
 }

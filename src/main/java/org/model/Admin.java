@@ -1,17 +1,17 @@
 package org.model;
-public class Admin {
-    private int id_admin;
+public class Admin implements Model {
+    private int id;
     private final String email;
     private final String senha;
 
     /**
      * Construtor que inicializa todos os atributos da classe Admin
-     * @param id_admin ID do administrador
+     * @param id ID do administrador
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(int id_admin, String email, String senha) {
-        this.id_admin = id_admin;
+    public Admin(int id, String email, String senha) {
+        this.id = id;
         this.email = email;
         this.senha = senha;
     }
@@ -49,18 +49,30 @@ public class Admin {
      * @return ID do administrador
      */
 
-    public int getId_admin() {
-        return id_admin;
+    public int getId() {
+        return id;
     }
 
     /**
-     * Setter para o ID do administrador
-     * @param id_admin ID do administrador
+     * @param id
      */
-
-    public boolean matches(Admin adm) {
-        return this.matches(adm.email, adm.senha);
+    @Override
+    public void setId(int id) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    /**
+     * @return
+     */
+    @Override
+    public String getRawHTMLRow() {
+        return String.format(
+                "<td>%s</td>" +
+                "<td>*************<td>",
+                this.email
+        );
+    }
+
 
     /**
      * Verifica se o email e senha são iguais aos dados passados anteriormente
@@ -72,6 +84,5 @@ public class Admin {
     public boolean matches(String email, String senha) {
         return this.senha.equals(senha) && this.email.equals(email);
     }
-
 }
 

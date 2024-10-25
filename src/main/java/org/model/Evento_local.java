@@ -1,25 +1,28 @@
 package org.model;
-import java.util.Date;
 
-public class Evento_local {
+public class Evento_local implements Model {
     private String nome;
-    private double latitud;
-    private double longitud;
+    private double latitude;
+    private double longitude;
     private int id;
 
     /**
      * Construtor que inicia os atributos da classe
      * @param nome Nome do evento
-     * @param latitud Latitude do local do evento
-     * @param longitud Longitude do local do evento
+     * @param latitude Latitude do local do evento
+     * @param longitude Longitude do local do evento
      */
 
-    public Evento_local(String nome, double latitud, double longitud) {
+    public Evento_local(String nome, double latitude, double longitude) {
         this.nome = nome;
-        this.latitud = latitud;
-        this.longitud = longitud;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
-    public Evento_local() {}
+
+    public Evento_local(int id, String nome, double latitude, double longitude) {
+        this(nome, latitude, longitude);
+        this.id = id;
+    }
 
     /**
      * Getter do nome do evento
@@ -35,8 +38,8 @@ public class Evento_local {
      * @return Latitude do local do evento
      */
 
-    public double getLatitud() {
-        return latitud;
+    public double getLatitude() {
+        return latitude;
     }
 
     /**
@@ -44,11 +47,23 @@ public class Evento_local {
      * @return Longitude do local do evento
      */
 
-    public double getLongitud() {
-        return longitud;
+    public double getLongitude() {
+        return longitude;
     }
 
     public int getId() {
         return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public String getRawHTMLRow() {
+        return "";
     }
 }

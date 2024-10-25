@@ -40,9 +40,7 @@ build/
 .idea/dataSources
 /.idea/dataSources.local.xml
 /.idea/dataSources.xml
-<<<<<<< HEAD
 /.env
-=======
 /src/main/resources/.env
 /src/main/java/org/test/
->>>>>>> c5580918d96592a8c60201406ebbde11b39c3130
+/src/main/webapp/trsh/

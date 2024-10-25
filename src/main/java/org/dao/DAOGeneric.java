@@ -11,9 +11,9 @@ public abstract class DAOGeneric<T> implements DAO<T> {
     public T visualizar(int id) {
         Conexao.conectar();
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM ? WHERE id = ?");
-            ps.setString(1, this.getNome());
-            ps.setObject(2, id);
+            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNome() + "\" WHERE id = ?");
+            System.out.println(ps.toString());
+            ps.setObject(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return extrairEntidade(rs);
@@ -30,9 +30,11 @@ public abstract class DAOGeneric<T> implements DAO<T> {
         Conexao.conectar();
         List<T> retorno = new LinkedList<>();
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM ?");
-            ps.setString(1, this.getNome());
+            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNome() + "\"");
+            System.out.println(ps.toString());
+
             ResultSet rs = ps.executeQuery();
+
 
             while (rs.next()) {
                 retorno.add(extrairEntidade(rs));
@@ -75,7 +77,7 @@ public abstract class DAOGeneric<T> implements DAO<T> {
     public SqlExitDML remover(int id) {
         Conexao.conectar();
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM ? WHERE id = ?");
+            PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM \""+ this.getNome() + "\" WHERE id = ?");
             ps.setString(1, this.getNome());
             ps.setInt(2, id);
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);
@@ -91,5 +93,5 @@ public abstract class DAOGeneric<T> implements DAO<T> {
     protected abstract T extrairEntidade(ResultSet rs) throws SQLException;
     protected abstract PreparedStatement getInserirQuery(T entidade) throws SQLException;
     protected abstract PreparedStatement getAlterarQuery(T entidade) throws SQLException;
-    protected abstract String getNome();
+    public abstract String getNome();
 }

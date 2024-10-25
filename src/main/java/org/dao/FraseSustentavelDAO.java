@@ -7,8 +7,7 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
     @Override
     protected FraseSustentavel extrairEntidade(ResultSet rs) throws SQLException {
         return new FraseSustentavel(
-                rs.getString("ds_frase"),
-                rs.getInt("id_frase")
+                rs.getInt("id_frase"), rs.getString("ds_frase")
         );
     }
 
@@ -29,7 +28,7 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
     }
 
     @Override
-    protected String getNome() {
+    public String getNome() {
         return "frase_sustentavel";
     }
 }

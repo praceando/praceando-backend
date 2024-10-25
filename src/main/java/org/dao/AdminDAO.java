@@ -34,7 +34,7 @@ public class AdminDAO extends DAOGeneric<Admin> {
     }
 
     @Override
-    protected String getNome() {
+    public String getNome() {
         return "admin";
     }
 
@@ -83,5 +83,4 @@ public class AdminDAO extends DAOGeneric<Admin> {
 
         return result;
     }
-
 }

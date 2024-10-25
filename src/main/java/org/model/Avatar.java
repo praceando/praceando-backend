@@ -1,36 +1,18 @@
 package org.model;
 
 
-public class Avatar {
-    private int id_avatar;
+public class Avatar implements Model {
+    private int id;
     private String b64_avatar;
 
     /**
-     * Construtor que inicializa o ID do avatar com 0 e o b64_avatar com null
+     * Construtor que inicializa o ID do avatar podendo ser null b64_avatar
      * @param id_avatar ID do avatar
      * @param b64_avatar Converte a imagem do avatar para base64
      */
-    public Avatar(int id_avatar, String b64_avatar) {
-        this(b64_avatar);
-        this.id_avatar = id_avatar;
-    }
-
-    /**
-     * Construtor que inicializa o b64_avatar com null
-     * @param b64_avatar Convertendo a imagem do avatar para base64
-     */
-
-    public Avatar(String b64_avatar) {
+    public Avatar(Integer id_avatar, String b64_avatar) {
         this.b64_avatar = b64_avatar;
-    }
-
-    /**
-     * Getter do ID do avatar
-     * @return ID do avatar
-     */
-
-    public int getId_avatar() {
-        return id_avatar;
+        this.id = id_avatar;
     }
 
     /**
@@ -42,4 +24,26 @@ public class Avatar {
         return b64_avatar;
     }
 
+    /**
+     * Getter do ID do avatar, pode retornar null.
+     * @return ID do avatar
+     */
+    public int getId() {
+        return this.id;
+    }
+
+    /**
+     * Setter do ID do avatar
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public String getRawHTMLRow() {
+        return "";
+    }
 }

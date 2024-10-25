@@ -18,24 +18,6 @@ public class EscolherTabela extends HttpServlet {
 
         String[] colunas = null;
 
-        switch (tabelaNome) {
-            case "Avatar" -> colunas = new String[]{
-                "id_avatar", "url_avatar"
-            };
-            case "Evento Local" -> colunas = new String[]{
-                    "id_local", "nome", "lat", "long"
-            };
-            case "Frase Sustentável" -> colunas = new String[] {
-                    "id_frase", "dt_atualizacao", "ds_frase"
-            };
-            case "Produto" -> colunas = new String[]{
-                    "id_produto", "estoque", "nome", "ds_produto", "preco",
-                    "categoria", "dt_atualizacao", "dt_desativacao"
-            };
-            case "Tag" -> colunas = new String[]{
-                    "id_tag", "nome", "dt_atualizacao", "categoria"
-            };
-        }
         request.setAttribute("colunas", colunas);
 
         RequestDispatcher rd = request.getRequestDispatcher("escolherAcao.jsp");

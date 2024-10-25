@@ -1,10 +1,11 @@
 package org.model;
 import java.util.Date;
 
-public class Log {
+public class Log implements Model {
     private Date dt_log;
     private String operacao;
     private String query;
+    private int id;
 
     /**
      * Construtor que inicializa os atributos da classe Log
@@ -17,6 +18,11 @@ public class Log {
         this.dt_log = dt_log;
         this.operacao = operacao;
         this.query = query;
+    }
+
+    public Log(int id, Date dt_log, String operacao, String query) {
+        this(dt_log, operacao, query);
+        this.id = id;
     }
 
     /**
@@ -44,6 +50,20 @@ public class Log {
 
     public String getQuery() {
         return query;
+    }
+
+    public int getId() { return id; }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public String getRawHTMLRow() {
+        return "";
     }
 }
 

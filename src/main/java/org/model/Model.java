@@ -1,9 +1,7 @@
 package org.model;
 
-public class Model {
-    protected int id;
-
-    public Model(int id) {
-        this.id = id;
-    }
+public interface Model {
+    int getId();
+    void setId(int id);
+    String getRawHTMLRow();
 }
