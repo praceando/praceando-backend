@@ -9,7 +9,8 @@
         String tabelaNome = request.getParameter("tabela");
     %>
     <h1>Formulário de inserção: <%=tabelaNome%></h1>
-    <form method="post">
+    <form method="post" action="inserir">
+        <input type="hidden" name="tabela" value="<%=tabelaNome%>">
         <%=HTMLInput.getForm(tabelaNome)%>
         <button type="submit">Inserir</button>
     </form>

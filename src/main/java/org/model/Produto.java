@@ -1,6 +1,8 @@
 package org.model;
+import org.common.Constants;
+import java.text.ParseException;
 import java.util.Date;
-import java.util.Dictionary;
+import java.util.Map;
 
 public class Produto implements Model {
     private int estoque;
@@ -33,13 +35,13 @@ public class Produto implements Model {
 
     }
 
-    public Produto(Dictionary<String, Object> params) {
-        this.nome = (String) params.get("nome");
-        this.descricao = (String) params.get("descricao");
-        this.preco = (double) params.get("preco");
-        this.categoria = (String) params.get("categoria");
-        this.dt_desativacao = (Date) params.get("dt_desativacao");
-        this.estoque = (int) params.get("estoque");
+    public Produto(Map<String, String> params) throws ParseException {
+        this.nome = params.get("nome");
+        this.descricao = params.get("descricao");
+        this.preco = Double.parseDouble(params.get("preco"));
+        this.categoria =  params.get("categoria");
+        this.dt_desativacao = Constants.formatoData.parse(params.get("dt_desativacao"));
+        this.estoque = Integer.parseInt(params.get("estoque"));
     }
 
     /**Getter para o estoque do produto

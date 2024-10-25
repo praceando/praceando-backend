@@ -1,5 +1,5 @@
 package org.model;
-import java.util.Dictionary;
+import java.util.Map;
 
 public class Evento_local implements Model {
     private String nome;
@@ -29,11 +29,11 @@ public class Evento_local implements Model {
         this.id = id;
     }
 
-    public Evento_local(Dictionary<String, Object> params) {
-        this.id = (int) params.get("id");
-        this.nome = (String) params.get("nome");
-        this.latitude = (double) params.get("latitude");
-        this.longitude = (double) params.get("longitude");
+    public Evento_local(Map<String, String > params) {
+        this.id = Integer.parseInt(params.get("id"));
+        this.nome = params.get("nome");
+        this.latitude = Double.parseDouble(params.get("latitude"));
+        this.longitude = Double.parseDouble(params.get("longitude"));
     }
 
     /** Getter do nome do evento

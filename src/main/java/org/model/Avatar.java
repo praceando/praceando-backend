@@ -1,6 +1,6 @@
 package org.model;
 
-import java.util.Dictionary;
+import java.util.Map;
 
 public class Avatar implements Model {
     private int id;
@@ -19,9 +19,9 @@ public class Avatar implements Model {
         this.b64_avatar = b64_avatar;
     }
 
-    public Avatar(Dictionary<String, Object> params) {
-        this.id = (Integer) params.get("id");
-        this.b64_avatar = (String) params.get("b64_avatar");
+    public Avatar(Map<String, String> params) {
+        this.id = Integer.parseInt(params.get("id"));
+        this.b64_avatar = params.get("b64_avatar");
     }
 
     /** Getter do b64_avatar

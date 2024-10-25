@@ -1,5 +1,7 @@
 package org.model;
 
+import java.util.Map;
+
 public class Tag implements Model {
     private int id;
     private String nome;
@@ -13,6 +15,12 @@ public class Tag implements Model {
         this.nome = nome;
         this.id = id;
         this.categoria = categoria;
+    }
+
+    public Tag(Map<String, String> params) {
+        this.id = Integer.parseInt(params.get("id"));
+        this.nome = params.get("nome");
+        this.categoria = params.get("categoria");
     }
 
     /**Getter para o nome da tag

@@ -21,7 +21,9 @@ public class HTMLInput {
         this(name, label, type, isRequired, null);
     }
 
-
+    public String getName() {
+        return name;
+    }
 
     public String toString() {
         return String.format(
