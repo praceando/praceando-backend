@@ -8,8 +8,7 @@ import java.util.Base64;
 import javax.imageio.ImageIO;
 
 public class ImageString {
-    /**
-     * Converter uma imagem para uma string base64
+    /** Converter uma imagem para uma string base64
      * @param image Imagem
      * @param formatName Formato ("png", "jpg", ...)
      * @return Dados da imagem
