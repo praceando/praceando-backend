@@ -79,12 +79,13 @@ public class Admin implements Model {
         return String.format(
                 "<td>%d</td>" +
                 "<td>%s</td>" +
-                "<td>%s</td" +
-                "<td>***************</td>",
+                "<td>%s</td>" +
+                "<td>*******</td>" +
+                "<td>%s</td",
                 id,
+                nome,
                 email,
-                isAtivo ? "SIM" : "NÃO",
-                senha
+                isAtivo ? "Ativo" : "Inativo"
         );
     }
 
