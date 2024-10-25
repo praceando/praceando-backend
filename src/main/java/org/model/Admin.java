@@ -30,7 +30,6 @@ public class Admin implements Model {
     /** Getter para o e-mail do administrador
      * @return E-mail do administrador
      */
-
     public String getEmail() {
         return email;
     }
@@ -38,7 +37,6 @@ public class Admin implements Model {
     /** Getter para a senha do administrador
      * @return Senha do administrador
      */
-
     public String getSenha() {
         return senha;
     }
@@ -46,7 +44,6 @@ public class Admin implements Model {
     /** Getter para o ID do administrador
      * @return ID do administrador
      */
-
     public int getId() {
         return id;
     }
@@ -58,12 +55,15 @@ public class Admin implements Model {
         return nome;
     }
 
+    /** Getter para o status do administrador
+     * @return True se o administrador estiver ativo, False caso contrário
+     */
     public boolean isAtivo() {
         return isAtivo;
     }
 
-    /**
-     * @param id
+    /** Método para alterar o ID do objeto do administrador
+     * @param id ID do administrador
      */
     @Override
     public void setId(int id) {
@@ -87,15 +87,12 @@ public class Admin implements Model {
         );
     }
 
-
     /** Verifica se o email e senha são iguais aos dados passados anteriormente
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      * @return True se os dados forem iguais, False caso contrário
      */
-
     public boolean matches(String email, String senha) {
         return this.senha.equals(senha) && this.email.equals(email);
     }
 }
-

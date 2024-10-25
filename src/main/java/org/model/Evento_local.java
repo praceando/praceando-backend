@@ -11,13 +11,18 @@ public class Evento_local implements Model {
      * @param latitude Latitude do local do evento
      * @param longitude Longitude do local do evento
      */
-
     public Evento_local(String nome, double latitude, double longitude) {
         this.nome = nome;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
+    /** Construtor que inicia os atributos da classe e o id do evento
+     * @param id
+     * @param nome
+     * @param latitude
+     * @param longitude
+     */
     public Evento_local(int id, String nome, double latitude, double longitude) {
         this(nome, latitude, longitude);
         this.id = id;
@@ -26,7 +31,6 @@ public class Evento_local implements Model {
     /** Getter do nome do evento
      * @return Nome do evento
      */
-
     public String getNome() {
         return nome;
     }
@@ -34,7 +38,6 @@ public class Evento_local implements Model {
     /** Getter da latitude do local do evento
      * @return Latitude do local do evento
      */
-
     public double getLatitude() {
         return latitude;
     }
@@ -42,15 +45,20 @@ public class Evento_local implements Model {
     /** Getter da longitude do local do evento
      * @return Longitude do local do evento
      */
-
     public double getLongitude() {
         return longitude;
     }
 
+    /** Getter do id do evento
+     * @return Id do evento
+     */
     public int getId() {
         return this.id;
     }
 
+    /** Setter do id do evento
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }

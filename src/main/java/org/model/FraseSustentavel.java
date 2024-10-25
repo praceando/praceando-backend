@@ -10,12 +10,15 @@ public class FraseSustentavel implements Model {
      * @param id_frase ID da frase sustentável
      * @param ds_frase Descrição da frase sustentável
      */
-
     public FraseSustentavel(int id_frase, String ds_frase) {
         this(ds_frase);
         this.id = id_frase;
     }
 
+    /**
+     * Construtor que inicializa apenas o atributo ds_frase
+     * @param ds_frase Descrição da frase sustentável
+     */
     public FraseSustentavel(String ds_frase) {
         this.ds_frase = ds_frase;
     }
@@ -23,7 +26,6 @@ public class FraseSustentavel implements Model {
     /** Getter da ds_frase
      * @return Descrição da frase sustentável
      */
-
     public String getDs_frase() {
         return ds_frase;
     }
@@ -31,7 +33,6 @@ public class FraseSustentavel implements Model {
     /**Getter do id_frase
      * @return ID da frase sustentável
      */
-
     public int getId() {
         return id;
     }

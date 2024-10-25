@@ -1,5 +1,4 @@
 package org.model;
-
 import java.util.Date;
 
 public class Produto implements Model {
@@ -20,7 +19,6 @@ public class Produto implements Model {
      * @param categoria Categoria do produto (ecobag)
      * @param dt_desativacao Data de desativação do Produto
      */
-
     public Produto(Integer id, int estoque, String nome, String descricao,
                    double preco, String categoria, Date dt_desativacao) {
 
@@ -45,7 +43,6 @@ public class Produto implements Model {
     /**Getter para o nome do produto
      * @return Nome do produto
      */
-
     public String getNome() {
         return nome;
     }
@@ -53,7 +50,6 @@ public class Produto implements Model {
     /**Getter para a descrição do produto
      * @return Descrição do produto
      */
-
     public String getDescricao() {
         return descricao;
     }
@@ -61,7 +57,6 @@ public class Produto implements Model {
     /**Getter para o preço do produto
      * @return Preço do produto
      */
-
     public double getPreco() {
         return preco;
     }
@@ -69,7 +64,6 @@ public class Produto implements Model {
     /**Getter para a categoria do produto
      * @return Categoria do produto
      */
-
     public String getCategoria() {
         return categoria;
     }
@@ -77,7 +71,6 @@ public class Produto implements Model {
     /**Getter para a data de desativação do produto
      * @return Data de desativação do produto
      */
-
     public Date getDt_desativacao() {
         return dt_desativacao;
     }

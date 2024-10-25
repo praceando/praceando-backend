@@ -10,7 +10,6 @@ public class Tag implements Model {
      * @param id ID da tag
      * @param nome Nome da tag
      */
-
     public Tag(Integer id, String nome, String categoria) {
         this.nome = nome;
         this.id = id;
@@ -20,11 +19,13 @@ public class Tag implements Model {
     /**Getter para o nome da tag
      * @return Nome da tag
      */
-
     public String getNome() {
         return nome;
     }
 
+    /**Getter para a categoria da tag
+     * @return Categoria da tag
+     */
     public String getCategoria() {
         return categoria;
     }

@@ -1,6 +1,5 @@
 package org.model;
 
-
 public class Avatar implements Model {
     private int id;
     private String b64_avatar;
@@ -17,7 +16,6 @@ public class Avatar implements Model {
     /** Getter do b64_avatar
      * @return b64_avatar
      */
-
     public String getB64_avatar() {
         return b64_avatar;
     }
@@ -30,6 +28,7 @@ public class Avatar implements Model {
     }
 
     /** Setter do ID do avatar
+     * @param id ID do avatar
      */
     public void setId(int id) {
         this.id = id;
@@ -48,4 +47,3 @@ public class Avatar implements Model {
         );
     }
 }
-
