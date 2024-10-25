@@ -41,6 +41,9 @@ public class Redirect extends HttpServlet {
         String[] colunas = new String[]{};
 
         switch (tabelaNome) {
+            case "admin" -> colunas = new String[]{
+                    "ID", "Nome", "E-mail", "Senha", "Status"
+            };
             case "avatar" -> colunas = new String[]{
                     "ID", "URL"
             };
