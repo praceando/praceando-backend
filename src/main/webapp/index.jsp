@@ -9,7 +9,7 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>]
-<a href="escolherAcao.jsp">acao</a>
+<a href="trsh/escolherAcao.jsp">acao</a>
 <a href="loginDev.jsp">logas</a>
 
 </body>
