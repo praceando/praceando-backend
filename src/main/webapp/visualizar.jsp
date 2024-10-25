@@ -10,10 +10,9 @@
     <%
         DAOGeneric<Model> dao = (DAOGeneric<Model>) request.getAttribute("dao");
         String[] colunas = (String[]) request.getAttribute("colunas");
-        String tabelaNome = (String) request.getAttribute("tabela");
         List<Model> saida = dao.visualizar();
     %>
-    <h1>Visualizando: <%=tabelaNome%></h1>
+    <h1>Visualizando: <%=dao.getNome()%></h1>
     <h2><i><%=saida.size()%> Elementos listados...</i></h2>
     <table class="tabelaSaida">
         <tr>

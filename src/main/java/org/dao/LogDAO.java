@@ -9,6 +9,7 @@ public class LogDAO extends DAOGeneric<Log> {
     @Override
     protected Log extrairEntidade(ResultSet rs) throws SQLException {
         return new Log(
+                rs.getInt("id_log"),
                 rs.getDate("dt_log"),
                 rs.getString("operacao"),
                 rs.getString("query")
@@ -25,7 +26,7 @@ public class LogDAO extends DAOGeneric<Log> {
 
     @Override
     protected PreparedStatement getAlterarQuery(Log entidade) throws SQLException {
-        return null;
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override

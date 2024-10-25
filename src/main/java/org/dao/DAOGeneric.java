@@ -11,7 +11,7 @@ public abstract class DAOGeneric<T> implements DAO<T> {
     public T visualizar(int id) {
         Conexao.conectar();
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNome() + "\" WHERE id = ?");
+            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNome() + "\" WHERE id_"+getNome()+" = ?");
             System.out.println(ps.toString());
             ps.setObject(1, id);
             ResultSet rs = ps.executeQuery();
@@ -77,7 +77,7 @@ public abstract class DAOGeneric<T> implements DAO<T> {
     public SqlExitDML remover(int id) {
         Conexao.conectar();
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM \""+ this.getNome() + "\" WHERE id = ?");
+            PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM \""+ this.getNome() + "\" WHERE id_"+ getNome() +" = ?");
             ps.setString(1, this.getNome());
             ps.setInt(2, id);
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);

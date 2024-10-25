@@ -14,7 +14,9 @@ public class AdminDAO extends DAOGeneric<Admin> {
         return new Admin(
                 rs.getInt("id_admin"),
                 rs.getString("usuario"),
-                rs.getString("senha")
+                rs.getString("email"),
+                rs.getString("senha"),
+                rs.getBoolean("is_ativo")
         );
     }
 
@@ -41,15 +43,24 @@ public class AdminDAO extends DAOGeneric<Admin> {
     // Método para Select
 
 
-    public boolean usuarioExiste(String email, String senha) {
+    public int usuarioExiste(String email, String senha) {
         List<Admin> admins = visualizar();
 
+        for (Admin admin : admins) {
+            System.out.println(admin.getEmail());
+        }
+
+        if (admins == null) {
+            return -1;
+        }
         for (Admin adm : admins) {
             if (adm.matches(email, senha)) {
-                return true;
+                if (adm.isAtivo()) {
+                    return 1;
+                }
             }
         }
-        return false;
+        return 0;
     }
 
     public boolean usuarioExiste(String email) {

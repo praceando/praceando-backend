@@ -7,14 +7,18 @@ public class TagDAO extends DAOGeneric<Tag> {
 
     @Override
     protected Tag extrairEntidade(ResultSet rs) throws SQLException {
-        return null;
+        return new Tag(
+                rs.getInt("id_tag"),
+                rs.getString("nome"),
+                rs.getString("categoria")
+        );
     }
 
     @Override
     protected PreparedStatement getInserirQuery(Tag tag) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO tag (nome) values (?)");
-
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO tag (nome, categoria) values (?, ?)");
         ps.setString(1, tag.getNome());
+        ps.setString(2, tag.getCategoria());
         return ps;
     }
 

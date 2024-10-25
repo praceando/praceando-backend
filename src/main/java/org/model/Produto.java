@@ -113,7 +113,7 @@ public class Produto implements Model {
                 preco,
                 categoria,
                 estoque,
-                dt_desativacao.toString()
+                dt_desativacao != null ? dt_desativacao.toString() : "NÃO"
         );
     }
 }
