@@ -11,8 +11,7 @@ public class Produto implements Model {
     private Date dt_desativacao;
     private int id;
 
-    /**
-     * Construtor com todos os parâmetros exceto o ID
+    /**Construtor com todos os parâmetros exceto o ID
      * @param id ID do produto, pode ser null
      * @param estoque Quantidade de produtos em estoque
      * @param nome Nome do produto
@@ -35,8 +34,7 @@ public class Produto implements Model {
 
     }
 
-    /**
-     * Getter para o estoque do produto
+    /**Getter para o estoque do produto
      * @return Quantidade de produtos em estoque
      */
     public int getEstoque() {
@@ -44,8 +42,7 @@ public class Produto implements Model {
     }
 
 
-    /**
-     * Getter para o nome do produto
+    /**Getter para o nome do produto
      * @return Nome do produto
      */
 
@@ -53,8 +50,7 @@ public class Produto implements Model {
         return nome;
     }
 
-    /**
-     * Getter para a descrição do produto
+    /**Getter para a descrição do produto
      * @return Descrição do produto
      */
 
@@ -62,8 +58,7 @@ public class Produto implements Model {
         return descricao;
     }
 
-    /**
-     * Getter para o preço do produto
+    /**Getter para o preço do produto
      * @return Preço do produto
      */
 
@@ -71,8 +66,7 @@ public class Produto implements Model {
         return preco;
     }
 
-    /**
-     * Getter para a categoria do produto
+    /**Getter para a categoria do produto
      * @return Categoria do produto
      */
 
@@ -80,8 +74,7 @@ public class Produto implements Model {
         return categoria;
     }
 
-    /**
-     * Getter para a data de desativação do produto
+    /**Getter para a data de desativação do produto
      * @return Data de desativação do produto
      */
 
@@ -89,23 +82,21 @@ public class Produto implements Model {
         return dt_desativacao;
     }
 
-    /**
-     * Getter para o id do produto
+    /**Getter para o id do produto
      * @return Id do produto
      */
     public int getId() {
         return id;
     }
 
-    /**
-     * Setter para o id do produto
+    /**Setter para o id do produto
      */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * @return
+    /**Método utilizado para gerar uma linha HTML com os dados dos produtos do nosso marketplace
+     * @return Uma linha HTML com os dados dos produtos
      */
     public String getRawHTMLRow() {
         return String.format(

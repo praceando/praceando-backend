@@ -6,8 +6,7 @@ public class Evento_local implements Model {
     private double longitude;
     private int id;
 
-    /**
-     * Construtor que inicia os atributos da classe
+    /** Construtor que inicia os atributos da classe
      * @param nome Nome do evento
      * @param latitude Latitude do local do evento
      * @param longitude Longitude do local do evento
@@ -24,8 +23,7 @@ public class Evento_local implements Model {
         this.id = id;
     }
 
-    /**
-     * Getter do nome do evento
+    /** Getter do nome do evento
      * @return Nome do evento
      */
 
@@ -33,8 +31,7 @@ public class Evento_local implements Model {
         return nome;
     }
 
-    /**
-     * Getter da latitude do local do evento
+    /** Getter da latitude do local do evento
      * @return Latitude do local do evento
      */
 
@@ -42,8 +39,7 @@ public class Evento_local implements Model {
         return latitude;
     }
 
-    /**
-     * Getter da longitude do local do evento
+    /** Getter da longitude do local do evento
      * @return Longitude do local do evento
      */
 
@@ -59,8 +55,8 @@ public class Evento_local implements Model {
         this.id = id;
     }
 
-    /**
-     * @return
+    /* Método utilizado para gerar uma linha HTML com os dados dos locais
+     * @return Uma linha HTML com os dados dos locais
      */
     @Override
     public String getRawHTMLRow() {

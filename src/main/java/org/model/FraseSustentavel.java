@@ -20,9 +20,7 @@ public class FraseSustentavel implements Model {
         this.ds_frase = ds_frase;
     }
 
-    /**
-     * Getter da ds_frase
-     *
+    /** Getter da ds_frase
      * @return Descrição da frase sustentável
      */
 
@@ -30,9 +28,7 @@ public class FraseSustentavel implements Model {
         return ds_frase;
     }
 
-    /**
-     * Getter do id_frase
-     *
+    /**Getter do id_frase
      * @return ID da frase sustentável
      */
 
@@ -40,15 +36,14 @@ public class FraseSustentavel implements Model {
         return id;
     }
 
-    /**
-     * Setter do id da frase sustentável
+    /**Setter do id da frase sustentável
      */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * @return
+    /** Método utilizado para gerar uma linha HTML com os dados da frase sustentável
+     * @return Uma linha HTML com os dados da frase sustentável
      */
     @Override
     public String getRawHTMLRow() {
