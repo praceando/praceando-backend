@@ -6,8 +6,7 @@ public class Tag implements Model {
     private String nome;
     private String categoria;
 
-    /**
-     * Construtor que inicializa os atributos da classe Tag
+    /**Construtor que inicializa os atributos da classe Tag
      * @param id ID da tag
      * @param nome Nome da tag
      */
@@ -18,8 +17,7 @@ public class Tag implements Model {
         this.categoria = categoria;
     }
 
-    /**
-     * Getter para o nome da tag
+    /**Getter para o nome da tag
      * @return Nome da tag
      */
 
@@ -31,28 +29,28 @@ public class Tag implements Model {
         return categoria;
     }
 
-    /**
-     * Getter para o ID da tag
+    /**Getter para o ID da tag
      */
     public int getId() {
         return id;
     }
 
-    /**
-     * Setter para o ID da tag
+    /**Setter para o ID da tag
      */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * @return
+    /**Método utilizado para gerar uma linha HTML com os dados da tag
+     * @return Uma linha HTML com os dados da tag
      */
     public String getRawHTMLRow() {
         return String.format(
                 "<td>%d</td>" +
                 "<td>%s</td>",
+                "<td>%s</td>",
                 id,
-                nome);
+                nome,
+                 categoria);
     }
 }

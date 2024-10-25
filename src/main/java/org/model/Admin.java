@@ -6,8 +6,7 @@ public class Admin implements Model {
     private final String senha;
     private final boolean isAtivo;
 
-    /**
-     * Construtor que inicializa todos os atributos da classe Admin
+    /** Construtor que inicializa todos os atributos da classe Admin
      * @param id ID do administrador
      * @param email E-mail do administrador
      * @param senha Senha do administrador
@@ -17,8 +16,7 @@ public class Admin implements Model {
         this.id = id;
     }
 
-    /**
-     * Construtor que inicializa somente os atributos email e senha do administrador
+    /** Construtor que inicializa somente os atributos email e senha do administrador
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
@@ -29,8 +27,7 @@ public class Admin implements Model {
         this.isAtivo = isAtivo;
     }
 
-    /**
-     * Getter para o e-mail do administrador
+    /** Getter para o e-mail do administrador
      * @return E-mail do administrador
      */
 
@@ -38,8 +35,7 @@ public class Admin implements Model {
         return email;
     }
 
-    /**
-     * Getter para a senha do administrador
+    /** Getter para a senha do administrador
      * @return Senha do administrador
      */
 
@@ -47,8 +43,7 @@ public class Admin implements Model {
         return senha;
     }
 
-    /**
-     * Getter para o ID do administrador
+    /** Getter para o ID do administrador
      * @return ID do administrador
      */
 
@@ -63,6 +58,10 @@ public class Admin implements Model {
         return nome;
     }
 
+    public boolean isAtivo() {
+        return isAtivo;
+    }
+
     /**
      * @param id
      */
@@ -71,8 +70,8 @@ public class Admin implements Model {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    /**
-     * @return
+    /** Método utilizado para gerar uma linha HTML com os dados do administrador
+     * @return Uma linha HTML com os dados do administrador
      */
     @Override
     public String getRawHTMLRow() {
@@ -90,8 +89,7 @@ public class Admin implements Model {
     }
 
 
-    /**
-     * Verifica se o email e senha são iguais aos dados passados anteriormente
+    /** Verifica se o email e senha são iguais aos dados passados anteriormente
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      * @return True se os dados forem iguais, False caso contrário
@@ -99,10 +97,6 @@ public class Admin implements Model {
 
     public boolean matches(String email, String senha) {
         return this.senha.equals(senha) && this.email.equals(email);
-    }
-
-    public boolean isAtivo() {
-        return isAtivo;
     }
 }
 

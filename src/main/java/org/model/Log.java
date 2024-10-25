@@ -7,8 +7,7 @@ public class Log implements Model {
     private String query;
     private int id;
 
-    /**
-     * Construtor que inicializa os atributos da classe Log
+    /**Construtor que inicializa os atributos da classe Log
      * @param dt_log Data e hora da operação
      * @param operacao Operação realizada no banco de dados
      * @param query Consulta executada no banco de dados
@@ -25,8 +24,7 @@ public class Log implements Model {
         this.id = id;
     }
 
-    /**
-     * Getter para o atributo dt_log
+    /**Getter para o atributo dt_log
      * @return Data e hora da operação
      */
 
@@ -34,8 +32,7 @@ public class Log implements Model {
         return dt_log;
     }
 
-    /**
-     * Getter para o atributo operacao
+    /**Getter para o atributo operacao
      * @return Operação realizada no banco de dados
      */
 
@@ -43,8 +40,7 @@ public class Log implements Model {
         return operacao;
     }
 
-    /**
-     * Getter para o atributo query
+    /**Getter para o atributo query
      * @return nome da tabela consultada
      */
 
@@ -58,9 +54,8 @@ public class Log implements Model {
         this.id = id;
     }
 
-    /**
-     *
-     * @return
+    /**Método utilizado para gerar uma linha HTML com os dados das operações realizadas no banco de dados pelo CRUD
+     * @return Uma linha HTML contendo os dados das operações realizadas no banco de dados
      */
     @Override
     public String getRawHTMLRow() {
