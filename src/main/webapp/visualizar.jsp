@@ -14,8 +14,12 @@
     %>
     <h1>Visualizando: <%=dao.getNome()%></h1>
     <h2><i><%=saida.size()%> Elementos listados...</i></h2>
+    <a class="visuBtn" id="novoBtn" href="redirect?tabela=<%=dao.getNome()%>&opcao=inserir">Novo</a>
+
     <table class="tabelaSaida">
         <tr>
+            <td>Ações</td>
+            <td>Ações</td>
             <%for (String coluna : colunas) {%>
                     <td><%=coluna%></td>
             <%}
@@ -24,6 +28,8 @@
         <%
           for (Model m : saida) {%>
               <tr>
+                  <td><a class="visuBtn" id="atualizarBtn" href="atualizar?tabela=<%=dao.getNome()%>&id=<%=m.getId()%>">Atualizar</a></td>
+                  <td><a class="visuBtn" id="removerBtn" href="remover?tabela=<%=dao.getNome()%>&id=<%=m.getId()%>">Excluir</a></td>
                   <%=m.getRawHTMLRow()%>
               </tr>
         <%  }

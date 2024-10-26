@@ -9,7 +9,7 @@ public class DAOManager {
             new AvatarDAO(),
             new ProdutoDAO(),
             new FraseSustentavelDAO(),
-            new Evento_localDAO()
+            new EventoLocalDAO()
     };
 
     public static DAOGeneric<Model> getDAO(String nome) {

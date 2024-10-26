@@ -43,6 +43,10 @@ public class SqlExitDML {
         return erro;
     }
 
+    /** Verifica se a saída contém erros
+     * @return true se sim, false senão.
+     */
+    public boolean hasErro() { return erro != null; }
     /** Método ToString para exibição do objeto SqlExitDML
      * @return Erro lançado
      */
@@ -55,7 +59,7 @@ public class SqlExitDML {
                 return String.format("Erro no banco de dados: '%s'", erro.getMessage());
             }
             case 0 -> {
-                return "Operação concluída, porém sem efeitos.";
+                return "Não foi encontrado.";
             }
             case -2 -> {
                 return "Operação inválida";

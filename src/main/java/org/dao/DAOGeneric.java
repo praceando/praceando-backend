@@ -1,13 +1,15 @@
 package org.dao;
 import org.common.SqlExitDML;
+import org.model.Model;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class DAOGeneric<T> implements DAO<T> {
+public abstract class DAOGeneric<T extends Model> implements DAO<T> {
 
+    // TODO: Fazer o preparedStatement dos métodos de visualizar originar de sobrescritas de métodos abstratos;
     public T visualizar(int id) {
         Conexao.conectar();
         try {
@@ -78,8 +80,7 @@ public abstract class DAOGeneric<T> implements DAO<T> {
         Conexao.conectar();
         try {
             PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM \""+ this.getNome() + "\" WHERE id_"+ getNome() +" = ?");
-            ps.setString(1, this.getNome());
-            ps.setInt(2, id);
+            ps.setInt(1, id);
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,4 +1,4 @@
-package org.common;
+package org.common.html;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -7,21 +7,21 @@ public class HTMLInput {
     private final String label;
     private final String type;
     private final boolean isRequired;
-    private final String placeholder;
+    private final String value;
 
     /** Método construtor padrão
      * @param name Nome do campo
      * @param label Rótulo do campo
      * @param type Tipo do campo
      * @param isRequired Se o campo é obrigatório
-     * @param placeholder Texto de placeholder do campo
+     * @param value Texto do campo por default.
      */
-    public HTMLInput(String name, String label, String type, boolean isRequired, String placeholder) {
+    public HTMLInput(String name, String label, String type, boolean isRequired, String value) {
         this.name = name;
         this.label = label;
         this.type = type;
         this.isRequired = isRequired;
-        this.placeholder = placeholder;
+        this.value = value;
     }
 
     /** Método construtor com placeholder padrão
@@ -48,7 +48,7 @@ public class HTMLInput {
                 "   <input type=\"%s\" id=\"%s\" name=\"%s\" class=\"inputForm\" %s %s/>" +
                 "</div>",
                 name, label, type, name, name,
-                placeholder != null ? String.format("placeholder=%s", placeholder) : "",
+                value != null ? String.format("value=%s", value) : "",
                 isRequired ? "required" : ""
         );
     }
@@ -59,7 +59,7 @@ public class HTMLInput {
      * @throws UnsupportedOperationException Se não encontrado colunas de inserir para a tabela
      */
     public static HTMLInput[] getInputs(String tableName) throws UnsupportedOperationException {
-        HTMLInput[] inputs = new HTMLInput[]{};
+        HTMLInput[] inputs;
 
         switch (tableName) {
             case "avatar" -> inputs = new HTMLInput[]{

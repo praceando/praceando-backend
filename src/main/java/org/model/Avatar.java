@@ -20,7 +20,9 @@ public class Avatar implements Model {
     }
 
     public Avatar(Map<String, String> params) {
-        this.id = Integer.parseInt(params.get("id"));
+        if (params.containsKey("id")) {
+            this.id = Integer.parseInt(params.get("id"));
+        }
         this.b64_avatar = params.get("b64_avatar");
     }
 

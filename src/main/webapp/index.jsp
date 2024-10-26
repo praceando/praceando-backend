@@ -10,6 +10,6 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <a href="loginDev.jsp">logas</a>
-
+<a href="home.html">home</a>
 </body>
 </html>

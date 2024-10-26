@@ -1,7 +1,7 @@
 package org.model;
 import java.util.Map;
 
-public class Evento_local implements Model {
+public class EventoLocal implements Model {
     private String nome;
     private double latitude;
     private double longitude;
@@ -12,7 +12,7 @@ public class Evento_local implements Model {
      * @param latitude Latitude do local do evento
      * @param longitude Longitude do local do evento
      */
-    public Evento_local(String nome, double latitude, double longitude) {
+    public EventoLocal(String nome, double latitude, double longitude) {
         this.nome = nome;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -24,13 +24,15 @@ public class Evento_local implements Model {
      * @param latitude
      * @param longitude
      */
-    public Evento_local(int id, String nome, double latitude, double longitude) {
+    public EventoLocal(int id, String nome, double latitude, double longitude) {
         this(nome, latitude, longitude);
         this.id = id;
     }
 
-    public Evento_local(Map<String, String > params) {
-        this.id = Integer.parseInt(params.get("id"));
+    public EventoLocal(Map<String, String > params) {
+        if (params.containsKey("id")) {
+            this.id = Integer.parseInt(params.get("id"));
+        }
         this.nome = params.get("nome");
         this.latitude = Double.parseDouble(params.get("latitude"));
         this.longitude = Double.parseDouble(params.get("longitude"));

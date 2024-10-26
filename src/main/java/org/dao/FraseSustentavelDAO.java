@@ -16,14 +16,14 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO frase_sustentavel (ds_frase) values (?)");
 
         //Setando valor
-        ps.setString(1, fraseSustentavel.getDs_frase() );
+        ps.setString(1, fraseSustentavel.getDescricao() );
         return ps;
     }
 
     @Override
     protected PreparedStatement getAlterarQuery(FraseSustentavel fraseSustentavel) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE frase_sustentavel SET ds_frase = ? where id_frase = ?");
-        ps.setString(1, fraseSustentavel.getDs_frase());
+        ps.setString(1, fraseSustentavel.getDescricao());
         return ps;
     }
 

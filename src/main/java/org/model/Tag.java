@@ -18,7 +18,9 @@ public class Tag implements Model {
     }
 
     public Tag(Map<String, String> params) {
-        this.id = Integer.parseInt(params.get("id"));
+        if (params.containsKey("id")) {
+            this.id = Integer.parseInt(params.get("id"));
+        }
         this.nome = params.get("nome");
         this.categoria = params.get("categoria");
     }
@@ -55,7 +57,7 @@ public class Tag implements Model {
     public String getRawHTMLRow() {
         return String.format(
                 "<td>%d</td>" +
-                "<td>%s</td>",
+                "<td>%s</td>" +
                 "<td>%s</td>",
                 id,
                 nome,

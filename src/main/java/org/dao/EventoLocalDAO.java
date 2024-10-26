@@ -1,14 +1,14 @@
 package org.dao;
 
-import org.model.Evento_local;
+import org.model.EventoLocal;
 
 import java.sql.*;
 
-public class Evento_localDAO extends DAOGeneric<Evento_local> {
+public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
 
     @Override
-    protected Evento_local extrairEntidade(ResultSet rs) throws SQLException {
-        return new Evento_local(
+    protected EventoLocal extrairEntidade(ResultSet rs) throws SQLException {
+        return new EventoLocal(
                 rs.getInt("id_evento_local"),
                 rs.getString("nome"),
                 rs.getDouble("lat"),
@@ -17,7 +17,7 @@ public class Evento_localDAO extends DAOGeneric<Evento_local> {
     }
 
     @Override
-    protected PreparedStatement getInserirQuery(Evento_local local) throws SQLException {
+    protected PreparedStatement getInserirQuery(EventoLocal local) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO evento_local (nome, lat, long) values (?,?,?)");
         ps.setString(1, local.getNome());
         ps.setDouble(2, local.getLatitude());
@@ -26,7 +26,7 @@ public class Evento_localDAO extends DAOGeneric<Evento_local> {
     }
 
     @Override
-    protected PreparedStatement getAlterarQuery(Evento_local local) throws SQLException {
+    protected PreparedStatement getAlterarQuery(EventoLocal local) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE evento_local SET nome = ?, lat = ?, long = ? WHERE id = ?");
         ps.setString(1, local.getNome());
         ps.setDouble(2, local.getLatitude());

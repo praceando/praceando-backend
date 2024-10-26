@@ -32,7 +32,7 @@
 
             if (Arrays.equals(status, new boolean[]{false, false, false})) {
     %>
-            <p><%=saidaInsert.toString()%>></p>
+            <p><%=saidaInsert.toString()%></p>
     <%
             } else {
                 for (String av : avisos) {

@@ -2,38 +2,40 @@ package org.model;
 import java.util.Map;
 
 public class FraseSustentavel implements Model {
-    private String ds_frase;
+    private String descricao;
     private int id;
 
     /**
      * Construtor que inicializa todos os atributos
      *
-     * @param id_frase ID da frase sustentável
-     * @param ds_frase Descrição da frase sustentável
+     * @param id ID da frase sustentável
+     * @param descricao Descrição da frase sustentável
      */
-    public FraseSustentavel(int id_frase, String ds_frase) {
-        this(ds_frase);
-        this.id = id_frase;
+    public FraseSustentavel(int id, String descricao) {
+        this(descricao);
+        this.id = id;
     }
 
     /**
      * Construtor que inicializa apenas o atributo ds_frase
-     * @param ds_frase Descrição da frase sustentável
+     * @param descricao Descrição da frase sustentável
      */
-    public FraseSustentavel(String ds_frase) {
-        this.ds_frase = ds_frase;
+    public FraseSustentavel(String descricao) {
+        this.descricao = descricao;
     }
 
     public FraseSustentavel(Map<String, String> params) {
-        this.id = Integer.parseInt(params.get("id"));
-        this.ds_frase = params.get("ds_frase");
+        if (params.containsKey("id")) {
+            this.id = Integer.parseInt(params.get("id"));
+        }
+        this.descricao = params.get("descricao");
     }
 
-    /** Getter da ds_frase
+    /** Getter da Descrição
      * @return Descrição da frase sustentável
      */
-    public String getDs_frase() {
-        return ds_frase;
+    public String getDescricao() {
+        return descricao;
     }
 
     /**Getter do id_frase
@@ -58,7 +60,7 @@ public class FraseSustentavel implements Model {
                 "<td>%d</td>" +
                 "<td>%s</td>",
                 id,
-                ds_frase
+                descricao
         );
     }
 }

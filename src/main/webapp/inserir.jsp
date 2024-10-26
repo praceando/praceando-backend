@@ -1,4 +1,4 @@
-<%@ page import="org.common.HTMLInput" %>
+<%@ page import="org.common.html.HTMLInput" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -10,7 +10,7 @@
     %>
     <h1>Formulário de inserção: <%=tabelaNome%></h1>
     <form method="post" action="inserir">
-        <input type="hidden" name="tabela" value="<%=tabelaNome%>">
+        <input type="hidden" name="tabelaNome" value="<%=tabelaNome%>">
         <%=HTMLInput.getForm(tabelaNome)%>
         <button type="submit">Inserir</button>
     </form>

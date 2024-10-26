@@ -36,6 +36,9 @@ public class Produto implements Model {
     }
 
     public Produto(Map<String, String> params) throws ParseException {
+        if (params.containsKey("id")) {
+            this.id = Integer.parseInt(params.get("id"));
+        }
         this.nome = params.get("nome");
         this.descricao = params.get("descricao");
         this.preco = Double.parseDouble(params.get("preco"));
