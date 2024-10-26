@@ -129,7 +129,7 @@ public class HTMLInput {
         }
     }
 
-        public static List<String> getForm(HTMLInput[] form, Model m) {
+    public static List<String> getForm(HTMLInput[] form, Model m) {
         fillInputs(form, m.getParams());
 
         List<String> formList = getForm(form);

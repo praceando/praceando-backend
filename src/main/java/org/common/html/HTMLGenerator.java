@@ -40,7 +40,7 @@ public class HTMLGenerator {
         return colunas;
     }
 
-    /** Método para retornar o HTML da linha do Model
+    /** Método para retornar o HTML da linha de um Model
      * Utilizado na página de visualização
      * @param model Model para gerar o HTML
      * @return HTML da linha do objeto
