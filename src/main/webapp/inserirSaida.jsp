@@ -23,6 +23,8 @@
       %>
         <td>
             <%=linha.getKey()%>
+        </td>
+        <td>
             <%=linha.getValue()%>
         </td>
       <%

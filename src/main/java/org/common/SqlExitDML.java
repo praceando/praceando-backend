@@ -21,11 +21,10 @@ public class SqlExitDML {
     }
 
     /** Construtor com código de saída e erro
-     * @param codigo Código de saída
      * @param erro Erro lançado
      */
-    public SqlExitDML(int codigo, Throwable erro) {
-        this(codigo);
+    public SqlExitDML(Throwable erro) {
+        this();
         this.erro = erro;
     }
 
