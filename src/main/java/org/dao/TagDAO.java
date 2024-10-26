@@ -30,6 +30,7 @@ public class TagDAO extends DAOGeneric<Tag> {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE tag SET nome = ?, categoria = ? WHERE id_tag = ?");
         // SETANDO O VALOR DOS PARÂMETROS
         ps.setString(1, tag.getNome());
+        ps.setString(2, tag.getCategoria());
         ps.setInt(3, tag.getId());
         return ps;
     }
