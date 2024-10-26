@@ -1,5 +1,6 @@
 package org.dao;
 
+import org.common.Senha;
 import org.model.Admin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ public class AdminDAO extends DAOGeneric<Admin> {
                 rs.getInt("id_admin"),
                 rs.getString("usuario"),
                 rs.getString("email"),
-                rs.getString("senha"),
+                new Senha(rs.getString("senha")),
                 rs.getBoolean("is_ativo")
         );
     }

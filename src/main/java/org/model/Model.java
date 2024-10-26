@@ -16,8 +16,5 @@ public interface Model {
     void setId(int id);
 
     Map<String, String> getParams();
-    /** Método para retornar o HTML da linha do objeto
-     * @return HTML da linha do objeto
-     */
-    String getRawHTMLRow();
+
 }

@@ -6,25 +6,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Produto implements Model {
-    private int estoque;
+    private int id;
     private String nome;
     private String descricao;
     private double preco;
     private String categoria;
+    private int estoque;
     private Date dt_desativacao;
-    private int id;
 
-    /**Construtor com todos os parâmetros exceto o ID
-     * @param id ID do produto, pode ser null
-     * @param estoque Quantidade de produtos em estoque
-     * @param nome Nome do produto
-     * @param descricao Descrição do produto
-     * @param preco Preço do produto
-     * @param categoria Categoria do produto (ecobag)
+    /**
+     * Construtor com todos os parâmetros exceto o ID
+     *
+     * @param id             ID do produto, pode ser null
+     * @param nome           Nome do produto
+     * @param descricao      Descrição do produto
+     * @param preco          Preço do produto
+     * @param categoria      Categoria do produto (ecobag)
+     * @param estoque        Quantidade de produtos em estoque
      * @param dt_desativacao Data de desativação do Produto
      */
-    public Produto(Integer id, int estoque, String nome, String descricao,
-                   double preco, String categoria, Date dt_desativacao) {
+    public Produto(Integer id, String nome, String descricao, double preco, String categoria, int estoque,
+                   Date dt_desativacao) {
 
         this.id = id;
         this.estoque = estoque;
@@ -113,26 +115,5 @@ public class Produto implements Model {
         params.put("estoque", Integer.toString(estoque));
         params.put("dt_desativacao", dt_desativacao.toString());
         return params;
-    }
-    /**Método utilizado para gerar uma linha HTML com os dados dos produtos do nosso marketplace
-     * @return Uma linha HTML com os dados dos produtos
-     */
-    public String getRawHTMLRow() {
-        return String.format(
-                "<td>%d</td>" +
-                "<td>%s</td>" +
-                "<td>%s</td>" +
-                "<td>R$ %.2f</td>" +
-                "<td>%s</td>" +
-                "<td>%d</td>" +
-                "<td>%s</td>",
-                id,
-                nome,
-                descricao,
-                preco,
-                categoria,
-                estoque,
-                dt_desativacao != null ? dt_desativacao.toString() : "NÃO"
-        );
     }
 }

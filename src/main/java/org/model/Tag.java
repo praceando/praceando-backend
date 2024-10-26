@@ -58,18 +58,4 @@ public class Tag implements Model {
     public void setId(int id) {
         this.id = id;
     }
-
-    /**Método utilizado para gerar uma linha HTML com os dados da tag
-     * @return Uma linha HTML com os dados da tag
-     */
-    public String getRawHTMLRow() {
-        return String.format(
-                "<td>%d</td>" +
-                "<td>%s</td>" +
-                "<td>%s</td>",
-                id,
-                nome,
-                categoria
-        );
-    }
 }

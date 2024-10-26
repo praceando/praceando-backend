@@ -3,8 +3,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FraseSustentavel implements Model {
-    private String descricao;
     private int id;
+    private String descricao;
 
     /**
      * Construtor que inicializa todos os atributos
@@ -57,18 +57,5 @@ public class FraseSustentavel implements Model {
         Map<String, String> params = new HashMap<>();
         params.put("descricao", descricao);
         return params;
-    }
-
-    /** Método utilizado para gerar uma linha HTML com os dados da frase sustentável
-     * @return Uma linha HTML com os dados da frase sustentável
-     */
-    @Override
-    public String getRawHTMLRow() {
-        return String.format(
-                "<td>%d</td>" +
-                "<td>%s</td>",
-                id,
-                descricao
-        );
     }
 }

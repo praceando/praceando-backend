@@ -1,20 +1,22 @@
 package org.model;
 
+import org.common.Senha;
+
 import java.util.Map;
 
 public class Admin implements Model {
     private int id;
     private final String nome;
     private final String email;
-    private final String senha;
     private final boolean isAtivo;
+    private final Senha senha;
 
     /** Construtor que inicializa todos os atributos da classe Admin
      * @param id ID do administrador
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(int id, String nome, String email, String senha, boolean isAtivo) {
+    public Admin(int id, String nome, String email, Senha senha, boolean isAtivo) {
         this(nome, email, senha, isAtivo);
         this.id = id;
     }
@@ -23,7 +25,7 @@ public class Admin implements Model {
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(String nome, String email, String senha, boolean isAtivo) {
+    public Admin(String nome, String email, Senha senha, boolean isAtivo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -41,7 +43,7 @@ public class Admin implements Model {
      * @return Senha do administrador
      */
     public String getSenha() {
-        return senha;
+        return senha.get();
     }
 
     /** Getter para o ID do administrador
@@ -71,24 +73,6 @@ public class Admin implements Model {
     @Override
     public void setId(int id) {
         throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** Método utilizado para gerar uma linha HTML com os dados do administrador
-     * @return Uma linha HTML com os dados do administrador
-     */
-    @Override
-    public String getRawHTMLRow() {
-        return String.format(
-                "<td>%d</td>" +
-                "<td>%s</td>" +
-                "<td>%s</td>" +
-                "<td>*******</td>" +
-                "<td>%s</td",
-                id,
-                nome,
-                email,
-                isAtivo ? "Ativo" : "Inativo"
-        );
     }
 
     @Override

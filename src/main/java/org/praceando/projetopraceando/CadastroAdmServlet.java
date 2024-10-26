@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.common.Constants;
+import org.common.Senha;
 import org.common.SqlExitDML;
 import org.dao.AdminDAO;
 import org.model.Admin;
@@ -38,7 +39,7 @@ public class CadastroAdmServlet extends HttpServlet {
 
 
         if (Arrays.equals(status, new boolean[]{false, false, false}) && temAcessoValido) {
-            Admin admin = new Admin(nome, email, senha, false);
+            Admin admin = new Admin(nome, email, new Senha(senha), false);
             saida = adminDAO.inserir(admin);
         }
 

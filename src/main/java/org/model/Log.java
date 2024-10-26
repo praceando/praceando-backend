@@ -3,18 +3,18 @@ import java.util.Date;
 import java.util.Map;
 
 public class Log implements Model {
-    private Date dt_log;
+    private int id;
+    private Date dtLog;
     private String operacao;
     private String query;
-    private int id;
 
     /**Construtor que inicializa os atributos da classe Log
-     * @param dt_log Data e hora da operação
+     * @param dtLog Data e hora da operação
      * @param operacao Operação realizada no banco de dados
      * @param query Consulta executada no banco de dados
      */
-    public Log(Date dt_log, String operacao, String query) {
-        this.dt_log = dt_log;
+    public Log(Date dtLog, String operacao, String query) {
+        this.dtLog = dtLog;
         this.operacao = operacao;
         this.query = query;
     }
@@ -22,16 +22,16 @@ public class Log implements Model {
     /** Construtor que inicializa os atributos da classe Log e o id da operação
      * @param id Id da operação
      */
-    public Log(int id, Date dt_log, String operacao, String query) {
-        this(dt_log, operacao, query);
+    public Log(int id, Date dtLog, String operacao, String query) {
+        this(dtLog, operacao, query);
         this.id = id;
     }
 
     /**Getter para o atributo dt_log
      * @return Data e hora da operação
      */
-    public Date getDt_log() {
-        return dt_log;
+    public Date getDtLog() {
+        return dtLog;
     }
 
     /**Getter para o atributo operacao
@@ -64,22 +64,5 @@ public class Log implements Model {
     @Override
     public Map<String, String> getParams() {
         throw new UnsupportedOperationException("Log não suporta parametrização");
-    }
-
-    /**Método utilizado para gerar uma linha HTML com os dados das operações realizadas no banco de dados pelo CRUD
-     * @return Uma linha HTML contendo os dados das operações realizadas no banco de dados
-     */
-    @Override
-    public String getRawHTMLRow() {
-        return String.format(
-                "<td>%d</td>" +
-                "<td>%s</td>" +
-                "<td>%s</td>" +
-                "<td>%s</td>",
-                id,
-                operacao,
-                query,
-                dt_log
-        );
     }
 }

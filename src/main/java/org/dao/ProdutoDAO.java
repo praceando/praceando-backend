@@ -12,11 +12,7 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
     protected Produto extrairEntidade(ResultSet rs) throws SQLException {
         return new Produto(
                 rs.getInt("id_produto"),
-                rs.getInt("estoque"),
-                rs.getString("nome"),
-                rs.getString("ds_produto"),
-                rs.getDouble("preco"),
-                rs.getString("categoria"),
+                rs.getString("nome"), rs.getString("ds_produto"), rs.getDouble("preco"), rs.getString("categoria"), rs.getInt("estoque"),
                 rs.getDate("dt_desativacao")
         );
     }

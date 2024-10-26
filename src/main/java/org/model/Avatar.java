@@ -53,17 +53,4 @@ public class Avatar implements Model {
         params.put("b64_avatar", b64_avatar);
         return params;
     }
-    /**Método utilizado para gerar uma linha HTML com os dados do avatar
-     * @return Uma linha HTML com os dados do avatar
-     */
-    @Override
-    public String getRawHTMLRow() {
-        return String.format(
-                "<td>%d/td>" +
-                "<td><a href=\"%s\"></td>",
-                id,
-                b64_avatar
-        );
-    }
-
 }

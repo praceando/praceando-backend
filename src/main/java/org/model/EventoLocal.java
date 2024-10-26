@@ -3,10 +3,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EventoLocal implements Model {
+    private int id;
     private String nome;
     private double latitude;
     private double longitude;
-    private int id;
 
     /** Construtor que inicia os atributos da classe
      * @param nome Nome do evento
@@ -81,22 +81,4 @@ public class EventoLocal implements Model {
         params.put("longitude", Double.toString(longitude));
         return params;
     }
-
-    /** Utilizado para gerar uma linha HTML com os dados dos locais
-     * @return Uma linha HTML com os dados dos locais
-     */
-    @Override
-    public String getRawHTMLRow() {
-        return String.format(
-                "<td>%d</td>" +
-                "<td>%s</td>" +
-                "<td>%f</td>" +
-                "<td>%f</td>",
-                id,
-                nome,
-                latitude,
-                longitude
-        );
-    }
-
 }
