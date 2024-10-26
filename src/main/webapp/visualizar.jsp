@@ -28,7 +28,7 @@
         <%
           for (Model m : saida) {%>
               <tr>
-                  <td><a class="visuBtn" id="atualizarBtn" href="atualizar?tabela=<%=dao.getNome()%>&id=<%=m.getId()%>">Atualizar</a></td>
+                  <td><a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=dao.getNome()%>&id=<%=m.getId()%>">Alterar</a></td>
                   <td><a class="visuBtn" id="removerBtn" href="remover?tabela=<%=dao.getNome()%>&id=<%=m.getId()%>">Excluir</a></td>
                   <%=m.getRawHTMLRow()%>
               </tr>

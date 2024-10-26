@@ -5,6 +5,9 @@ import org.model.Log;
 import java.sql.*;
 
 public class LogDAO extends DAOGeneric<Log> {
+    public boolean isReadOnly() {
+        return true;
+    }
 
     @Override
     protected Log extrairEntidade(ResultSet rs) throws SQLException {

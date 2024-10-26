@@ -2,6 +2,7 @@ package org.model;
 import org.common.Constants;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Produto implements Model {
@@ -103,6 +104,16 @@ public class Produto implements Model {
         this.id = id;
     }
 
+    public Map<String, String> getParams() {
+        Map<String, String> params = new HashMap<>();
+        params.put("nome", nome);
+        params.put("categoria", categoria);
+        params.put("descricao", descricao);
+        params.put("preco", Double.toString(preco));
+        params.put("estoque", Integer.toString(estoque));
+        params.put("dt_desativacao", dt_desativacao.toString());
+        return params;
+    }
     /**Método utilizado para gerar uma linha HTML com os dados dos produtos do nosso marketplace
      * @return Uma linha HTML com os dados dos produtos
      */

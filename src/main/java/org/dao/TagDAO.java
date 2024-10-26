@@ -4,6 +4,9 @@ import java.sql.*;
 
 
 public class TagDAO extends DAOGeneric<Tag> {
+    public boolean isReadOnly() {
+        return false;
+    }
 
     @Override
     protected Tag extrairEntidade(ResultSet rs) throws SQLException {
@@ -16,7 +19,7 @@ public class TagDAO extends DAOGeneric<Tag> {
 
     @Override
     protected PreparedStatement getInserirQuery(Tag tag) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO tag (nome, categoria) values (?, ?)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO tag (nome, categoria) VALUES (?, ?)");
         ps.setString(1, tag.getNome());
         ps.setString(2, tag.getCategoria());
         return ps;

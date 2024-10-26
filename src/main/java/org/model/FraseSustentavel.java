@@ -1,4 +1,5 @@
 package org.model;
+import java.util.HashMap;
 import java.util.Map;
 
 public class FraseSustentavel implements Model {
@@ -26,6 +27,7 @@ public class FraseSustentavel implements Model {
 
     public FraseSustentavel(Map<String, String> params) {
         if (params.containsKey("id")) {
+            System.out.println("Construtor frasesustentavel: ID=" + params.get("id"));
             this.id = Integer.parseInt(params.get("id"));
         }
         this.descricao = params.get("descricao");
@@ -49,6 +51,12 @@ public class FraseSustentavel implements Model {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Map<String, String> getParams() {
+        Map<String, String> params = new HashMap<>();
+        params.put("descricao", descricao);
+        return params;
     }
 
     /** Método utilizado para gerar uma linha HTML com os dados da frase sustentável

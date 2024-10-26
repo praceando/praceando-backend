@@ -1,5 +1,6 @@
 package org.model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Avatar implements Model {
@@ -47,6 +48,11 @@ public class Avatar implements Model {
         this.id = id;
     }
 
+    public Map<String, String> getParams() {
+        Map<String, String> params = new HashMap<>();
+        params.put("b64_avatar", b64_avatar);
+        return params;
+    }
     /**Método utilizado para gerar uma linha HTML com os dados do avatar
      * @return Uma linha HTML com os dados do avatar
      */

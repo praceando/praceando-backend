@@ -1,5 +1,7 @@
 package org.model;
 
+import java.util.Map;
+
 public class Admin implements Model {
     private int id;
     private final String nome;
@@ -89,6 +91,11 @@ public class Admin implements Model {
         );
     }
 
+    @Override
+    public Map<String, String> getParams() {
+        throw new UnsupportedOperationException("Admin não suporta parametrização");
+    }
+
     /** Verifica se o email e senha são iguais aos dados passados anteriormente
      * @param email E-mail do administrador
      * @param senha Senha do administrador
@@ -97,5 +104,4 @@ public class Admin implements Model {
     public boolean matches(String email, String senha) {
         return this.senha.equals(senha) && this.email.equals(email);
     }
-
 }

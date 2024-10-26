@@ -4,6 +4,10 @@ import org.model.Produto;
 import java.sql.*;
 
 public class ProdutoDAO extends DAOGeneric<Produto> {
+    public boolean isReadOnly() {
+        return false;
+    }
+
     @Override
     protected Produto extrairEntidade(ResultSet rs) throws SQLException {
         return new Produto(

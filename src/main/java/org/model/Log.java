@@ -1,5 +1,6 @@
 package org.model;
 import java.util.Date;
+import java.util.Map;
 
 public class Log implements Model {
     private Date dt_log;
@@ -58,6 +59,11 @@ public class Log implements Model {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public Map<String, String> getParams() {
+        throw new UnsupportedOperationException("Log não suporta parametrização");
     }
 
     /**Método utilizado para gerar uma linha HTML com os dados das operações realizadas no banco de dados pelo CRUD

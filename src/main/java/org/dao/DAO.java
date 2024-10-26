@@ -7,6 +7,7 @@ import java.util.List;
 public interface DAO<T extends Model> {
     List<T> visualizar();
     T visualizar(int id);
+    boolean isReadOnly();
     SqlExitDML inserir(T entidade);
     SqlExitDML alterar(T entidade);
     SqlExitDML remover(int id);

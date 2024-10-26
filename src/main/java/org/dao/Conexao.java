@@ -2,7 +2,6 @@ package org.dao;
 import io.github.cdimascio.dotenv.Dotenv;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Conexao {
@@ -36,9 +35,4 @@ public class Conexao {
             sqle.printStackTrace();
         }
     }
-
-
-//    public static Date getDataAtual() {
-//        return new Date(System.currentTimeMillis());
-//    }
 }

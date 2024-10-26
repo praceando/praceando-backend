@@ -1,27 +1,31 @@
 package org.common.html;
+import org.model.Model;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class HTMLInput {
     private final String name;
     private final String label;
     private final String type;
+    private String value;
+
     private final boolean isRequired;
-    private final String value;
+    private final boolean isReadOnly;
 
     /** Método construtor padrão
      * @param name Nome do campo
      * @param label Rótulo do campo
      * @param type Tipo do campo
      * @param isRequired Se o campo é obrigatório
-     * @param value Texto do campo por default.
      */
-    public HTMLInput(String name, String label, String type, boolean isRequired, String value) {
+    public HTMLInput(String name, String label, String type, boolean isRequired, boolean isReadOnly, String value) {
         this.name = name;
         this.label = label;
         this.type = type;
-        this.isRequired = isRequired;
         this.value = value;
+        this.isRequired = isRequired;
+        this.isReadOnly = isReadOnly;
     }
 
     /** Método construtor com placeholder padrão
@@ -31,11 +35,15 @@ public class HTMLInput {
      * @param isRequired Se o campo é obrigatório
      */
     public HTMLInput(String name, String label, String type, boolean isRequired) {
-        this(name, label, type, isRequired, null);
+        this(name, label, type, isRequired, false, null);
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     /** Método toString para gerar o HTML do input
@@ -45,11 +53,12 @@ public class HTMLInput {
         return String.format(
                 "<div class=\"inputContainer\">" +
                 "   <label for=\"%s\">%s</label>\n" +
-                "   <input type=\"%s\" id=\"%s\" name=\"%s\" class=\"inputForm\" %s %s/>" +
+                "   <input type=\"%s\" id=\"%s\" name=\"%s\" class=\"inputForm\" %s %s %s/>" +
                 "</div>",
                 name, label, type, name, name,
-                value != null ? String.format("value=%s", value) : "",
-                isRequired ? "required" : ""
+                value != null ? String.format("value=\"%s\"", value) : "",
+                isRequired ? "required" : "",
+                isReadOnly ? "readonly" : ""
         );
     }
 
@@ -106,11 +115,29 @@ public class HTMLInput {
     }
 
     /** Método para gerar o formulário HTML a partir do nome da tabela
-     * @param tablename Nome da tabela
+     * @param tabelaNome Nome da tabela
      * @return String HTML do formulário
      * @throws UnsupportedOperationException Se não encontrado colunas de inserir para a tabela
      */
-    public static String getForm(String tablename) throws UnsupportedOperationException {
-        return String.join("\n", getForm(getInputs(tablename)));
+    public static String getForm(String tabelaNome) throws UnsupportedOperationException {
+        return String.join("\n", getForm(getInputs(tabelaNome)));
+    }
+
+    public static void fillInputs(HTMLInput[] form, Map<String, String> params) throws UnsupportedOperationException {
+        for (HTMLInput htmlInput : form) {
+            htmlInput.setValue(params.get(htmlInput.name));
+        }
+    }
+
+        public static List<String> getForm(HTMLInput[] form, Model m) {
+        fillInputs(form, m.getParams());
+
+        List<String> formList = getForm(form);
+        formList.add(0, new HTMLInput("id", "ID", "number", true, true , String.valueOf(m.getId())).toString());
+        return formList;
+    }
+
+    public static String getForm(String tabelaNome, Model m) {
+        return String.join("\n", getForm(getInputs(tabelaNome), m));
     }
 }

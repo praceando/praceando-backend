@@ -1,4 +1,5 @@
 package org.model;
+import java.util.HashMap;
 import java.util.Map;
 
 public class EventoLocal implements Model {
@@ -73,7 +74,15 @@ public class EventoLocal implements Model {
         this.id = id;
     }
 
-    /* Método utilizado para gerar uma linha HTML com os dados dos locais
+    public Map<String, String> getParams() {
+        Map<String, String> params = new HashMap<>();
+        params.put("nome", nome);
+        params.put("latitude", Double.toString(latitude));
+        params.put("longitude", Double.toString(longitude));
+        return params;
+    }
+
+    /** Utilizado para gerar uma linha HTML com os dados dos locais
      * @return Uma linha HTML com os dados dos locais
      */
     @Override

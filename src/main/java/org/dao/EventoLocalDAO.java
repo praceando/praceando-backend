@@ -5,6 +5,9 @@ import org.model.EventoLocal;
 import java.sql.*;
 
 public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
+    public boolean isReadOnly() {
+        return false;
+    }
 
     @Override
     protected EventoLocal extrairEntidade(ResultSet rs) throws SQLException {

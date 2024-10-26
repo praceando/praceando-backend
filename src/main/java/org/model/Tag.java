@@ -1,5 +1,6 @@
 package org.model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Tag implements Model {
@@ -43,6 +44,13 @@ public class Tag implements Model {
      */
     public int getId() {
         return id;
+    }
+
+    public Map<String, String> getParams() {
+        Map<String, String> params = new HashMap<>();
+        params.put("nome", nome);
+        params.put("categoria", categoria);
+        return params;
     }
 
     /**Setter para o ID da tag

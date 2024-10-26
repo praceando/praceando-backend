@@ -7,7 +7,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class AdminDAO extends DAOGeneric<Admin> {
-
+    public boolean isReadOnly() {
+        return false;
+    }
 
     @Override
     protected Admin extrairEntidade(ResultSet rs) throws SQLException {

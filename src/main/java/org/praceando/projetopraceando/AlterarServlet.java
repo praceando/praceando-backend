@@ -6,9 +6,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.common.html.HTMLInput;
 import org.common.ModelCreator;
 import org.common.SqlExitDML;
+import org.common.html.HTMLInput;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
 import org.model.Model;
@@ -18,10 +18,10 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(name="InserirServlet", value="/inserir")
-public class InserirServlet extends HttpServlet {
+@WebServlet(name="AlterarServlet", value="/alterar-done")
+public class AlterarServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tabelaNome = request.getParameter("tabelaNome");
         System.out.println(tabelaNome);
         HTMLInput[] inputs = HTMLInput.getInputs(tabelaNome);
@@ -34,6 +34,8 @@ public class InserirServlet extends HttpServlet {
             System.out.printf("%s : %s", input.getName(), request.getParameter(input.getName()));
             params.put(input.getName(), request.getParameter(input.getName()));
         }
+        params.put("id", request.getParameter("id"));
+
         System.out.println(params.size());
 
         try {
@@ -48,7 +50,7 @@ public class InserirServlet extends HttpServlet {
                 dispatcher.forward(request, response);
             }
 
-            SqlExitDML saida = dao.inserir(criado);
+            SqlExitDML saida = dao.alterar(criado);
 
             request.setAttribute("saida", saida);
             RequestDispatcher rd = request.getRequestDispatcher("inserirSaida.jsp");

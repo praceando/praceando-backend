@@ -6,6 +6,10 @@ import java.sql.SQLException;
 
 public class AvatarDAO extends DAOGeneric<Avatar> {
 
+    public boolean isReadOnly() {
+        return false;
+    }
+
     @Override
     protected Avatar extrairEntidade(ResultSet rs) throws SQLException {
         return new Avatar(
@@ -16,7 +20,7 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
 
     @Override
     protected PreparedStatement getInserirQuery(Avatar avatar) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO avatar (b64_avatar) values (?)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO avatar (b64_avatar) VALUES (?)");
 
         ps.setString(1, avatar.getB64_avatar());
         return ps;
@@ -24,7 +28,7 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
 
     @Override
     protected PreparedStatement getAlterarQuery(Avatar avatar) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("update avatar set b64_avatar = ? where id_avatar = ?");
+        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE avatar SET b64_avatar = ? WHERE id_avatar = ?");
         // SETANDO O VALOR DOS PARÂMETROS
         ps.setString(1, avatar.getB64_avatar());
         ps.setInt(2, avatar.getId());
