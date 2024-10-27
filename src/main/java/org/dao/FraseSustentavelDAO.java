@@ -8,6 +8,11 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
         return false;
     }
 
+    /** Método responsável por extrair os dados de um ResultSet e criar uma entidade do tipo FraseSustentavel
+     * @param rs ResultSet com os dados a serem extraídos
+     * @return Entidade do tipo FraseSustentavel
+     * @throws SQLException Caso ocorra algum erro com o banco de dados
+     */
     @Override
     protected FraseSustentavel extrairEntidade(ResultSet rs) throws SQLException {
         return new FraseSustentavel(
@@ -15,6 +20,11 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
         );
     }
 
+    /** Método responsável por criar uma query para inserir uma nova frase sustentável no banco de dados
+     * @param fraseSustentavel Objeto do tipo FraseSustentavel com os dados a serem inseridos no banco de dados
+     * @return Query com a instrução SQL para inserir uma nova frase sustentável no banco de dados
+     * @throws SQLException Caso ocorra algum erro com o banco de dados
+     */
     @Override
     protected PreparedStatement getInserirQuery(FraseSustentavel fraseSustentavel) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO frase_sustentavel (ds_frase) VALUES (?)");
@@ -24,6 +34,11 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
         return ps;
     }
 
+    /** Método responsável por criar uma query para alterar uma frase sustentável no banco de dados
+     * @param fraseSustentavel  Objeto do tipo FraseSustentavel com os dados a serem alterados no banco de dados
+     * @return Query com a instrução SQL para alterar uma frase sustentável no banco de dados
+     * @throws SQLException Caso ocorra algum erro com o banco de dados
+     */
     @Override
     protected PreparedStatement getAlterarQuery(FraseSustentavel fraseSustentavel) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE frase_sustentavel SET ds_frase = ? WHERE id_frase_sustentavel = ?");
@@ -32,6 +47,9 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
         return ps;
     }
 
+    /** Método responsável por criar uma query para excluir uma frase sustentável do banco de dados
+     * @return  Query com a instrução SQL para excluir uma frase sustentável do banco de dados
+     */
     @Override
     public String getNome() {
         return "frase_sustentavel";

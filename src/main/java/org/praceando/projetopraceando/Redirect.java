@@ -27,6 +27,7 @@ public class Redirect extends HttpServlet {
 
         RequestDispatcher rd = getDispatcher(request, tabela, opcao);
 
+        // Redireciona a requisição para a página JSP
         try {
             rd.forward(request, response);
         } catch (UnsupportedOperationException uoe) {
@@ -41,7 +42,6 @@ public class Redirect extends HttpServlet {
     /**Obtém um objeto RequestDispatcher, que é usado para redirecionar a requisição para uma página JSP.
      * @param request Solicitação HTTP
      */
-
     private RequestDispatcher getDispatcher(HttpServletRequest request, String tabela, String opcao) {
         // Obtém as colunas da tabela
         String[] colunas = HTMLGenerator.getColunas(tabela);

@@ -8,6 +8,12 @@ public class TagDAO extends DAOGeneric<Tag> {
         return false;
     }
 
+    /**
+     * Método que retorna a entidade correspondente a linha do ResultSet
+     * @param rs ResultSet com a linha correspondente a entidade
+     * @return Entidade correspondente a linha do ResultSet
+     * @throws SQLException Se ocorrer algum erro com o banco de dados
+     */
     @Override
     protected Tag extrairEntidade(ResultSet rs) throws SQLException {
         return new Tag(
@@ -17,6 +23,11 @@ public class TagDAO extends DAOGeneric<Tag> {
         );
     }
 
+    /** Método que retorna a query para inserir uma nova entidade
+     * @param tag Entidade a ser inserida
+     * @return Query para inserir a entidade
+     * @throws SQLException Se ocorrer algum erro com o banco de dados
+     */
     @Override
     protected PreparedStatement getInserirQuery(Tag tag) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO tag (nome, categoria) VALUES (?, ?)");
@@ -25,6 +36,12 @@ public class TagDAO extends DAOGeneric<Tag> {
         return ps;
     }
 
+    /**
+     * Método que retorna a query para alterar uma entidade
+     * @param tag Entidade a ser alterada
+     * @return Query para alterar a entidade
+     * @throws SQLException Se ocorrer algum erro com o banco de dados
+     */
     @Override
     protected PreparedStatement getAlterarQuery(Tag tag) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE tag SET nome = ?, categoria = ? WHERE id_tag = ?");
@@ -35,6 +52,9 @@ public class TagDAO extends DAOGeneric<Tag> {
         return ps;
     }
 
+    /** Método que retorna a query para excluir uma entidade
+     * @return Query para excluir a entidade
+     */
     @Override
     public String getNome() {
         return "tag";

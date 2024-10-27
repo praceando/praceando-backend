@@ -8,6 +8,11 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         return false;
     }
 
+    /** Extrai uma entidade do ResultSet
+     * @param rs ResultSet
+     * @return Entidade extraída
+     * @throws SQLException Se ocorrer algum erro com o banco de dados
+     */
     @Override
     protected Produto extrairEntidade(ResultSet rs) throws SQLException {
         return new Produto(
@@ -17,6 +22,11 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         );
     }
 
+    /** Cria uma query para inserir uma entidade no banco de dados
+     * @param produto Entidade a ser inserida
+     * @return Query de inserção
+     * @throws SQLException Se ocorrer algum erro com o banco de dados
+     */
     @Override
     protected PreparedStatement getInserirQuery(Produto produto) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO produto (estoque, nome, ds_produto, preco, categoria) values (?,?,?,?,?)");
@@ -30,6 +40,11 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         return ps;
     }
 
+    /** Cria uma query para alterar uma entidade no banco de dados
+     * @param produto Entidade a ser alterada
+     * @return Query de alteração
+     * @throws SQLException Se ocorrer algum erro com o banco de dados
+     */
     @Override
     protected PreparedStatement getAlterarQuery(Produto produto) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("update produto set nome = ?, ds_produto = ?, preco = ?, categoria = ? where id_produto = ?");
@@ -43,10 +58,12 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         return ps;
     }
 
+    /**
+     * Cria uma query para excluir uma entidade no banco de dados
+     * @return Query de exclusão
+     */
     @Override
     public String getNome() {
         return "produto";
     }
 }
-
-

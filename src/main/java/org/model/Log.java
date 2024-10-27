@@ -61,6 +61,9 @@ public class Log implements Model {
         this.id = id;
     }
 
+    /** Metodo que retorna um mapa com os atributos e seus valores
+     * @return Mapa com os atributos e seus valores
+     */
     @Override
     public Map<String, String> getParams() {
         throw new UnsupportedOperationException("Log não suporta parametrização");

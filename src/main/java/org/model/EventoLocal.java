@@ -30,6 +30,9 @@ public class EventoLocal implements Model {
         this.id = id;
     }
 
+    /** Construtor que recebe um map de parâmetros e cria um objeto do tipo EventoLocal
+     * @param params Map de parâmetros
+     */
     public EventoLocal(Map<String, String > params) {
         if (params.containsKey("id")) {
             this.id = Integer.parseInt(params.get("id"));
@@ -74,6 +77,9 @@ public class EventoLocal implements Model {
         this.id = id;
     }
 
+    /** Método que retorna um map de parâmetros do objeto
+     * @return Map de parâmetros do objeto
+     */
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
         params.put("nome", this.nome);

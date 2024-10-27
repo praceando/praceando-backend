@@ -18,6 +18,10 @@ public class Tag implements Model {
         this.categoria = categoria;
     }
 
+    /**
+     * Construtor que inicializa os atributos da classe Tag a partir de um map de parâmetros
+     * @param params Map com os parâmetros da tag
+     */
     public Tag(Map<String, String> params) {
         if (params.containsKey("id")) {
             this.id = Integer.parseInt(params.get("id"));
@@ -46,6 +50,10 @@ public class Tag implements Model {
         return this.id;
     }
 
+    /**
+     * Getter para os parâmetros da tag
+     * @return Map com os parâmetros da tag
+     */
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
         params.put("nome", nome);

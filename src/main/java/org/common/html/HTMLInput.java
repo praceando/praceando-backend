@@ -38,10 +38,16 @@ public class HTMLInput {
         this(name, label, type, isRequired, false, null);
     }
 
+    /** Método para retornar o nome do campo
+     * @return String Nome do campo
+     */
     public String getName() {
         return this.name;
     }
 
+    /** Método para retornar o rótulo do campo
+     * @param value Valor do campo
+     */
     public void setValue(String value) {
         this.value = value;
     }
@@ -123,12 +129,22 @@ public class HTMLInput {
         return String.join("\n", getForm(getInputs(tabelaNome)));
     }
 
+    /** Método para preencher os inputs de um formulário com os valores de um mapa
+     * @param form Array de HTMLInput
+     * @param params Mapa com os valores
+     * @throws UnsupportedOperationException Se não encontrado colunas de inserir para a tabela
+     */
     public static void fillInputs(HTMLInput[] form, Map<String, String> params) throws UnsupportedOperationException {
         for (HTMLInput htmlInput : form) {
             htmlInput.setValue(params.get(htmlInput.name));
         }
     }
 
+    /** Método para gerar o formulário HTML a partir do nome da tabela e do Model
+     * @param form Array de HTMLInput
+     * @param m Model com os valores
+     * @return Lista de strings com o HTML do formulário
+     */
     public static List<String> getForm(HTMLInput[] form, Model m) {
         fillInputs(form, m.getParams());
 
@@ -137,6 +153,11 @@ public class HTMLInput {
         return formList;
     }
 
+    /** Método para gerar o formulário HTML a partir do nome da tabela e do Model
+     * @param tabelaNome Nome da tabela
+     * @param m Model com os valores
+     * @return String HTML do formulário
+     */
     public static String getForm(String tabelaNome, Model m) {
         return String.join("\n", getForm(getInputs(tabelaNome), m));
     }

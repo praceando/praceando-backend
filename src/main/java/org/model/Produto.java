@@ -38,6 +38,10 @@ public class Produto implements Model {
 
     }
 
+    /** Construtor com parâmetros para criar um produto a partir de um mapa de parâmetros
+     * @param params Mapa de parâmetros
+     * @throws ParseException Caso o parâmetro dt_desativacao não possa ser convertido para uma data
+     */
     public Produto(Map<String, String> params) throws ParseException {
         if (params.containsKey("id")) {
             this.id = Integer.parseInt(params.get("id"));
@@ -106,6 +110,9 @@ public class Produto implements Model {
         this.id = id;
     }
 
+    /** Método para converter o produto em um mapa de parâmetros
+     * @return Mapa de parâmetros do produto
+     */
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
         params.put("nome", this.nome);

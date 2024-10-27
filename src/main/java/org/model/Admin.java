@@ -75,8 +75,14 @@ public class Admin implements Model {
         throw new UnsupportedOperationException("Admin não suporta alterar o ID");
     }
 
+    /**
+     * Método para retornar os parâmetros do administrador em um Map
+     * @return Map com os parâmetros do administrador
+     */
     @Override
-    public Map<String, String> getParams() { throw new UnsupportedOperationException("Admin não suporta parametrização"); }
+    public Map<String, String> getParams() {
+        throw new UnsupportedOperationException("Admin não suporta parametrização");
+    }
 
     /** Verifica se o email e senha são iguais aos dados passados anteriormente
      * @param email E-mail do administrador

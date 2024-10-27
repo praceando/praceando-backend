@@ -15,6 +15,10 @@ public interface Model {
      */
     void setId(int id);
 
+    /**
+     * Método para retornar os parâmetros do objeto
+     * @return Map com os parâmetros do objeto
+     */
     Map<String, String> getParams();
 
 }

@@ -9,6 +9,11 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
         return false;
     }
 
+    /** Método que retorna a entidade correspondente a tabela "evento_local"
+     * @param rs ResultSet com os dados da tabela
+     * @return EventoLocal correspondente ao ResultSet
+     * @throws SQLException Caso ocorra algum erro com o ResultSet
+     */
     @Override
     protected EventoLocal extrairEntidade(ResultSet rs) throws SQLException {
         return new EventoLocal(
@@ -19,6 +24,11 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
         );
     }
 
+    /** Método que retorna a query para inserir um novo registro na tabela "evento_local"
+     * @param local Objeto EventoLocal com os dados a serem inseridos
+     * @return PreparedStatement com a query de inserção
+     * @throws SQLException Caso ocorra algum erro com a query
+     */
     @Override
     protected PreparedStatement getInserirQuery(EventoLocal local) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO evento_local (nome, lat, long) values (?,?,?)");
@@ -28,6 +38,11 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
         return ps;
     }
 
+    /** Método que retorna a query para alterar um registro na tabela "evento_local"
+     * @param local Objeto EventoLocal com os dados a serem alterados
+     * @return PreparedStatement com a query de alteração
+     * @throws SQLException Caso ocorra algum erro com a query
+     */
     @Override
     protected PreparedStatement getAlterarQuery(EventoLocal local) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE evento_local SET nome = ?, lat = ?, long = ? WHERE id = ?");
@@ -38,6 +53,9 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
         return ps;
     }
 
+    /** Método que retorna o nome da tabela correspondente a entidade "EventoLocal"
+     * @return String com o nome da tabela
+     */
     @Override
     public String getNome() {
         return "evento_local";

@@ -25,6 +25,9 @@ public class FraseSustentavel implements Model {
         this.descricao = descricao;
     }
 
+    /** Método que retorna o nome da entidade no banco de dados
+     * @param params Map com os parâmetros da entidade
+     */
     public FraseSustentavel(Map<String, String> params) {
         if (params.containsKey("id")) {
             System.out.println("Construtor frasesustentavel: ID=" + params.get("id"));
@@ -53,6 +56,9 @@ public class FraseSustentavel implements Model {
         this.id = id;
     }
 
+    /** Método que retorna os parâmetros da entidade em forma de Map
+     * @return Map com os parâmetros da entidade
+     */
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
         params.put("descricao", descricao);

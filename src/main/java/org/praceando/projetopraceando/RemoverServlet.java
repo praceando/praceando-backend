@@ -17,10 +17,16 @@ import java.io.IOException;
 @WebServlet(name="RemoverServlet", value="/remover")
 public class RemoverServlet extends HttpServlet {
 
+    /**
+     * Metodo doGet para remover um registro da tabela
+     * @param request Requisição do cliente
+     * @param response Resposta para o cliente
+     * @throws ServletException Exceção ocorrida no Servlet
+     * @throws IOException Exceção ocorrida no I/O
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String tabela = request.getParameter("tabela");
-
 
         try {
             DAOGeneric<Model> dao = DAOManager.getDAO(tabela);

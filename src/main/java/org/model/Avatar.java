@@ -48,6 +48,10 @@ public class Avatar implements Model {
         this.id = id;
     }
 
+    /**
+     * Método que retorna os parâmetros do avatar em um mapa.
+     * @return Map<String, String> com os parâmetros do avatar
+     */
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
         params.put("b64_avatar", this.b64_avatar);
