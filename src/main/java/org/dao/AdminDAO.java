@@ -5,6 +5,7 @@ import org.model.Admin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class AdminDAO extends DAOGeneric<Admin> {
@@ -38,33 +39,39 @@ public class AdminDAO extends DAOGeneric<Admin> {
         return null;
     }
 
+    public int usuarioExiste(String email, String senha) {
+        Conexao.conectar();
+        List<Admin> retorno = new LinkedList<>();
+        try {
+            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM admin " +
+                                                                      "WHERE senha = crypt(?, senha) AND email = ?");
+            ps.setString(1, senha);
+            ps.setString(2, email);
+
+            System.out.println(ps);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                retorno.add(extrairEntidade(rs));
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+            return -1;
+        } finally {
+            Conexao.desconectar();
+        }
+
+        return retorno.isEmpty() ? 0 : 1;
+    }
+
+
     @Override
     public String getNome() {
         return "admin";
     }
 
     // Método para Select
-
-
-    public int usuarioExiste(String email, String senha) {
-        List<Admin> admins = visualizar();
-
-        for (Admin admin : admins) {
-            System.out.println(admin.getEmail());
-        }
-
-        if (admins == null) {
-            return -1;
-        }
-        for (Admin adm : admins) {
-            if (adm.matches(email, senha)) {
-                if (adm.isAtivo()) {
-                    return 1;
-                }
-            }
-        }
-        return 0;
-    }
 
     public boolean usuarioExiste(String email) {
         List<Admin> admins = visualizar();
