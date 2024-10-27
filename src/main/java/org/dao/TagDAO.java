@@ -28,6 +28,7 @@ public class TagDAO extends DAOGeneric<Tag> {
     @Override
     protected PreparedStatement getAlterarQuery(Tag tag) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE tag SET nome = ?, categoria = ? WHERE id_tag = ?");
+
         // SETANDO O VALOR DOS PARÂMETROS
         ps.setString(1, tag.getNome());
         ps.setString(2, tag.getCategoria());

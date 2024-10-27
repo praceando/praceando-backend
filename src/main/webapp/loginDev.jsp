@@ -29,7 +29,7 @@
     <button type="submit">Entrar</button>
   </form>
 
-  <img src="assets/OlavoPraceando.jpg" alt="imagem Ilustrativa">
+  <img src="#" alt="imagem Ilustrativa">
 </div>
 
 <p id="textoEnfeite">&lt; \ &gt;</p>
