@@ -72,7 +72,7 @@ public class HTMLInput {
 
         switch (tableName) {
             case "avatar" -> inputs = new HTMLInput[]{
-                    new HTMLInput("b64_avatar", "B64", "image", true),
+                    new HTMLInput("url_avatar", "Imagem", "image", true),
             };
 
             case "evento_local" -> inputs = new HTMLInput[]{
