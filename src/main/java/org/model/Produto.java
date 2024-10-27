@@ -54,7 +54,7 @@ public class Produto implements Model {
      * @return Quantidade de produtos em estoque
      */
     public int getEstoque() {
-        return estoque;
+        return this.estoque;
     }
 
 
@@ -62,35 +62,35 @@ public class Produto implements Model {
      * @return Nome do produto
      */
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     /**Getter para a descrição do produto
      * @return Descrição do produto
      */
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
     }
 
     /**Getter para o preço do produto
      * @return Preço do produto
      */
     public double getPreco() {
-        return preco;
+        return this.preco;
     }
 
     /**Getter para a categoria do produto
      * @return Categoria do produto
      */
     public String getCategoria() {
-        return categoria;
+        return this.categoria;
     }
 
     /**Getter para a data de desativação do produto
      * @return Data de desativação do produto
      */
     public Date getDt_desativacao() {
-        return dt_desativacao;
+        return this.dt_desativacao;
     }
 
     /**Getter para o id do produto
@@ -108,12 +108,12 @@ public class Produto implements Model {
 
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
-        params.put("nome", nome);
-        params.put("categoria", categoria);
-        params.put("descricao", descricao);
-        params.put("preco", Double.toString(preco));
-        params.put("estoque", Integer.toString(estoque));
-        params.put("dt_desativacao", dt_desativacao.toString());
+        params.put("nome", this.nome);
+        params.put("categoria", this.categoria);
+        params.put("descricao", this.descricao);
+        params.put("preco", Double.toString(this.preco));
+        params.put("estoque", Integer.toString(this.estoque));
+        params.put("dt_desativacao", this.dt_desativacao.toString());
         return params;
     }
 }

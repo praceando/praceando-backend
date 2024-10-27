@@ -44,7 +44,7 @@ public class FraseSustentavel implements Model {
      * @return ID da frase sustentável
      */
     public int getId() {
-        return id;
+        return this.id;
     }
 
     /**Setter do id da frase sustentável

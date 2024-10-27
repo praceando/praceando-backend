@@ -10,7 +10,6 @@ import org.dao.DAOManager;
 import org.model.Model;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name="search", value="/search")
 public class SearchServlet extends HttpServlet {

@@ -10,11 +10,11 @@ public class Tabela {
     }
 
     public String getNomeBanco() {
-        return nomeBanco;
+        return this.nomeBanco;
     }
 
     public String getNomeInterface() {
-        return nomeInterface;
+        return this.nomeInterface;
     }
 
     public String toString() {

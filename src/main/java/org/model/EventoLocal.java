@@ -43,21 +43,21 @@ public class EventoLocal implements Model {
      * @return Nome do evento
      */
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     /** Getter da latitude do local do evento
      * @return Latitude do local do evento
      */
     public double getLatitude() {
-        return latitude;
+        return this.latitude;
     }
 
     /** Getter da longitude do local do evento
      * @return Longitude do local do evento
      */
     public double getLongitude() {
-        return longitude;
+        return this.longitude;
     }
 
     /** Getter do id do evento
@@ -76,9 +76,9 @@ public class EventoLocal implements Model {
 
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
-        params.put("nome", nome);
-        params.put("latitude", Double.toString(latitude));
-        params.put("longitude", Double.toString(longitude));
+        params.put("nome", this.nome);
+        params.put("latitude", Double.toString(this.latitude));
+        params.put("longitude", Double.toString(this.longitude));
         return params;
     }
 }

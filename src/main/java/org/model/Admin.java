@@ -36,7 +36,7 @@ public class Admin implements Model {
      * @return E-mail do administrador
      */
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     /** Getter para a senha do administrador
@@ -50,21 +50,21 @@ public class Admin implements Model {
      * @return ID do administrador
      */
     public int getId() {
-        return id;
+        return this.id;
     }
 
     /** Getter do nome do administrador
      * @return Nome do administrador
      */
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     /** Getter para o status do administrador
      * @return True se o administrador estiver ativo, False caso contrário
      */
     public boolean isAtivo() {
-        return isAtivo;
+        return this.isAtivo;
     }
 
     /** Método para alterar o ID do objeto do administrador
@@ -72,13 +72,11 @@ public class Admin implements Model {
      */
     @Override
     public void setId(int id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Admin não suporta alterar o ID");
     }
 
     @Override
-    public Map<String, String> getParams() {
-        throw new UnsupportedOperationException("Admin não suporta parametrização");
-    }
+    public Map<String, String> getParams() { throw new UnsupportedOperationException("Admin não suporta parametrização"); }
 
     /** Verifica se o email e senha são iguais aos dados passados anteriormente
      * @param email E-mail do administrador

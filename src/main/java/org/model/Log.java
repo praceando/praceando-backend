@@ -31,21 +31,21 @@ public class Log implements Model {
      * @return Data e hora da operação
      */
     public Date getDtLog() {
-        return dtLog;
+        return this.dtLog;
     }
 
     /**Getter para o atributo operacao
      * @return Operação realizada no banco de dados
      */
     public String getOperacao() {
-        return operacao;
+        return this.operacao;
     }
 
     /**Getter para o atributo query
      * @return nome da tabela consultada
      */
     public String getQuery() {
-        return query;
+        return this.query;
     }
 
     /**

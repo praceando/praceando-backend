@@ -39,7 +39,7 @@ public class HTMLInput {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setValue(String value) {

@@ -31,7 +31,7 @@ public class Avatar implements Model {
      * @return b64_avatar
      */
     public String getB64_avatar() {
-        return b64_avatar;
+        return this.b64_avatar;
     }
 
     /** Getter do ID do avatar, pode retornar null.
@@ -50,7 +50,7 @@ public class Avatar implements Model {
 
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
-        params.put("b64_avatar", b64_avatar);
+        params.put("b64_avatar", this.b64_avatar);
         return params;
     }
 }

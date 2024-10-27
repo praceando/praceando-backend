@@ -6,10 +6,10 @@ public class Senha {
         this.pwd = password;
     }
     public String get() {
-        return pwd;
+        return this.pwd;
     }
 
     public boolean equals(String senha) {
-        return pwd.equals(senha);
+        return this.pwd.equals(senha);
     }
 }

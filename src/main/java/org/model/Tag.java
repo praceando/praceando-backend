@@ -30,20 +30,20 @@ public class Tag implements Model {
      * @return Nome da tag
      */
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     /**Getter para a categoria da tag
      * @return Categoria da tag
      */
     public String getCategoria() {
-        return categoria;
+        return this.categoria;
     }
 
     /**Getter para o ID da tag
      */
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public Map<String, String> getParams() {

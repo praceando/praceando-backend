@@ -32,20 +32,20 @@ public class SqlExitDML {
      * @return Código de saída
      */
     public int getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 
     /** 'Getter' do erro lançado
      * @return Erro lançado
      */
     public Throwable getErro() {
-        return erro;
+        return this.erro;
     }
 
     /** Verifica se a saída contém erros
      * @return true se sim, false senão.
      */
-    public boolean hasErro() { return erro != null; }
+    public boolean hasErro() { return this.erro != null; }
     /** Método ToString para exibição do objeto SqlExitDML
      * @return Erro lançado
      */
@@ -55,7 +55,7 @@ public class SqlExitDML {
                 return "Operação concluída com sucesso";
             }
             case -1 -> {
-                return String.format("Erro no banco de dados: '%s'", erro.getMessage());
+                return String.format("Erro no banco de dados: '%s'", this.erro.getMessage());
             }
             case 0 -> {
                 return "Não foi encontrado.";
