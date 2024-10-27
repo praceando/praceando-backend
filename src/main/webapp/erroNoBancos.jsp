@@ -26,9 +26,6 @@
       <p id="descricao"><%=mensagemErro%></p>
     </div>
 
-    <img src="assets/ErroDbIcone.png" alt="Erro do Db" id="erroBanco">
-
-
     <p id="textoEnfeite">&lt; \ &gt;</p>
   </body>
 </html>
