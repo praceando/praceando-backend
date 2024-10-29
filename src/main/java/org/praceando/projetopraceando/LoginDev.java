@@ -26,7 +26,7 @@ public class LoginDev extends HttpServlet {
             case 1 -> pag = "home.html";
             case 0 -> {
                 request.setAttribute("tipoErro", "Acesso negado");
-                request.setAttribute("mensagemErro", "Login não encontrado ou inválido. Peça permissão para o grupo para realizar o cadastro de sua conta.");
+                request.setAttribute("mensagemErro", "Login não encontrado ou inválido. Peça permissão para o grupo para realizar o cadastro de sua conta. Caso for um administrador já cadastrado, peça a ativação de sua conta para praceando.blomera@gmail.com");
             }
             case -1 -> {
                 request.setAttribute("tipoErro", "Erro Interno");

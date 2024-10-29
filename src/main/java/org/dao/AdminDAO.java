@@ -62,7 +62,16 @@ public class AdminDAO extends DAOGeneric<Admin> {
             Conexao.desconectar();
         }
 
-        return retorno.isEmpty() ? 0 : 1;
+        int hasAdmin = retorno.isEmpty() ? 0 : 1;
+
+        if (hasAdmin == 1) {
+            Admin admin = retorno.get(0);
+            if (admin.isAtivo()) {
+                return hasAdmin;
+            }
+            return 0;
+        }
+        return hasAdmin;
     }
 
 

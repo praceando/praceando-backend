@@ -1,4 +1,5 @@
 package org.common.html;
+import org.common.Constants;
 import org.model.Model;
 import java.util.List;
 import java.util.ArrayList;
@@ -49,16 +50,23 @@ public class HTMLInput {
     /** Método toString para gerar o HTML do input
      * @return String HTML do input
      */
+
+    protected static String surroundContainer(String content) {
+        return String.format("<div class=\"inputContainer\">" +
+                content +
+                "</div>");
+    }
+
     public String toString() {
-        return String.format(
-                "<div class=\"inputContainer\">" +
-                "   <label for=\"%s\">%s</label>\n" +
-                "   <input type=\"%s\" id=\"%s\" name=\"%s\" class=\"inputForm\" %s %s %s/>" +
-                "</div>",
-                name, label, type, name, name,
-                value != null ? String.format("value=\"%s\"", value) : "",
-                isRequired ? "required" : "",
-                isReadOnly ? "readonly" : ""
+        return surroundContainer(
+                String.format(
+                    "   <label for=\"%s\">%s</label>\n" +
+                    "   <input type=\"%s\" id=\"%s\" name=\"%s\" class=\"inputForm\" %s %s %s/>",
+                    name, label, type, name, name,
+                    value != null ? String.format("value=\"%s\"", value) : "",
+                    isRequired ? "required" : "",
+                    isReadOnly ? "readonly" : ""
+                )
         );
     }
 
@@ -95,7 +103,8 @@ public class HTMLInput {
 
             case "tag" -> inputs = new HTMLInput[]{
                     new HTMLInput("nome", "Nome", "text", true),
-                    new HTMLInput("categoria", "Categoria", "text", true), // TODO: Fazer combobox
+                    new HTMLInput("categoria", "Categoria", "text", true),
+                    new HTMLSelection("descricao", "Descricao", Constants.SELECT_CATEGORIA_TAGS, true)
             };
             default -> throw new UnsupportedOperationException(String.format("Não encontrado colunas de inserir para '%s'", tableName));
         }
