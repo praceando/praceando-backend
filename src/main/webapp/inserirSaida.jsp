@@ -21,19 +21,21 @@
       </tr>
       <%for (Map.Entry<String, String> linha : params.entrySet()) {
       %>
-        <td>
-            <%=linha.getKey()%>
-        </td>
-        <td>
-            <%=linha.getValue()%>
-        </td>
+        <tr>
+            <td>
+                <%=linha.getKey()%>
+            </td>
+            <td>
+                <%=linha.getValue()%>
+            </td>
+        </tr>
       <%
         }
       %>
   </table>
 
-  <h2>Saída:</h2>
   <div class="saida">
+      <h2>Saída:</h2>
       <p><%=saida.toString()%></p>
 
       <%if (saida.hasErro()) {

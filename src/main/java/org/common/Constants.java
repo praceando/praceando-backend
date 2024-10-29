@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 public class Constants {
     public static final Pattern EMAIL_PATTERN = Pattern.compile("^[^._\\s\\W]{2,}\\.[^._\\s\\W]{2,}@germinare\\.org\\.br$");
     public static final Pattern SENHA_PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$");
+    public static final String NUMBER_REGEX = "^(-(?!-))?\\d+((?<=\\d),(?!,))?\\d+$";
     public static final String[] SELECT_CATEGORIA_TAGS =  {
             "Esportes e Atividades Físicas",
             "Meio Ambiente e Sustentabilidade",
