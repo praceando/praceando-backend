@@ -3,16 +3,22 @@
 <html>
 <head>
     <title>Formulário de Inserção</title>
+    <link rel="stylesheet" href="./css/inserir.css">
 </head>
-<body>
+<body cz-shortcut-listen="true">
+    <div id="linhaEnfeite"></div>
     <%
         String tabelaNome = request.getParameter("tabela");
     %>
-    <h1>Formulário de inserção: <%=tabelaNome%></h1>
-    <form method="post" action="inserir">
-        <input type="hidden" name="tabelaNome" value="<%=tabelaNome%>">
-        <%=HTMLInput.getForm(tabelaNome)%>
-        <button type="submit">Inserir</button>
-    </form>
+    <p>Formulário de inserção: <span id="gradiente"><%=tabelaNome%></span></p>
+    <div id="centralizar">
+        <div id="caixaInsert">
+            <form method="post" action="inserir">
+                <input type="hidden" name="tabelaNome" value="<%=tabelaNome%>">
+                <%=HTMLInput.getForm(tabelaNome)%>
+                <button type="submit" id="botaoInserir">Inserir</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

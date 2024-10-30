@@ -57,7 +57,7 @@ public class HTMLGenerator {
 
                 // Converter valor para cada caso
                 if (value instanceof java.util.Date) {
-                    value = Constants.formatoData.format(value);
+                    value = Constants.FORMATO_DATA.format(value);
                 } else if (value instanceof Senha) {
                     value = "************";
                 } else if (value instanceof Boolean) {

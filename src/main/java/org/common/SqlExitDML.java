@@ -46,7 +46,8 @@ public class SqlExitDML {
      * @return true se sim, false senão.
      */
     public boolean hasErro() { return this.erro != null; }
-    /** Método ToString para exibição do objeto SqlExitDML
+
+    /** Método toString para exibição do objeto SqlExitDML
      * @return Erro lançado
      */
     public String toString() {

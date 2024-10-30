@@ -84,8 +84,8 @@ public class CadastroAdmServlet extends HttpServlet {
 
         AdminDAO adminDAO = new AdminDAO();
 
-        Matcher matcherEmail = Constants.emailPattern.matcher(email);
-        Matcher matcherSenha = Constants.senhaPattern.matcher(senha);
+        Matcher matcherEmail = Constants.EMAIL_PATTERN.matcher(email);
+        Matcher matcherSenha = Constants.SENHA_PATTERN.matcher(senha);
 
         return new boolean[]{!matcherSenha.find(), !matcherEmail.find(), adminDAO.usuarioExiste(email)};
     }
