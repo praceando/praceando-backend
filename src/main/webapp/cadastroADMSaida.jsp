@@ -26,27 +26,29 @@
 
     <h1>Tentou cadastrar '<%=email%>', com senha '<%="*".repeat(senha.length())%>' </h1>
 
-    <%
-        if (dbAccessValido) {
+    <div class="avisos-container">
+        <%
+            if (dbAccessValido) {
 
 
-            if (Arrays.equals(status, new boolean[]{false, false, false})) {
-    %>
-            <p><%=saidaInsert.toString()%></p>
-    <%
-            } else {
-                for (String av : avisos) {
-                    if (av != null) {
-    %>
-                    <p style="color: red"><%=av%></p>
-    <%
+                if (Arrays.equals(status, new boolean[]{false, false, false})) {
+        %>
+        <p><%=saidaInsert.toString()%></p>
+        <%
+        } else {
+            for (String av : avisos) {
+                if (av != null) {
+        %>
+        <p style="color: red"><%=av%></p>
+        <%
                     }
                 }
             }
         } else {%>
-                    <p>Código de acesso inválido</p>
+        <p>Código de acesso inválido</p>
         <%
-        }
+            }
         %>
+    </div>
 </body>
 </html>
