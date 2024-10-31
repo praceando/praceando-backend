@@ -9,14 +9,16 @@ public class Constants {
 
     // Padrão de expressão regular para validar senhas
     // A senha deve ter pelo menos 8 caracteres, incluindo pelo menos um dígito, uma letra maiúscula e uma letra minúscula
-    public static final Pattern senhaPattern = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$");
+    public static final Pattern SENHA_PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$");
+
+    public static final Pattern EMAIL_PATTERN = Pattern.compile("^[^._\\s\\W]{2,}\\.[^._\\s\\W]{2,}@germinare\\.org\\.br$");
+
+    public static final String NUMBER_REGEX = "^(-(?!-))?\\d+((?<=\\d),(?!,))?\\d+$";
 
     // Formato de data definido como "dd/MM/yyyy"
     // Usado para formatar e analisar datas nesse padrão
-    public static SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
-    public static final Pattern EMAIL_PATTERN = Pattern.compile("^[^._\\s\\W]{2,}\\.[^._\\s\\W]{2,}@germinare\\.org\\.br$");
-    public static final Pattern SENHA_PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$");
-    public static final String NUMBER_REGEX = "^(-(?!-))?\\d+((?<=\\d),(?!,))?\\d+$";
+    public static final SimpleDateFormat FORMATO_DATA = new SimpleDateFormat("dd/MM/yyyy");
+
     public static final String[] SELECT_CATEGORIA_TAGS =  {
             "Esportes e Atividades Físicas",
             "Meio Ambiente e Sustentabilidade",
@@ -27,7 +29,4 @@ public class Constants {
             "Educação e Tecnologia",
             "Gastronomia"
     };
-
-    public static final SimpleDateFormat FORMATO_DATA = new SimpleDateFormat("dd/MM/yyyy");
-
 }
