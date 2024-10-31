@@ -7,15 +7,17 @@ public class Tag implements Model {
     private int id;
     private String nome;
     private String categoria;
+    private String descricao;
 
     /**Construtor que inicializa os atributos da classe Tag
      * @param id ID da tag
      * @param nome Nome da tag
      */
-    public Tag(Integer id, String nome, String categoria) {
+    public Tag(Integer id, String nome, String categoria, String descricao) {
         this.nome = nome;
         this.id = id;
         this.categoria = categoria;
+        this.descricao = descricao;
     }
 
     /**
@@ -28,6 +30,7 @@ public class Tag implements Model {
         }
         this.nome = params.get("nome");
         this.categoria = params.get("categoria");
+        this.descricao = params.get("descricao");
     }
 
     /**Getter para o nome da tag
@@ -44,6 +47,13 @@ public class Tag implements Model {
         return this.categoria;
     }
 
+    /**Getter para a descrição da tag
+     * @return Descrição da tag
+     */
+    public String getDescricao() {
+        return this.descricao;
+    }
+
     /**Getter para o ID da tag
      */
     public int getId() {
@@ -58,6 +68,7 @@ public class Tag implements Model {
         Map<String, String> params = new HashMap<>();
         params.put("nome", nome);
         params.put("categoria", categoria);
+        params.put("descricao", descricao);
         return params;
     }
 
