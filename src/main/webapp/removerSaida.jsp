@@ -7,8 +7,9 @@
 <body>
 <%
     SqlExitDML saida = (SqlExitDML) request.getAttribute("saida");
+    String tabelaNome = request.getParameter("tabela");
 %>
-    <h1>Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=request.getParameter("tabela")%>'</h1>
+    <h1>Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=tabelaNome%>'</h1>
 
     <h2>Saída:</h2>
     <div class="saida">
