@@ -22,5 +22,7 @@
         %>
     </div>
 
+    <a class="botao-voltar" href="redirect?opcao=visualizar&tabela=<%=tabelaNome%>"></a>
+
 </body>
 </html>

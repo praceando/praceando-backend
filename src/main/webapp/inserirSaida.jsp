@@ -44,8 +44,9 @@
       <p><%=saida.getErro()%></p>
       <%}
       %>
-
   </div>
+
+  <a class="botao-voltar" href="redirect?opcao=visualizar&tabela=<%=tabelaNome%>"></a>
   <br><br>
 </body>
 </html>
