@@ -1,5 +1,4 @@
 package org.dao;
-
 import org.model.Log;
 
 import java.sql.*;
@@ -31,9 +30,10 @@ public class LogDAO extends DAOGeneric<Log> {
      */
     @Override
     protected PreparedStatement getInserirQuery(Log entidade) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO log (operacao, query) VALUES (?, ?)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO log (operacao, query, dt_log) VALUES (?, ?, ?)");
         ps.setString(1, entidade.getOperacao());
         ps.setString(2, entidade.getQuery());
+        ps.setDate(3, new Date(System.currentTimeMillis()));
         return ps;
     }
 
