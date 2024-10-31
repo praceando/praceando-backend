@@ -12,12 +12,13 @@ public class HTMLSelection extends HTMLInput {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("<select class=\"selecao inputForm\">");
-        for (int i = 0; i <= options.length; i++) {
+        sb.append(String.format("<label for=\"%s\">%s</label>", this.name, this.label));
+        sb.append(String.format("<select name=\"%s\"class=\"selecao inputForm\">", this.name));
+        for (int i = 0; i < options.length; i++) {
             String option = options[i];
             sb.append(String.format(
                     "<option class=\"opcao\"value=\"%s\" %s>%s</option>",
-                    option, option, i == selectedIndex ? "selected" : ""
+                    option, i == selectedIndex ? "selected" : "", option
             ));
         }
         sb.append("</select>");

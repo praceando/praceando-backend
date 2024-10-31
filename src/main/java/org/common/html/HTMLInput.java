@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class HTMLInput {
-    private final String name;
-    private final String label;
-    private final String type;
-    private String value;
+    protected final String name;
+    protected final String label;
+    protected final String type;
+    protected String value;
 
-    private final boolean isRequired;
-    private final boolean isReadOnly;
+    protected final boolean isRequired;
+    protected final boolean isReadOnly;
 
     /** Método construtor padrão
      * @param name Nome do campo
@@ -63,12 +63,16 @@ public class HTMLInput {
                 "</div>");
     }
 
+    protected String getLabelTag() {
+        return String.format("<label for=\"%s\">%s</label>\n", name, label);
+    }
+
     public String toString() {
         return surroundContainer(
                 String.format(
-                    "   <label for=\"%s\">%s</label>\n" +
+                     getLabelTag() +
                     "   <input type=\"%s\" id=\"%s\" name=\"%s\" class=\"inputForm\" %s %s %s/>",
-                    name, label, type, name, name,
+                    type, name, name,
                     value != null ? String.format("value=\"%s\"", value) : "",
                     isRequired ? "required" : "",
                     isReadOnly ? "readonly" : ""
@@ -91,8 +95,8 @@ public class HTMLInput {
 
             case "evento_local" -> inputs = new HTMLInput[]{
                     new HTMLInput("nome", "Nome", "text", true),
-                    new HTMLInput("latitude", "Latitude", "number", true),
-                    new HTMLInput("longitude", "Longitude", "number", true)
+                    new HTMLDecimalInput("latitude", "Latitude", 0.00000001, true, false),
+                    new HTMLDecimalInput("longitude", "Longitude", 0.00000001, true, false)
             };
 
             case "frase_sustentavel" -> inputs = new HTMLInput[]{
@@ -102,15 +106,15 @@ public class HTMLInput {
             case "produto" -> inputs = new HTMLInput[]{
                     new HTMLInput("nome", "Nome", "text", true),
                     new HTMLInput("descricao", "Descrição", "text", true),
-                    new HTMLInput("preco", "Preço", "number", true),
+                    new HTMLDecimalInput("preco", "Preço (R$)", 0.01, true, false),
                     new HTMLInput("estoque", "Estoque", "number", true),
                     new HTMLInput("categoria", "Categoria", "text", true),
             };
 
             case "tag" -> inputs = new HTMLInput[]{
                     new HTMLInput("nome", "Nome", "text", true),
-                    new HTMLInput("categoria", "Categoria", "text", true),
-                    new HTMLSelection("descricao", "Descricao", Constants.SELECT_CATEGORIA_TAGS, true)
+                    new HTMLSelection("categoria", "Categoria", Constants.SELECT_CATEGORIA_TAGS, true),
+                    new HTMLInput("descricao", "Descrição", "text", true),
             };
             default -> throw new UnsupportedOperationException(String.format("Não encontrado colunas de inserir para '%s'", tableName));
         }
