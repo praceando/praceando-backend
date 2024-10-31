@@ -33,7 +33,7 @@ public class HTMLGenerator {
                     "Estoque", "Desativação"
             };
             case "tag" -> colunas = new String[]{
-                    "ID", "Nome", "Categoria"
+                    "ID", "Nome", "Categoria", "Descrição"
             };
         }
         // Retorna o array com as colunas
@@ -66,7 +66,7 @@ public class HTMLGenerator {
 
                 // Adicionar a linha
                 linhaHTML.append("<td>")
-                        .append(value != null ? value.toString() : "Não definido")
+                        .append(value != null ? value.toString() : "<i>Não definido</i>")
                         .append("</td>");
 
             } catch (IllegalAccessException iae) {
