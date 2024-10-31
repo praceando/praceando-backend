@@ -12,7 +12,8 @@ public class Produto implements Model {
     private double preco;
     private String categoria;
     private int estoque;
-    private Date dt_desativacao;
+    private Date dtDesativacao;
+    private Date dtAtualizacao;
 
     /**
      * Construtor com todos os parâmetros exceto o ID
@@ -23,10 +24,10 @@ public class Produto implements Model {
      * @param preco          Preço do produto
      * @param categoria      Categoria do produto (ecobag)
      * @param estoque        Quantidade de produtos em estoque
-     * @param dt_desativacao Data de desativação do Produto
+     * @param dtDesativacao Data de desativação do Produto
      */
     public Produto(Integer id, String nome, String descricao, double preco, String categoria, int estoque,
-                   Date dt_desativacao) {
+                   Date dtDesativacao) {
 
         this.id = id;
         this.estoque = estoque;
@@ -34,7 +35,7 @@ public class Produto implements Model {
         this.descricao = descricao;
         this.preco = preco;
         this.categoria = categoria;
-        this.dt_desativacao = dt_desativacao;
+        this.dtDesativacao = dtDesativacao;
 
     }
 
@@ -50,7 +51,7 @@ public class Produto implements Model {
         this.descricao = params.get("descricao");
         this.preco = Double.parseDouble(params.get("preco"));
         this.categoria =  params.get("categoria");
-        this.dt_desativacao = Constants.formatoData.parse(params.get("dt_desativacao"));
+        this.dtDesativacao = Constants.FORMATO_DATA.parse(params.get("dt_desativacao"));
         this.estoque = Integer.parseInt(params.get("estoque"));
     }
 
@@ -93,8 +94,8 @@ public class Produto implements Model {
     /**Getter para a data de desativação do produto
      * @return Data de desativação do produto
      */
-    public Date getDt_desativacao() {
-        return this.dt_desativacao;
+    public Date getDtDesativacao() {
+        return this.dtDesativacao;
     }
 
     /**Getter para o id do produto
@@ -120,7 +121,7 @@ public class Produto implements Model {
         params.put("descricao", this.descricao);
         params.put("preco", Double.toString(this.preco));
         params.put("estoque", Integer.toString(this.estoque));
-        params.put("dt_desativacao", this.dt_desativacao.toString());
+        params.put("dt_desativacao", this.dtDesativacao.toString());
         return params;
     }
 }
