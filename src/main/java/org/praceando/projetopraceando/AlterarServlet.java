@@ -15,7 +15,7 @@ import org.model.Model;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @WebServlet(name="AlterarServlet", value="/alterar-done")
@@ -33,7 +33,8 @@ public class AlterarServlet extends HttpServlet {
         System.out.println(tabelaNome);
         HTMLInput[] inputs = HTMLInput.getInputs(tabelaNome);
         System.out.println(inputs.length);
-        Map<String, String> params = new HashMap<>();
+
+        Map<String, String> params = new LinkedHashMap<>(); // Dicionário que mantém ordem de inserção
 
         request.setAttribute("params", params);
 
