@@ -46,7 +46,7 @@
       %>
   </div>
 
-  <a class="botao-voltar" href="redirect?opcao=visualizar&tabela=<%=tabelaNome%>">Voltar</a>
+  <a class="botao-voltar" href="visualizar?tabela=<%=tabelaNome%>">Voltar</a>
   <br><br>
 </body>
 </html>

@@ -5,19 +5,19 @@
 <html>
 <%
     // Pegar os parâmetros oriundos do Servlet
-    String tabelaNome = (String) request.getAttribute("tabelaNome");
+    String tabelaInterface = (String) request.getAttribute("tabelaNome");
     String tabelaBanco = request.getParameter("tabela");
 
-    String[] colunas = HTMLGenerator.getColunas(tabelaNome);
+    String[] colunas = HTMLGenerator.getColunas(tabelaBanco);
     List<Model> saida = (List<Model>) request.getAttribute("saida");
     boolean canAlter = (boolean) request.getAttribute("canAlter");
 %>
 
 <head>
-    <title>Visualizando: <%=tabelaNome%></title>
+    <title>Visualizando: <%=tabelaInterface%></title>
 </head>
 <body>
-    <h1>Visualizando: <%=tabelaNome%></h1>
+    <h1>Visualizando: <%=tabelaInterface%></h1>
     <h2><i><%=saida.size()%> Elementos listados...</i></h2>
 
     <%if(canAlter) {
