@@ -27,10 +27,11 @@ public class VisualizarServlet extends HttpServlet {
         try {
             DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
             assert dao != null;
-            boolean canAlter = !dao.isReadOnly() && !dao.getNome().equals("admin");
+            boolean canAlter = !dao.isReadOnly() && !dao.getNomeBanco().equals("admin");
 
             List<Model> saida = dao.visualizar();
 
+            request.setAttribute("tabelaNome", dao.getNomeInterface());
             request.setAttribute("saida", saida);
             request.setAttribute("canAlter", canAlter);
 

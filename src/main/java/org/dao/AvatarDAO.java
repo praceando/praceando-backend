@@ -11,6 +11,14 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
         return false;
     }
 
+    @Override
+    public String getNomeBanco() {
+        return "avatar";
+    }
+
+    @Override
+    public String getNomeInterface() {return "Avatares";}
+
     /** Método que extrai uma entidade do ResultSet
      * @param rs ResultSet com os dados da entidade
      * @return Entidade extraída
@@ -49,13 +57,5 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
         ps.setString(1, avatar.getUrl_avatar());
         ps.setInt(2, avatar.getId());
         return ps;
-    }
-
-    /** Método que retorna o nome da tabela referente a entidade
-     * @return Nome da tabela referente a entidade
-     */
-    @Override
-    public String getNome() {
-        return "avatar";
     }
 }

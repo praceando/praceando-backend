@@ -22,7 +22,7 @@ public class DAOManager {
      */
     public static DAOGeneric<Model> getDAO(String nome) {
         for (DAOGeneric<Model> dao : DAOS) {
-            if (dao.getNome().equals(nome)) {
+            if (dao.getNomeBanco().equals(nome)) {
                 return dao;
             }
         }

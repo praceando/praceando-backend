@@ -12,6 +12,15 @@ public class AdminDAO extends DAOGeneric<Admin> {
     public boolean isReadOnly() {
         return false;
     }
+    @Override
+    public String getNomeBanco() {
+        return "admin";
+    }
+
+    @Override
+    public String getNomeInterface() {
+        return "Administradores";
+    }
 
     @Override
     protected Admin extrairEntidade(ResultSet rs) throws SQLException {
@@ -35,7 +44,7 @@ public class AdminDAO extends DAOGeneric<Admin> {
     }
 
     @Override
-    protected PreparedStatement getAlterarQuery(Admin admin) throws SQLException {
+    protected PreparedStatement getAlterarQuery(Admin admin) {
         return null;
     }
 
@@ -72,12 +81,6 @@ public class AdminDAO extends DAOGeneric<Admin> {
             return 0;
         }
         return hasAdmin;
-    }
-
-
-    @Override
-    public String getNome() {
-        return "admin";
     }
 
     // Método para Select

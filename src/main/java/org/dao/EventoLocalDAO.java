@@ -9,6 +9,19 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
         return false;
     }
 
+    /** Método que retorna o nome da tabela correspondente a entidade "EventoLocal"
+     * @return String com o nome da tabela
+     */
+    @Override
+    public String getNomeBanco() {
+        return "evento_local";
+    }
+
+    @Override
+    public String getNomeInterface() {
+        return "Locais dos eventos";
+    }
+
     /** Método que retorna a entidade correspondente a tabela "evento_local"
      * @param rs ResultSet com os dados da tabela
      * @return EventoLocal correspondente ao ResultSet
@@ -51,13 +64,5 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
         ps.setBigDecimal(3, local.getLongitude());
         ps.setInt(4, local.getId());
         return ps;
-    }
-
-    /** Método que retorna o nome da tabela correspondente a entidade "EventoLocal"
-     * @return String com o nome da tabela
-     */
-    @Override
-    public String getNome() {
-        return "evento_local";
     }
 }

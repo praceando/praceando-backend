@@ -18,7 +18,7 @@ import java.text.ParseException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@WebServlet(name="InserirServlet", value="/inserir")
+@WebServlet(name="InserirServlet", value="/inserir-done")
 public class InserirServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

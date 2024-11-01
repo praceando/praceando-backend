@@ -8,6 +8,17 @@ public class LogDAO extends DAOGeneric<Log> {
         return true;
     }
 
+    /** Método que retorna o nome da tabela correspondente a entidade.
+     * @return Nome da tabela correspondente a entidade
+     */
+    @Override
+    public String getNomeBanco() {
+        return "log";
+    }
+
+    @Override
+    public String getNomeInterface() { return "Logs"; }
+
     /** Método que extrai uma entidade do ResultSet.
      * @param rs ResultSet com a entidade
      * @return Entidade extraída
@@ -45,13 +56,5 @@ public class LogDAO extends DAOGeneric<Log> {
     @Override
     protected PreparedStatement getAlterarQuery(Log entidade) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** Método que retorna o nome da tabela correspondente a entidade.
-     * @return Nome da tabela correspondente a entidade
-     */
-    @Override
-    public String getNome() {
-        return "log";
     }
 }

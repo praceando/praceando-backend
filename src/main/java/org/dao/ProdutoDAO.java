@@ -8,7 +8,19 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         return false;
     }
 
-    /** Extrai uma entidade do ResultSet
+    @Override
+    public String getNomeInterface() {
+        return "Produtos";
+    }
+
+    @Override
+    public String getNomeBanco() {
+        return "produto";
+    }
+
+    /**
+     * Extrai uma entidade do ResultSet
+     *
      * @param rs ResultSet
      * @return Entidade extraída
      * @throws SQLException Se ocorrer algum erro com o banco de dados
@@ -22,7 +34,9 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         );
     }
 
-    /** Cria uma query para inserir uma entidade no banco de dados
+    /**
+     * Cria uma query para inserir uma entidade no banco de dados
+     *
      * @param produto Entidade a ser inserida
      * @return Query de inserção
      * @throws SQLException Se ocorrer algum erro com o banco de dados
@@ -32,7 +46,7 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO produto (estoque, nome, ds_produto, preco, categoria) values (?,?,?,?,?)");
 
         ps.setInt(1, produto.getEstoque());
-        ps.setString(2, produto.getNome() );
+        ps.setString(2, produto.getNome());
         ps.setString(3, produto.getDescricao());
         ps.setDouble(4, produto.getPreco());
         ps.setString(5, produto.getCategoria());
@@ -40,7 +54,9 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         return ps;
     }
 
-    /** Cria uma query para alterar uma entidade no banco de dados
+    /**
+     * Cria uma query para alterar uma entidade no banco de dados
+     *
      * @param produto Entidade a ser alterada
      * @return Query de alteração
      * @throws SQLException Se ocorrer algum erro com o banco de dados
@@ -56,14 +72,5 @@ public class ProdutoDAO extends DAOGeneric<Produto> {
         ps.setInt(5, produto.getId());
 
         return ps;
-    }
-
-    /**
-     * Cria uma query para excluir uma entidade no banco de dados
-     * @return Query de exclusão
-     */
-    @Override
-    public String getNome() {
-        return "produto";
     }
 }

@@ -5,7 +5,9 @@
 <html>
 <%
     // Pegar os parâmetros oriundos do Servlet
-    String tabelaNome = request.getParameter("tabela");
+    String tabelaNome = (String) request.getAttribute("tabelaNome");
+    String tabelaBanco = request.getParameter("tabela");
+
     String[] colunas = HTMLGenerator.getColunas(tabelaNome);
     List<Model> saida = (List<Model>) request.getAttribute("saida");
     boolean canAlter = (boolean) request.getAttribute("canAlter");
@@ -20,7 +22,7 @@
 
     <%if(canAlter) {
     %>
-        <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaNome%>">Novo</a>
+        <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
     <%}
     %>
 
@@ -44,8 +46,8 @@
               <tr>
                   <%if (canAlter) {
                   %>
-                  <td><a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaNome%>&id=<%=m.getId()%>">Alterar</a></td>
-                  <td><a class="visuBtn" id="removerBtn" href="remover?tabela=<%=tabelaNome%>&id=<%=m.getId()%>">Excluir</a></td>
+                  <td><a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">Alterar</a></td>
+                  <td><a class="visuBtn" id="removerBtn" href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">Excluir</a></td>
                   <%}
                   %>
 

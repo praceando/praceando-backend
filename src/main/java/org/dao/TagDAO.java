@@ -8,6 +8,11 @@ public class TagDAO extends DAOGeneric<Tag> {
         return false;
     }
 
+    @Override
+    public String getNomeBanco() {
+        return "tag";
+    }
+
     /**
      * Método que retorna a entidade correspondente a linha do ResultSet
      * @param rs ResultSet com a linha correspondente a entidade
@@ -54,13 +59,5 @@ public class TagDAO extends DAOGeneric<Tag> {
         ps.setString(3, tag.getDescricao());
         ps.setInt(4, tag.getId());
         return ps;
-    }
-
-    /** Método que retorna a query para excluir uma entidade
-     * @return Query para excluir a entidade
-     */
-    @Override
-    public String getNome() {
-        return "tag";
     }
 }

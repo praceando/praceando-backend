@@ -4,6 +4,18 @@ import java.sql.*;
 
 
 public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
+
+    @Override
+    public String getNomeBanco() {
+        return "frase_sustentavel";
+    }
+
+    @Override
+    public String getNomeInterface() {
+        return "Frases sustentáveis";
+    }
+
+
     public boolean isReadOnly() {
         return false;
     }
@@ -50,8 +62,4 @@ public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
     /** Método responsável por criar uma query para excluir uma frase sustentável do banco de dados
      * @return  Query com a instrução SQL para excluir uma frase sustentável do banco de dados
      */
-    @Override
-    public String getNome() {
-        return "frase_sustentavel";
-    }
 }

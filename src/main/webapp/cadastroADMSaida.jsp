@@ -1,6 +1,5 @@
 <%@ page import="java.util.Arrays" %>
 <%@ page import="org.common.SqlExitDML" %>
-<%@ page import="org.common.SqlExitDML" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -50,5 +49,6 @@
             }
         %>
     </div>
+    <a class="botao-voltar" href="home.html">Voltar</a>
 </body>
 </html>

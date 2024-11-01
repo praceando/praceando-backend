@@ -36,7 +36,7 @@ public class SearchServlet extends HttpServlet {
             models = orderBy(models, coluna, orderBy);
         }
 
-        boolean canAlter = !dao.isReadOnly() && !dao.getNome().equals("admin");
+        boolean canAlter = !dao.isReadOnly() && !dao.getNomeBanco().equals("admin");
         request.setAttribute("saida", models);
         request.setAttribute("canAlter", canAlter);
 

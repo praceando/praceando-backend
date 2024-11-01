@@ -13,7 +13,7 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
     public T visualizar(int id) {
         Conexao.conectar();
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNome() + "\" WHERE id_"+getNome()+" = ?");
+            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNomeBanco() + "\" WHERE id_"+ getNomeBanco()+" = ?");
             System.out.println(ps.toString());
             ps.setObject(1, id);
             ResultSet rs = ps.executeQuery();
@@ -32,7 +32,7 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         Conexao.conectar();
         List<T> retorno = new LinkedList<>();
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNome() + "\"");
+            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNomeBanco() + "\"");
             System.out.println(ps.toString());
 
             ResultSet rs = ps.executeQuery();
@@ -85,7 +85,7 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         Conexao.conectar();
         Throwable throwable;
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM \""+ this.getNome() + "\" WHERE id_"+ getNome() +" = ?");
+            PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM \""+ this.getNomeBanco() + "\" WHERE id_"+ getNomeBanco() +" = ?");
             ps.setInt(1, id);
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);
         } catch (SQLException sqle) {
@@ -98,8 +98,16 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
 
     }
 
+    /** Nome da tabela para visualização no front
+    * @return Retorna o nome da tabela no banco capitalizado por default
+    *  */
+    public String getNomeInterface() {
+        return getNomeBanco().substring(0, 1).toUpperCase() + getNomeBanco().substring(1);
+    }
+
     protected abstract T extrairEntidade(ResultSet rs) throws SQLException;
     protected abstract PreparedStatement getInserirQuery(T entidade) throws SQLException;
     protected abstract PreparedStatement getAlterarQuery(T entidade) throws SQLException;
-    public abstract String getNome();
+    public abstract String getNomeBanco();
+
 }

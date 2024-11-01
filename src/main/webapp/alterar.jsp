@@ -4,18 +4,19 @@
 <html>
 <head>
     <%
-        String tabelaNome = request.getParameter("tabela");
+        String tabelaBanco = request.getParameter("tabela");
+        String tabelaInterface = (String) request.getAttribute("tabelaNome");
         Model model = (Model) request.getAttribute("model");
     %>
 
-    <title>Alterando ID <%=model.getId()%> da tabela <%=tabelaNome%></title>
+    <title>Alterando ID <%=model.getId()%> da tabela <%=tabelaInterface%></title>
 </head>
 <body>
 
-    <h1>Formulário de atualização: <%=tabelaNome%></h1>
+    <h1>Formulário de atualização: <%=tabelaInterface%></h1>
     <form method="post" action="alterar-done">
-        <input type="hidden" name="tabelaNome" value="<%=tabelaNome%>">
-        <%=HTMLInput.getForm(tabelaNome, model)%>
+        <input type="hidden" name="tabelaNome" value="<%=tabelaBanco%>">
+        <%=HTMLInput.getForm(tabelaBanco, model)%>
         <button type="submit">Alterar</button>
     </form>
 </body>
