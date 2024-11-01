@@ -46,8 +46,8 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
     protected PreparedStatement getInserirQuery(EventoLocal local) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO evento_local (nome, lat, long) values (?,?,?)");
         ps.setString(1, local.getNome());
-        ps.setBigDecimal(2, local.getLatitude());
-        ps.setBigDecimal(3, local.getLongitude());
+        ps.setBigDecimal(2, local.getLat());
+        ps.setBigDecimal(3, local.getLon());
         return ps;
     }
 
@@ -60,8 +60,8 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
     protected PreparedStatement getAlterarQuery(EventoLocal local) throws SQLException {
         PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE evento_local SET nome = ?, lat = ?, long = ? WHERE id_evento_local = ?");
         ps.setString(1, local.getNome());
-        ps.setBigDecimal(2, local.getLatitude());
-        ps.setBigDecimal(3, local.getLongitude());
+        ps.setBigDecimal(2, local.getLat());
+        ps.setBigDecimal(3, local.getLon());
         ps.setInt(4, local.getId());
         return ps;
     }

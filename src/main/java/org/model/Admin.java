@@ -8,7 +8,7 @@ public class Admin implements Model {
     private int id;
     private final String nome;
     private final String email;
-    private final boolean isAtivo;
+    private final boolean is_ativo;
     private final Senha senha;
 
     /** Construtor que inicializa todos os atributos da classe Admin
@@ -16,8 +16,8 @@ public class Admin implements Model {
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(int id, String nome, String email, Senha senha, boolean isAtivo) {
-        this(nome, email, senha, isAtivo);
+    public Admin(int id, String nome, String email, Senha senha, boolean is_ativo) {
+        this(nome, email, senha, is_ativo);
         this.id = id;
     }
 
@@ -25,11 +25,11 @@ public class Admin implements Model {
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(String nome, String email, Senha senha, boolean isAtivo) {
+    public Admin(String nome, String email, Senha senha, boolean is_ativo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.isAtivo = isAtivo;
+        this.is_ativo = is_ativo;
     }
 
     /** Getter para o e-mail do administrador
@@ -63,8 +63,8 @@ public class Admin implements Model {
     /** Getter para o status do administrador
      * @return True se o administrador estiver ativo, False caso contrário
      */
-    public boolean isAtivo() {
-        return this.isAtivo;
+    public boolean isIs_ativo() {
+        return this.is_ativo;
     }
 
     /** Método para alterar o ID do objeto do administrador

@@ -12,8 +12,8 @@ import org.model.Model;
 
 import java.io.IOException;
 
-@WebServlet(name="InsertForm", value="/inserir")
-public class InsertForm extends HttpServlet {
+@WebServlet(name="InsertFormServlet", value="/inserir")
+public class InsertFormServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tabela = request.getParameter("tabela");
         DAOGeneric<Model> dao = DAOManager.getDAO(tabela);

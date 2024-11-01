@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.dao.AdminDAO;
 import java.io.IOException;
 
-@WebServlet(name="LoginDev", value="/processa-login")
-public class LoginDev extends HttpServlet {
+@WebServlet(name="LoginDevServlet", value="/processa-login")
+public class LoginDevServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");

@@ -11,8 +11,8 @@ import org.model.Model;
 
 import java.io.IOException;
 
-@WebServlet(name="AlterarForm", value="/alterar")
-public class AlterarForm extends HttpServlet {
+@WebServlet(name="AlterarFormServlet", value="/alterar")
+public class AlterarFormServlet extends HttpServlet {
 
     /**
      * Método do HttpServlet que é chamado quando o usuário envia o formulário de alteração de um registro.

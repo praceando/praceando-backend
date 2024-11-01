@@ -75,7 +75,7 @@ public class AdminDAO extends DAOGeneric<Admin> {
 
         if (hasAdmin == 1) {
             Admin admin = retorno.get(0);
-            if (admin.isAtivo()) {
+            if (admin.isIs_ativo()) {
                 return hasAdmin;
             }
             return 0;

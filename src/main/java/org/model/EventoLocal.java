@@ -6,28 +6,28 @@ import java.util.Map;
 public class EventoLocal implements Model {
     private int id;
     private String nome;
-    private BigDecimal latitude;
-    private BigDecimal longitude;
+    private BigDecimal lat;
+    private BigDecimal lon;
 
     /** Construtor que inicia os atributos da classe
      * @param nome Nome do evento
-     * @param latitude Latitude do local do evento
-     * @param longitude Longitude do local do evento
+     * @param lat Latitude do local do evento
+     * @param lon Longitude do local do evento
      */
-    public EventoLocal(String nome, BigDecimal latitude, BigDecimal longitude) {
+    public EventoLocal(String nome, BigDecimal lat, BigDecimal lon) {
         this.nome = nome;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.lat = lat;
+        this.lon = lon;
     }
 
     /** Construtor que inicia os atributos da classe e o id do evento
      * @param id
      * @param nome
-     * @param latitude
-     * @param longitude
+     * @param lat
+     * @param lon
      */
-    public EventoLocal(int id, String nome, BigDecimal latitude, BigDecimal longitude) {
-        this(nome, latitude, longitude);
+    public EventoLocal(int id, String nome, BigDecimal lat, BigDecimal lon) {
+        this(nome, lat, lon);
         this.id = id;
     }
 
@@ -39,8 +39,8 @@ public class EventoLocal implements Model {
             this.id = Integer.parseInt(params.get("id"));
         }
         this.nome = params.get("nome");
-        this.latitude = new BigDecimal(params.get("latitude"));
-        this.longitude = new BigDecimal(params.get("longitude"));
+        this.lat = new BigDecimal(params.get("latitude"));
+        this.lon = new BigDecimal(params.get("longitude"));
     }
 
     /** Getter do nome do evento
@@ -53,15 +53,15 @@ public class EventoLocal implements Model {
     /** Getter da latitude do local do evento
      * @return Latitude do local do evento
      */
-    public BigDecimal getLatitude() {
-        return this.latitude;
+    public BigDecimal getLat() {
+        return this.lat;
     }
 
     /** Getter da longitude do local do evento
      * @return Longitude do local do evento
      */
-    public BigDecimal getLongitude() {
-        return this.longitude;
+    public BigDecimal getLon() {
+        return this.lon;
     }
 
     /** Getter do id do evento
@@ -84,8 +84,8 @@ public class EventoLocal implements Model {
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
         params.put("nome", this.nome);
-        params.put("latitude", this.latitude.toString());
-        params.put("longitude", this.longitude.toString());
+        params.put("latitude", this.lat.toString());
+        params.put("longitude", this.lon.toString());
         return params;
     }
 }
