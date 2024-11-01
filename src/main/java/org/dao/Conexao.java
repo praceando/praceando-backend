@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Conexao {
 
     static Connection conn;
-    public static void conectar() {
+    public static void conectar() throws ConnectionIsNullException {
 
         Dotenv dotenv = Dotenv.load();
         String url = dotenv.get("DB_URL");
@@ -22,6 +22,9 @@ public class Conexao {
             cnfe.printStackTrace();
         } catch (SQLException sqle) {
             sqle.printStackTrace();
+        }
+        if (conn == null) {
+            throw new ConnectionIsNullException("Não foi possível se conectar com o banco de dados do Praceando.");
         }
     }
 

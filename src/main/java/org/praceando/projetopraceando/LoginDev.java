@@ -24,7 +24,7 @@ public class LoginDev extends HttpServlet {
         // Verifica o tipo de retorno do método
         System.out.println(saida);
         // Define a página a ser redirecionada dependendo do retorno do método
-        String pag = "erroNoBancos.jsp";
+        String pag = "erroBanco.jsp";
 
         // Verifica o tipo de retorno do método
         switch (saida) {
@@ -32,13 +32,11 @@ public class LoginDev extends HttpServlet {
             case 1 -> pag = "home.html";
             // Se o usuário não existe, redireciona para a página de erro
             case 0 -> {
-                request.setAttribute("tipoErro", "Acesso negado");
-                request.setAttribute("mensagemErro", "Login não encontrado ou inválido. Peça permissão para o grupo para realizar o cadastro de sua conta. Caso for um administrador já cadastrado, peça a ativação de sua conta para praceando.blomera@gmail.com");
+                ErrorRedirect.redirect(request, response, "Acesso Negado", "Login não encontrado ou inválido");
             }
             // Se houve algum erro interno, redireciona para a página de erro
             case -1 -> {
-                request.setAttribute("tipoErro", "Erro Interno");
-                request.setAttribute("mensagemErro", "Ocorreu uma instabilidade no banco");
+                ErrorRedirect.handleErroBanco(request, response);
             }
         }
         RequestDispatcher rd = request.getRequestDispatcher(pag);

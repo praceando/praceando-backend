@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
 import org.model.Model;
@@ -26,25 +27,29 @@ public class SearchServlet extends HttpServlet {
         DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
 
         assert dao != null;
-        List<Model> models = dao.visualizar(); // Lidar em caso de models ser null ou vazio
+        try {
+            List<Model> models = dao.visualizar(); // Lidar em caso de models ser null ou vazio
 
-        if (coluna != null && filter != null) {
-            models = filterByColumn(models, coluna, filter);
+            if (coluna != null && filter != null) {
+                models = filterByColumn(models, coluna, filter);
+            }
+
+            if (orderBy != null) {
+                models = orderBy(models, coluna, orderBy);
+            }
+
+            boolean canAlter = !dao.isReadOnly() && !dao.getNomeBanco().equals("admin");
+            request.setAttribute("saida", models);
+            request.setAttribute("canAlter", canAlter);
+
+            RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
+            rd.forward(request, response);
+        } catch (ConnectionIsNullException cne) {
+            ErrorRedirect.handleErroBanco(request, response);
         }
-
-        if (orderBy != null) {
-            models = orderBy(models, coluna, orderBy);
-        }
-
-        boolean canAlter = !dao.isReadOnly() && !dao.getNomeBanco().equals("admin");
-        request.setAttribute("saida", models);
-        request.setAttribute("canAlter", canAlter);
-
-        RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
-        rd.forward(request, response);
     }
 
-    private List<Model> orderBy(List<Model> models, String campo, String orderBy) {
+    private static List<Model> orderBy(List<Model> models, String campo, String orderBy) {
         boolean asc = !"desc".equalsIgnoreCase(orderBy);
 
         models.sort((model1, model2) -> {

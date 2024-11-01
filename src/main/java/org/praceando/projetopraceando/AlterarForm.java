@@ -4,14 +4,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
 import org.model.Model;
 
 import java.io.IOException;
 
-@WebServlet(name="FormAlterar", value="/alterar")
-public class FormAlterar extends HttpServlet {
+@WebServlet(name="AlterarForm", value="/alterar")
+public class AlterarForm extends HttpServlet {
 
     /**
      * Método do HttpServlet que é chamado quando o usuário envia o formulário de alteração de um registro.
@@ -29,14 +30,18 @@ public class FormAlterar extends HttpServlet {
         DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
         assert dao != null;
 
-        // Recupera o registro a ser alterado
-        Model model = dao.visualizar(id);
+        try {
+            // Recupera o registro a ser alterado
+            Model model = dao.visualizar(id);
 
-        // Adiciona o registro a ser alterado ao request
-        request.setAttribute("model", model);
-        request.setAttribute("tabelaNome", dao.getNomeInterface());
+            // Adiciona o registro a ser alterado ao request
+            request.setAttribute("model", model);
+            request.setAttribute("tabelaNome", dao.getNomeInterface());
 
-        // Encaminha o request para o JSP
-        request.getRequestDispatcher("alterar.jsp").forward(request, response);
+            // Encaminha o request para o JSP
+            request.getRequestDispatcher("alterar.jsp").forward(request, response);
+        } catch (ConnectionIsNullException cne) {
+            ErrorRedirect.handleErroBanco(request, response);
+        }
     }
 }

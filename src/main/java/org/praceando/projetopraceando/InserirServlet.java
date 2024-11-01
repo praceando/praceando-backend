@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.common.html.HTMLInput;
 import org.common.ModelCreator;
 import org.common.SqlExitDML;
+import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
 import org.model.Model;
@@ -45,7 +46,7 @@ public class InserirServlet extends HttpServlet {
             if (dao.isReadOnly()) {
                 request.setAttribute("tipoErro", "Operação inválida");
                 request.setAttribute("mensagemErro", "Tabela '%s' não aceita alterações pelos administradores");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("erroNoBancos.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("erroBanco.jsp");
                 dispatcher.forward(request, response);
             }
 
@@ -54,7 +55,8 @@ public class InserirServlet extends HttpServlet {
             request.setAttribute("saida", saida);
             RequestDispatcher rd = request.getRequestDispatcher("inserirSaida.jsp");
             rd.forward(request, response);
-
+        } catch (ConnectionIsNullException cne) {
+            ErrorRedirect.handleErroBanco(request, response);
         } catch (ParseException e) {
             e.printStackTrace();
         }

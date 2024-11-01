@@ -9,8 +9,8 @@ import java.util.List;
 
 public abstract class DAOGeneric<T extends Model> implements DAO<T> {
 
-    // TODO: Fazer o preparedStatement dos métodos de visualizar originar de sobrescritas de métodos abstratos;
-    public T visualizar(int id) {
+
+    public T visualizar(int id) throws ConnectionIsNullException {
         Conexao.conectar();
         try {
             PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNomeBanco() + "\" WHERE id_"+ getNomeBanco()+" = ?");
@@ -50,7 +50,7 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         return null;
     }
 
-    public SqlExitDML inserir(T entidade) {
+    public SqlExitDML inserir(T entidade) throws ConnectionIsNullException {
         Conexao.conectar();
         Throwable throwable;
         try {
@@ -65,7 +65,7 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         return new SqlExitDML(throwable);
     }
 
-    public SqlExitDML alterar(T entidade) {
+    public SqlExitDML alterar(T entidade) throws ConnectionIsNullException {
         Conexao.conectar();
 
         Throwable throwable;
@@ -81,7 +81,7 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         return new SqlExitDML(throwable);
     }
 
-    public SqlExitDML remover(int id) {
+    public SqlExitDML remover(int id) throws ConnectionIsNullException {
         Conexao.conectar();
         Throwable throwable;
         try {

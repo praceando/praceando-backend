@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.common.SqlExitDML;
+import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
 import org.dao.TagDAO;
@@ -34,13 +35,15 @@ public class RemoverServlet extends HttpServlet {
             SqlExitDML saida = dao.remover(id);
 
             request.setAttribute("saida", saida);
-            
+
             RequestDispatcher rd = request.getRequestDispatcher("removerSaida.jsp");
             rd.forward(request, response);
+        } catch (ConnectionIsNullException cne) {
+            ErrorRedirect.redirect(request, response, "E");
         } catch (UnsupportedOperationException uoe) {
             request.setAttribute("tipoErro", "Operação inválida");
             request.setAttribute("mensagemErro", "Não é possível remover da tabela " + tabela);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("erroNoBancos.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("erroBanco.jsp");
             dispatcher.forward(request, response);
         }
     }

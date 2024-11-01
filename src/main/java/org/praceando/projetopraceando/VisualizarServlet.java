@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
 import org.model.Model;
@@ -40,6 +41,8 @@ public class VisualizarServlet extends HttpServlet {
             rd.forward(request, response);
         } catch (NullPointerException e) {
             e.printStackTrace();
+        } catch (ConnectionIsNullException cne) {
+            ErrorRedirect.handleErroBanco(request, response);
         }
     }
 }

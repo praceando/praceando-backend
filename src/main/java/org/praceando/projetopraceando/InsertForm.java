@@ -12,10 +12,9 @@ import org.model.Model;
 
 import java.io.IOException;
 
-@WebServlet(name="FormInsert", value="/inserir")
-public class FormInsert extends HttpServlet {
+@WebServlet(name="InsertForm", value="/inserir")
+public class InsertForm extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String tabela = request.getParameter("tabela");
         DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
 

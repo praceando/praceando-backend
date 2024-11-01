@@ -25,6 +25,7 @@
         <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
     <%}
     %>
+    <a href="search-tabela?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
 
     <table class="tabelaSaida">
         <tr>
