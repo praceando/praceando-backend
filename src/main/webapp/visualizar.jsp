@@ -1,27 +1,26 @@
-<%@ page import="org.dao.DAOGeneric" %>
 <%@ page import="java.util.*" %>
 <%@ page import="org.model.Model" %>
 <%@ page import="org.common.html.HTMLGenerator" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <%
-    DAOGeneric<Model> dao = (DAOGeneric<Model>) request.getAttribute("dao");
-    String[] colunas = (String[]) request.getAttribute("colunas");
-    List<Model> saida = dao.visualizar();
-
-    boolean canAlter = !dao.isReadOnly() && !dao.getNome().equals("admin");
+    // Pegar os parâmetros oriundos do Servlet
+    String tabelaNome = request.getParameter("tabela");
+    String[] colunas = HTMLGenerator.getColunas(tabelaNome);
+    List<Model> saida = (List<Model>) request.getAttribute("saida");
+    boolean canAlter = (boolean) request.getAttribute("canAlter");
 %>
 
 <head>
-    <title>Visualizando: <%=dao.getNome()%></title>
+    <title>Visualizando: <%=tabelaNome%></title>
 </head>
 <body>
-    <h1>Visualizando: <%=dao.getNome()%></h1>
+    <h1>Visualizando: <%=tabelaNome%></h1>
     <h2><i><%=saida.size()%> Elementos listados...</i></h2>
 
     <%if(canAlter) {
     %>
-        <a class="visuBtn" id="novoBtn" href="redirect?tabela=<%=dao.getNome()%>&opcao=inserir">Novo</a>
+        <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaNome%>">Novo</a>
     <%}
     %>
 
@@ -45,8 +44,8 @@
               <tr>
                   <%if (canAlter) {
                   %>
-                  <td><a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=dao.getNome()%>&id=<%=m.getId()%>">Alterar</a></td>
-                  <td><a class="visuBtn" id="removerBtn" href="remover?tabela=<%=dao.getNome()%>&id=<%=m.getId()%>">Excluir</a></td>
+                  <td><a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaNome%>&id=<%=m.getId()%>">Alterar</a></td>
+                  <td><a class="visuBtn" id="removerBtn" href="remover?tabela=<%=tabelaNome%>&id=<%=m.getId()%>">Excluir</a></td>
                   <%}
                   %>
 
