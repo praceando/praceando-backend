@@ -24,23 +24,17 @@ public class LoginDevServlet extends HttpServlet {
         // Verifica o tipo de retorno do método
         System.out.println(saida);
         // Define a página a ser redirecionada dependendo do retorno do método
-        String pag = "erroBanco.jsp";
 
-        // Verifica o tipo de retorno do método
+        // Verifica em caso de erros na saída
         switch (saida) {
-            // Se o usuário existe, redireciona para a página de home
-            case 1 -> pag = "home.html";
             // Se o usuário não existe, redireciona para a página de erro
-            case 0 -> {
-                ErrorRedirect.redirect(request, response, "Acesso Negado", "Login não encontrado ou inválido");
-            }
+            case 0 -> ErrorRedirect.redirect(request, response, "Acesso Negado", "Login não encontrado ou inválido");
             // Se houve algum erro interno, redireciona para a página de erro
-            case -1 -> {
-                ErrorRedirect.handleErroBanco(request, response);
-            }
+            case -1 -> ErrorRedirect.handleErroBanco(request, response);
         }
-        RequestDispatcher rd = request.getRequestDispatcher(pag);
 
+        // Se o usuário existe, redireciona para a página de home
+        RequestDispatcher rd = request.getRequestDispatcher("home.html");
         rd.forward(request, response);
     }
 }

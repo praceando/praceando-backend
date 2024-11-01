@@ -33,7 +33,7 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
                 rs.getInt("id_evento_local"),
                 rs.getString("nome"),
                 rs.getBigDecimal("lat"),
-                rs.getBigDecimal("long")
+                rs.getBigDecimal("lon")
         );
     }
 

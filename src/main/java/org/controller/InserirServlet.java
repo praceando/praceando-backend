@@ -43,18 +43,16 @@ public class InserirServlet extends HttpServlet {
             DAOGeneric<Model> dao = DAOManager.getDAO(tabelaNome);
 
             assert dao != null;
-            if (dao.isReadOnly()) {
-                request.setAttribute("tipoErro", "Operação inválida");
-                request.setAttribute("mensagemErro", "Tabela '%s' não aceita alterações pelos administradores");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("erroBanco.jsp");
-                dispatcher.forward(request, response);
+            if (!dao.isReadOnly()) {
+                SqlExitDML saida = dao.inserir(criado);
+
+                request.setAttribute("saida", saida);
+                RequestDispatcher rd = request.getRequestDispatcher("inserirSaida.jsp");
+                rd.forward(request, response);
+            } else {
+                ErrorRedirect.redirect(request, response,"Operação inválida", "Tabela '%s' não aceita alterações por administradores");
             }
 
-            SqlExitDML saida = dao.inserir(criado);
-
-            request.setAttribute("saida", saida);
-            RequestDispatcher rd = request.getRequestDispatcher("inserirSaida.jsp");
-            rd.forward(request, response);
         } catch (ConnectionIsNullException cne) {
             ErrorRedirect.handleErroBanco(request, response);
         } catch (ParseException e) {

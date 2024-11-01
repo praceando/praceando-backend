@@ -31,14 +31,17 @@ public class VisualizarServlet extends HttpServlet {
             boolean canAlter = !dao.isReadOnly() && !dao.getNomeBanco().equals("admin");
 
             List<Model> saida = dao.visualizar();
+            if (saida != null) {
+                request.setAttribute("tabelaNome", dao.getNomeInterface());
+                request.setAttribute("saida", saida);
+                request.setAttribute("canAlter", canAlter);
 
-            request.setAttribute("tabelaNome", dao.getNomeInterface());
-            request.setAttribute("saida", saida);
-            request.setAttribute("canAlter", canAlter);
 
-
-            RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
-            rd.forward(request, response);
+                RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
+                rd.forward(request, response);
+            } else {
+                ErrorRedirect.redirect(request, response, "Saída nula.", "Saída retornou null, verifique a conexão com a internet.");
+            }
         } catch (NullPointerException e) {
             e.printStackTrace();
         } catch (ConnectionIsNullException cne) {
