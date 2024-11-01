@@ -56,17 +56,22 @@ public class HTMLInput {
     /** Método toString para gerar o HTML do input
      * @return String HTML do input
      */
-
     protected static String surroundContainer(String content) {
         return String.format("<div class=\"inputContainer\">" +
                 content +
                 "</div>");
     }
 
+    /** Método para retornar o HTML do label do input
+     * @return String HTML do label do input
+     */
     protected String getLabelTag() {
         return String.format("<label for=\"%s\">%s</label>\n", name, label);
     }
 
+    /** Método para retornar o HTML do input
+     * @return String HTML do input
+     */
     public String toString() {
         return surroundContainer(
                 String.format(

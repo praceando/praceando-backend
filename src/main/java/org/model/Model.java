@@ -20,5 +20,4 @@ public interface Model {
      * @return Map com os parâmetros do objeto
      */
     Map<String, String> getParams();
-
 }

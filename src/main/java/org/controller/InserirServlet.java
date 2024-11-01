@@ -22,6 +22,12 @@ import java.util.Map;
 @WebServlet(name="InserirServlet", value="/inserir-done")
 public class InserirServlet extends HttpServlet {
 
+    /** Método para processar o formulário de inserção de dados.
+     * @param request Requisição do usuário
+     * @param response Resposta para o usuário
+     * @throws IOException Exceção na leitura do arquivo
+     * @throws ServletException Exceção na execução do servlet
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String tabelaNome = request.getParameter("tabelaNome");
         System.out.println(tabelaNome);
@@ -32,16 +38,19 @@ public class InserirServlet extends HttpServlet {
 
         request.setAttribute("params", params);
 
+        // Adiciona os parâmetros do formulário ao dicionário
         for (HTMLInput input : inputs) {
             System.out.printf("%s : %s", input.getName(), request.getParameter(input.getName()));
             params.put(input.getName(), request.getParameter(input.getName()));
         }
         System.out.println(params.size());
 
+        // Cria o objeto Model a partir dos parâmetros do formulário
         try {
             Model criado = ModelCreator.createModel(tabelaNome, params);
             DAOGeneric<Model> dao = DAOManager.getDAO(tabelaNome);
 
+            // Verifica se a tabela aceita alterações por administradores
             assert dao != null;
             if (!dao.isReadOnly()) {
                 SqlExitDML saida = dao.inserir(criado);
@@ -52,7 +61,6 @@ public class InserirServlet extends HttpServlet {
             } else {
                 ErrorRedirect.redirect(request, response,"Operação inválida", "Tabela '%s' não aceita alterações por administradores");
             }
-
         } catch (ConnectionIsNullException cne) {
             ErrorRedirect.handleErroBanco(request, response);
         } catch (ParseException e) {
