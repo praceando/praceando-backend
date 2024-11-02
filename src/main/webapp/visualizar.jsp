@@ -8,7 +8,7 @@
     String tabelaInterface = (String) request.getAttribute("tabelaNome");
     String tabelaBanco = request.getParameter("tabela");
 
-    String[] colunas = HTMLGenerator.getColunas(tabelaBanco);
+    String[] colunas = HTMLGenerator.getColunasInterface(tabelaBanco);
     List<Model> saida = (List<Model>) request.getAttribute("saida");
     boolean canAlter = (boolean) request.getAttribute("canAlter");
 %>
@@ -25,7 +25,7 @@
         <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
     <%}
     %>
-    <a href="search-tabela?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
+    <a href="search-form?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
 
     <table class="tabelaSaida">
         <tr>

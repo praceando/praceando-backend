@@ -17,7 +17,7 @@ public class HTMLSelection extends HTMLInput {
         this.options = options;
     }
 
-    /** Método para definir a opção selecionada.
+    /** Usado para construir uma string contendo uma label e elemento HTML para a tag <select>
      * @return Opção selecionada.
      */
     public String toString() {
