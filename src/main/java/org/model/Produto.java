@@ -1,5 +1,7 @@
 package org.model;
 import org.common.Constants;
+import org.common.Tabela;
+
 import java.text.ParseException;
 import java.util.Date;
 import java.util.HashMap;
@@ -101,6 +103,12 @@ public class Produto implements Model {
     /**Getter para o id do produto
      * @return Id do produto
      */
+
+    public Tabela getTabela() {
+        return Constants.TABELA_PRODUTO;
+    }
+
+
     public int getId() {
         return id;
     }

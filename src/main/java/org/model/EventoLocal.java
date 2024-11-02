@@ -1,4 +1,7 @@
 package org.model;
+import org.common.Constants;
+import org.common.Tabela;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,6 +65,10 @@ public class EventoLocal implements Model {
      */
     public BigDecimal getLon() {
         return this.lon;
+    }
+
+    public Tabela getTabela() {
+        return Constants.TABELA_EVENTO_LOCAL;
     }
 
     /** Getter do id do evento

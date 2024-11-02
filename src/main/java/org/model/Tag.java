@@ -1,7 +1,11 @@
 package org.model;
 
+import org.common.Constants;
+import org.common.Tabela;
+
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class Tag implements Model {
     private int id;
@@ -52,6 +56,10 @@ public class Tag implements Model {
      */
     public String getDescricao() {
         return this.descricao;
+    }
+
+    public Tabela getTabela() {
+        return Constants.TABELA_TAG;
     }
 
     /**Getter para o ID da tag

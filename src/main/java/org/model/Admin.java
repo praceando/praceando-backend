@@ -1,6 +1,8 @@
 package org.model;
 
+import org.common.Constants;
 import org.common.Senha;
+import org.common.Tabela;
 
 import java.util.Map;
 
@@ -67,6 +69,11 @@ public class Admin implements Model {
         return this.is_ativo;
     }
 
+    public Tabela getTabela() {
+        return Constants.TABELA_ADMIN;
+    }
+
+
     /** Método para alterar o ID do objeto do administrador
      * @param id ID do administrador
      */
@@ -89,6 +96,7 @@ public class Admin implements Model {
      * @param senha Senha do administrador
      * @return True se os dados forem iguais, False caso contrário
      */
+    @Deprecated
     public boolean matches(String email, String senha) {
         return this.senha.equals(senha) && this.email.equals(email);
     }

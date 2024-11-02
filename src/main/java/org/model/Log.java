@@ -1,20 +1,23 @@
 package org.model;
+import org.common.Constants;
+import org.common.Tabela;
+
 import java.util.Date;
 import java.util.Map;
 
 public class Log implements Model {
     private int id;
-    private Date dtLog;
+    private Date dt_log;
     private String operacao;
     private String query;
 
     /**Construtor que inicializa os atributos da classe Log
-     * @param dtLog Data e hora da operação
+     * @param dt_log Data e hora da operação
      * @param operacao Operação realizada no banco de dados
      * @param query Consulta executada no banco de dados
      */
-    public Log(Date dtLog, String operacao, String query) {
-        this.dtLog = dtLog;
+    public Log(Date dt_log, String operacao, String query) {
+        this.dt_log = dt_log;
         this.operacao = operacao;
         this.query = query;
     }
@@ -22,16 +25,16 @@ public class Log implements Model {
     /** Construtor que inicializa os atributos da classe Log e o id da operação
      * @param id Id da operação
      */
-    public Log(int id, Date dtLog, String operacao, String query) {
-        this(dtLog, operacao, query);
+    public Log(int id, Date dt_log, String operacao, String query) {
+        this(dt_log, operacao, query);
         this.id = id;
     }
 
     /**Getter para o atributo dt_log
      * @return Data e hora da operação
      */
-    public Date getDtLog() {
-        return this.dtLog;
+    public Date getDt_log() {
+        return this.dt_log;
     }
 
     /**Getter para o atributo operacao
@@ -46,6 +49,10 @@ public class Log implements Model {
      */
     public String getQuery() {
         return this.query;
+    }
+
+    public Tabela getTabela() {
+        return Constants.TABELA_LOG;
     }
 
     /**

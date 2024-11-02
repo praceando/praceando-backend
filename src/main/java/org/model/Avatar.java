@@ -1,4 +1,6 @@
 package org.model;
+import org.common.Constants;
+import org.common.Tabela;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +27,10 @@ public class Avatar implements Model {
             this.id = Integer.parseInt(params.get("id"));
         }
         this.url_avatar = params.get("b64_avatar");
+    }
+
+    public Tabela getTabela() {
+        return Constants.TABELA_AVATAR;
     }
 
     /** Getter do b64_avatar

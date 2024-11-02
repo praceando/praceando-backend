@@ -1,37 +1,34 @@
 package org.common;
 
-public class Tabela {
-    public String nomeInterface;
-    public String nomeBanco;
+import java.util.LinkedHashMap;
 
-    public Tabela(String nomeInterface, String nomeBanco) {
-        this.nomeInterface = nomeInterface;
-        this.nomeBanco = nomeBanco;
+public abstract class Tabela {
+//    public String getNomeBanco(String nomeInterface) {
+//        if (this.getNomeInterface().equals(nomeInterface)) {
+//            return this.getNomeBanco();
+//        }
+//        throw new IllegalArgumentException("Tabela do banco " + nomeBanco + " não reconhecida para" + this.nomeBanco);
+//    }
+//
+//    public String getInterface(String nomeBanco) {
+//        if (this.getNomeBanco().equals(nomeBanco)) {
+//            return this.getNomeInterface();
+//        }
+//        throw new IllegalArgumentException("Tabela do banco " + nomeBanco + " não reconhecida para" + this.nomeInterface);
+//    }
+    public String[] getColunasBanco() {
+        return getColunas().sequencedKeySet().toArray(new String[]{});
     }
-
-    public String getNomeBanco() {
-        return this.nomeBanco;
-    }
-
-    public String getNomeInterface() {
-        return this.nomeInterface;
+    public String[] getColunasInterface() {
+        return getColunas().sequencedValues().toArray(new String[]{});
     }
 
     public String toString() {
-        return this.nomeInterface;
+        return String.format("'%s' <-> '%s'", this.getNomeBanco(), this.getNomeInterface());
     }
 
-    public String getNomeBanco(String nomeInterface) {
-        if (this.nomeInterface.equals(nomeInterface)) {
-            return this.nomeBanco;
-        }
-        return null;
-    }
+    public abstract String getNomeBanco();
+    public abstract String getNomeInterface();
+    public abstract LinkedHashMap<String, String> getColunas();
 
-    public String getInterface(String nomeBanco) {
-        if (this.nomeBanco.equals(nomeBanco)) {
-            return this.nomeInterface;
-        }
-        return null;
-    }
 }

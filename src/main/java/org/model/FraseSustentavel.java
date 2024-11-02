@@ -1,4 +1,7 @@
 package org.model;
+import org.common.Constants;
+import org.common.Tabela;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +44,10 @@ public class FraseSustentavel implements Model {
      */
     public String getDescricao() {
         return descricao;
+    }
+
+    public Tabela getTabela() {
+        return Constants.TABELA_FRASE_SUSTENTAVEL;
     }
 
     /**Getter do id_frase
