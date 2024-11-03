@@ -25,7 +25,8 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
     protected Avatar extrairEntidade(ResultSet rs) throws SQLException {
         return new Avatar(
                 rs.getInt("id"),
-                rs.getString("url_avatar")
+                rs.getString("url_avatar"),
+                rs.getDate("dt_atualizacao")
         );
     }
 
@@ -36,7 +37,7 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
      */
     @Override
     protected PreparedStatement getInserirQuery(Avatar avatar) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO avatar (b64_avatar) VALUES (?)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO avatar (b64_avatar, dt_atualizacao) VALUES (?, current_timestamp)");
 
         ps.setString(1, avatar.getUrl_avatar());
         return ps;
@@ -49,7 +50,7 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
      */
     @Override
     protected PreparedStatement getAlterarQuery(Avatar avatar) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE avatar SET url_avatar = ? WHERE id_avatar = ?");
+        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE avatar SET url_avatar = ?, dt_atualizacao = current_timestamp WHERE id_avatar = ?");
         // SETANDO O VALOR DOS PARÂMETROS
         ps.setString(1, avatar.getUrl_avatar());
         ps.setInt(2, avatar.getId());

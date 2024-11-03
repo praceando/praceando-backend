@@ -2,24 +2,23 @@ package org.model;
 import org.common.Constants;
 import org.common.Tabela;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Avatar implements Model {
     private int id;
     private String url_avatar;
+    private Date dt_atualizacao;
 
     /** Construtor que inicializa o ID do avatar podendo ser null b64_avatar
      * @param id_avatar ID do avatar
      * @param url_avatar URL da imagem do avatar
      */
-    public Avatar(Integer id_avatar, String url_avatar) {
+    public Avatar(Integer id_avatar, String url_avatar, Date dt_atualizacao) {
         this.url_avatar = url_avatar;
         this.id = id_avatar;
-    }
-
-    public Avatar(String url_avatar) {
-        this.url_avatar = url_avatar;
+        this.dt_atualizacao = dt_atualizacao;
     }
 
     public Avatar(Map<String, String> params) {

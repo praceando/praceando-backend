@@ -3,7 +3,7 @@ package org.model;
 import org.common.Constants;
 import org.common.Senha;
 import org.common.Tabela;
-
+import java.sql.Date;
 import java.util.Map;
 
 public class Admin implements Model {
@@ -12,14 +12,16 @@ public class Admin implements Model {
     private final String email;
     private final boolean is_ativo;
     private final Senha senha;
+    private Date dt_atualizacao;
 
     /** Construtor que inicializa todos os atributos da classe Admin
      * @param id ID do administrador
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(int id, String nome, String email, Senha senha, boolean is_ativo) {
+    public Admin(int id, String nome, String email, Senha senha, boolean is_ativo, Date dt_atualizacao) {
         this(nome, email, senha, is_ativo);
+        this.dt_atualizacao = dt_atualizacao;
         this.id = id;
     }
 

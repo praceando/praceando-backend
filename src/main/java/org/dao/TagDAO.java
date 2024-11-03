@@ -26,7 +26,8 @@ public class TagDAO extends DAOGeneric<Tag> {
                 rs.getInt("id_tag"),
                 rs.getString("nome"),
                 rs.getString("categoria"),
-                rs.getString("descricao")
+                rs.getString("descricao"),
+                rs.getDate("dt_atualizacao")
         );
     }
 
@@ -37,7 +38,7 @@ public class TagDAO extends DAOGeneric<Tag> {
      */
     @Override
     protected PreparedStatement getInserirQuery(Tag tag) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO tag (nome, categoria, descricao) VALUES (?,?,?)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO tag (nome, categoria, descricao, dt_atualizacao) VALUES (?,?,?,current_date)");
         ps.setString(1, tag.getNome());
         ps.setString(2, tag.getCategoria());
         ps.setString(3, tag.getDescricao());
@@ -52,7 +53,7 @@ public class TagDAO extends DAOGeneric<Tag> {
      */
     @Override
     protected PreparedStatement getAlterarQuery(Tag tag) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE tag SET nome = ?, categoria = ?, descricao = ? WHERE id_tag = ?");
+        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE tag SET nome = ?, categoria = ?, descricao = ?, dt_atualizacao = current_date WHERE id_tag = ?");
 
         // SETANDO O VALOR DOS PARÂMETROS
         ps.setString(1, tag.getNome());

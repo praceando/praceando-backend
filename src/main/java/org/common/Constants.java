@@ -72,6 +72,7 @@ public class Constants {
             LinkedHashMap<String, String> colunas = new LinkedHashMap<>();
             colunas.put("id", "ID");
             colunas.put("url_avatar", "URL");
+            colunas.put("dt_atualizacao", "Data de Atualização");
             return colunas;
         }
     };
@@ -91,6 +92,7 @@ public class Constants {
             colunas.put("nome", "Nome");
             colunas.put("categoria", "Categoria");
             colunas.put("descricao", "Descrição");
+            colunas.put("dt_atualizacao", "Data de Atualização");
             return colunas;
         }
     };
@@ -108,6 +110,7 @@ public class Constants {
             LinkedHashMap<String, String> colunas = new LinkedHashMap<>();
             colunas.put("id", "ID");
             colunas.put("descricao", "Descrição");
+            colunas.put("dt_atualizacao", "Data de Atualização");
             return colunas;
         }
     };
@@ -128,6 +131,7 @@ public class Constants {
             colunas.put("email", "E-mail");
             colunas.put("is_ativo", "Ativo");
             colunas.put("senha", "Senha");
+            colunas.put("dt_atualizacao", "Data de Atualização");
             return colunas;
         }
     };
@@ -171,6 +175,7 @@ public class Constants {
             colunas.put("nome", "Nome");
             colunas.put("lat", "Latitude");
             colunas.put("lon", "Longitude");
+            colunas.put("dt_atualizacao", "Data de Atualização");
             return colunas;
         }
     };

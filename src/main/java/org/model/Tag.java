@@ -3,6 +3,7 @@ package org.model;
 import org.common.Constants;
 import org.common.Tabela;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,16 +13,18 @@ public class Tag implements Model {
     private String nome;
     private String categoria;
     private String descricao;
+    private Date dt_atualizacao;
 
     /**Construtor que inicializa os atributos da classe Tag
      * @param id ID da tag
      * @param nome Nome da tag
      */
-    public Tag(Integer id, String nome, String categoria, String descricao) {
+    public Tag(Integer id, String nome, String categoria, String descricao, Date dt_atualizacao) {
         this.nome = nome;
         this.id = id;
         this.categoria = categoria;
         this.descricao = descricao;
+        this.dt_atualizacao = dt_atualizacao;
     }
 
     /**

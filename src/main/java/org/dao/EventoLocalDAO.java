@@ -27,7 +27,8 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
                 rs.getInt("id_evento_local"),
                 rs.getString("nome"),
                 rs.getBigDecimal("lat"),
-                rs.getBigDecimal("lon")
+                rs.getBigDecimal("lon"),
+                rs.getDate("dt_atualizacao")
         );
     }
 
@@ -38,7 +39,7 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
      */
     @Override
     protected PreparedStatement getInserirQuery(EventoLocal local) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO evento_local (nome, lat, long) values (?,?,?)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO evento_local (nome, lat, lon, dt_atualizacao) values (?,?,?,current_timestamp)");
         ps.setString(1, local.getNome());
         ps.setBigDecimal(2, local.getLat());
         ps.setBigDecimal(3, local.getLon());
@@ -52,7 +53,7 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
      */
     @Override
     protected PreparedStatement getAlterarQuery(EventoLocal local) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE evento_local SET nome = ?, lat = ?, long = ? WHERE id_evento_local = ?");
+        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE evento_local SET nome = ?, lat = ?, lon = ? WHERE id_evento_local = ?");
         ps.setString(1, local.getNome());
         ps.setBigDecimal(2, local.getLat());
         ps.setBigDecimal(3, local.getLon());

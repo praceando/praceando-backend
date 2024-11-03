@@ -3,6 +3,7 @@ import org.common.Constants;
 import org.common.Tabela;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,27 +12,21 @@ public class EventoLocal implements Model {
     private String nome;
     private BigDecimal lat;
     private BigDecimal lon;
+    private Date dt_atualizacao;
 
     /** Construtor que inicia os atributos da classe
+     * @param id ID do local
      * @param nome Nome do evento
      * @param lat Latitude do local do evento
      * @param lon Longitude do local do evento
+     * @param dt_atualizacao Data da última alteração do local do evento
      */
-    public EventoLocal(String nome, BigDecimal lat, BigDecimal lon) {
+    public EventoLocal(Integer id, String nome, BigDecimal lat, BigDecimal lon, Date dt_atualizacao) {
+        this.id = id;
         this.nome = nome;
         this.lat = lat;
         this.lon = lon;
-    }
-
-    /** Construtor que inicia os atributos da classe e o id do evento
-     * @param id
-     * @param nome
-     * @param lat
-     * @param lon
-     */
-    public EventoLocal(int id, String nome, BigDecimal lat, BigDecimal lon) {
-        this(nome, lat, lon);
-        this.id = id;
+        this.dt_atualizacao = dt_atualizacao;
     }
 
     /** Construtor que recebe um map de parâmetros e cria um objeto do tipo EventoLocal

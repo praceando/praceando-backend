@@ -22,7 +22,6 @@ public class DAOManager {
      */
     public static DAOGeneric<Model> getDAO(String nome) {
         for (DAOGeneric<Model> dao : DAOS) {
-            System.out.println(dao.getTabela().getNomeBanco());
             if (dao.getTabela().matches(nome)) {
                 return dao;
             }

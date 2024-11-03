@@ -2,12 +2,14 @@ package org.model;
 import org.common.Constants;
 import org.common.Tabela;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class FraseSustentavel implements Model {
     private int id;
     private String descricao;
+    private Date dt_atualizacao;
 
     /**
      * Construtor que inicializa todos os atributos
@@ -15,17 +17,10 @@ public class FraseSustentavel implements Model {
      * @param id ID da frase sustentável
      * @param descricao Descrição da frase sustentável
      */
-    public FraseSustentavel(int id, String descricao) {
-        this(descricao);
+    public FraseSustentavel(int id, String descricao, Date dt_atualizacao) {
         this.id = id;
-    }
-
-    /**
-     * Construtor que inicializa apenas o atributo ds_frase
-     * @param descricao Descrição da frase sustentável
-     */
-    public FraseSustentavel(String descricao) {
         this.descricao = descricao;
+        this.dt_atualizacao = dt_atualizacao;
     }
 
     /** Método que retorna o nome da entidade no banco de dados
