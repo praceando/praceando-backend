@@ -89,8 +89,8 @@ label {
 }
 
 #gradiente {
-/GAMIBARRA MUITO FORTE/
-background: linear-gradient(30deg, #4158D0, #C850C0, #FFCC70);
+    /*GAMIBARRA MUITO FORTE*/
+    background: linear-gradient(30deg, #4158D0, #C850C0, #FFCC70);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
