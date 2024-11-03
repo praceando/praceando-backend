@@ -28,6 +28,7 @@
     <%}
     %>
     <a href="search-form?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
+    <a href="home.html">Voltar para a Home</a>
 
     <table class="tabelaSaida">
         <tr>
