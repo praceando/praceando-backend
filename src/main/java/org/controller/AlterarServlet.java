@@ -59,6 +59,7 @@ public class AlterarServlet extends HttpServlet {
                 SqlExitDML saida = dao.alterar(criado);
 
                 // Exibe saída da alteração
+                request.setAttribute("tabela", dao.getTabela());
                 request.setAttribute("saida", saida);
                 RequestDispatcher rd = request.getRequestDispatcher("inserirSaida.jsp");
                 rd.forward(request, response);

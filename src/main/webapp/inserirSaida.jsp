@@ -1,5 +1,6 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="org.common.SqlExitDML" %>
+<%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,12 +8,15 @@
 </head>
 <body>
   <%
-    String tabelaNome = request.getParameter("tabelaNome");
-    Map<String, String> params = (Map<String, String>) request.getAttribute("params");
-    SqlExitDML saida = (SqlExitDML) request.getAttribute("saida");
+      Tabela tabela = (Tabela) request.getAttribute("tabela");
+      String tabelaInterface = tabela.getNomeInterface();
+      String tabelaBanco = tabela.getNomeBanco();
+
+      Map<String, String> params = (Map<String, String>) request.getAttribute("params");
+      SqlExitDML saida = (SqlExitDML) request.getAttribute("saida");
   %>
 
-  <h1>Tentou inserir na tabela <%=tabelaNome%></h1>
+  <h1>Tentou inserir na tabela de <%=tabelaInterface%></h1>
   <h2>Com parâmetros:</h2>
   <table class="params">
       <tr>
@@ -46,7 +50,7 @@
       %>
   </div>
 
-  <a class="botao-voltar" href="visualizar?tabela=<%=tabelaNome%>">Voltar</a>
+  <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">Voltar</a>
   <br><br>
 </body>
 </html>

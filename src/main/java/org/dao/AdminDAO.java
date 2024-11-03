@@ -1,6 +1,8 @@
 package org.dao;
 
+import org.common.Constants;
 import org.common.Senha;
+import org.common.Tabela;
 import org.model.Admin;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,17 +11,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AdminDAO extends DAOGeneric<Admin> {
-    public boolean isReadOnly() {
-        return false;
-    }
     @Override
-    public String getNomeBanco() {
-        return "admin";
-    }
+    public Tabela getTabela() {return Constants.TABELA_ADMIN;}
 
     @Override
-    public String getNomeInterface() {
-        return "Administradores";
+    public boolean isReadOnly() {
+        return false;
     }
 
     @Override

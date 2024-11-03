@@ -3,8 +3,8 @@ import org.common.Constants;
 import org.common.Senha;
 import org.model.Model;
 import java.lang.reflect.Field;
-import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class HTMLGenerator {
 
@@ -12,81 +12,36 @@ public class HTMLGenerator {
      * @param tabelaBanco Nome da tabela
      * @return Array com as colunas da tabela
      */
+    @Deprecated
     public static String[] getColunasInterface(String tabelaBanco) {
-
-        String[] colunas = new String[]{};
-        // Adiciona as colunas de cada tabela
-        switch (tabelaBanco) {
-            case "admin" -> colunas = new String[]{
-                    "ID", "Nome", "E-mail", "Ativo", "Senha"
-            };
-            case "avatar" -> colunas = new String[]{
-                    "ID", "URL"
-            };
-            case "evento_local" -> colunas = new String[]{
-                    "ID", "Nome", "Latitude", "Longitude"
-            };
-            case "frase_sustentavel" -> colunas = new String[] {
-                    "ID", "Descrição"
-            };
-            case "produto" -> colunas = new String[]{
-                    "ID", "Nome", "Descrição", "Preço", "Categoria",
-                    "Estoque", "Desativação"
-            };
-            case "tag" -> colunas = new String[]{
-                    "ID", "Nome", "Categoria", "Descrição"
-            };
+        try {
+            return Objects.requireNonNull(Constants.getTabela(tabelaBanco)).getColunasInterface();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            throw new NullPointerException("Objeto tabela '" + tabelaBanco + "' não encontrada para extração de colunas da Interface.");
         }
-        // Retorna o array com as colunas
-        return colunas;
     }
 
     /**Obtém as colunas de uma tabela para ser utilizadas no banco.
      * @param tabelaBanco Nome da tabela
      * @return Array com as colunas da tabela
      */
+    @Deprecated
     public static String[] getColunasBanco(String tabelaBanco) {
-
-        String[] colunas = new String[]{};
-
-        // Adiciona as colunas de cada tabela
-        switch (tabelaBanco) {
-            case "admin" -> colunas = new String[]{
-                    "id", "nome", "email", "is_ativo", "senha"
-            };
-            case "avatar" -> colunas = new String[]{
-                    "id", "url_avatar"
-            };
-            case "evento_local" -> colunas = new String[]{
-                    "id", "nome", "lat", "lon"
-            };
-            case "frase_sustentavel" -> colunas = new String[] {
-                    "id", "descricao"
-            };
-            case "produto" -> colunas = new String[]{
-                    "id", "nome", "descricao", "preco", "categoria",
-                    "estoque", "dt_desativacao", "dt_atualizacao"
-            };
-            case "tag" -> colunas = new String[]{
-                    "id", "nome", "categoria", "descricao"
-            };
+        try {
+            return Objects.requireNonNull(Constants.getTabela(tabelaBanco)).getColunasBanco();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            throw new NullPointerException("Objeto tabela '" + tabelaBanco + "' não encontrada para extração de colunas de Banco.");
         }
-        // Retorna o array com as colunas
-        return colunas;
     }
 
     /** Retorna um dicionário contendo as colunas do banco mapeadas com os seus relativos mostrados nas páginas HTML
      * @return Map contendo as colunas no modelo banco -> interface
      */
+    @Deprecated
     public static Map<String, String> getColunas(String tabelaBanco) {
-        Map<String, String> map = new LinkedHashMap<>();
-        String[] colunasBanco = getColunasBanco(tabelaBanco);
-        String[] colunasInterface = getColunasInterface(tabelaBanco);
-
-        for (int i = 0; i < colunasInterface.length; i++) {
-            map.put(colunasBanco[i], colunasInterface[i]);
-        }
-        return map;
+        return Objects.requireNonNull(Constants.getTabela(tabelaBanco)).getColunas();
     }
 
     /** Método para retornar o HTML da linha de um Model

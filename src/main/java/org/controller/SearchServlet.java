@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.common.Tabela;
 import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
@@ -29,6 +30,8 @@ public class SearchServlet extends HttpServlet {
 
         assert dao != null;
         try {
+            Tabela tabela_dao = dao.getTabela();
+
             List<Model> models = dao.visualizar(); // Lidar em caso de models ser null ou vazio
 
             System.out.println("ha! AQUIBOM");
@@ -36,8 +39,8 @@ public class SearchServlet extends HttpServlet {
             orderBy(models, colunaOrderBy, orderType);
 
 
-            boolean canAlter = !dao.isReadOnly() && !dao.getNomeBanco().equals("admin");
-            request.setAttribute("tabelaNome", dao.getNomeInterface());
+            boolean canAlter = !dao.isReadOnly() && !tabela_dao.matches("admin");
+            request.setAttribute("tabela", dao.getTabela());
             request.setAttribute("saida", models);
             request.setAttribute("canAlter", canAlter);
 

@@ -174,7 +174,6 @@ public class Constants {
         }
     };
 
-
     public static final Tabela[] TABELAS = new Tabela[]{
             TABELA_LOG,
             TABELA_AVATAR,
@@ -184,4 +183,18 @@ public class Constants {
             TABELA_PRODUTO,
             TABELA_EVENTO_LOCAL
     };
+
+    /**
+     * Com base no nome da tabela no banco de dados, retorne o objeto tabela
+     * @param nomeBanco Nome do banco
+     * @return Objeto tabela relativo
+     */
+    public static Tabela getTabela(String nomeBanco) {
+        for (Tabela t : TABELAS) {
+            if (t.getNomeBanco().equals(nomeBanco)) {
+                return t;
+            }
+        }
+        return null;
+    }
 }

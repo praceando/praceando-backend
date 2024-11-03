@@ -19,7 +19,10 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         Conexao.conectar();
 
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNomeBanco() + "\" WHERE id_"+ getNomeBanco()+" = ?");
+            PreparedStatement ps = Conexao.conn.prepareStatement(
+                    "SELECT * FROM \""
+                    + this.getTabela().getNomeBanco() + "\" WHERE id_"
+                    + this.getTabela().getNomeBanco() + " = ?");
             System.out.println(ps.toString());
             ps.setObject(1, id);
             ResultSet rs = ps.executeQuery();
@@ -44,7 +47,7 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         List<T> retorno = new LinkedList<>();
 
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getNomeBanco() + "\"");
+            PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getTabela().getNomeBanco() + "\"");
             System.out.println(ps.toString());
 
             ResultSet rs = ps.executeQuery();
@@ -113,7 +116,10 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         Conexao.conectar();
         Throwable throwable;
         try {
-            PreparedStatement ps = Conexao.conn.prepareStatement("DELETE FROM \""+ this.getNomeBanco() + "\" WHERE id_"+ getNomeBanco() +" = ?");
+            PreparedStatement ps = Conexao.conn.prepareStatement(
+                    "DELETE FROM \""
+                    + this.getTabela().getNomeBanco() + "\" WHERE id_"
+                    + this.getTabela().getNomeBanco() +" = ?");
             ps.setInt(1, id);
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);
         } catch (SQLException sqle) {
@@ -125,19 +131,6 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         return new SqlExitDML(throwable);
 
     }
-
-    /** Método para retornar o nome da interface do DAO
-     * @return Retorna o nome em linguagem convencional, serve para ser mostrado nas páginas para o usuário.
-     */
-    public String getNomeInterface() {
-        return getNomeBanco().substring(0, 1).toUpperCase() + getNomeBanco().substring(1);
-    }
-
-    /**
-     * Método para retornar o nome da tabela no banco correspondente ao DAO
-     * @return O Nome da tabela no banco
-     */
-    public abstract String getNomeBanco();
 
     /**
      * Extrai uma entidade da linha atual de um objeto ResultSet

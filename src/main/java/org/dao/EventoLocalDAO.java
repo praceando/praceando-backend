@@ -1,25 +1,19 @@
 package org.dao;
 
+import org.common.Constants;
+import org.common.Tabela;
 import org.model.EventoLocal;
 
 import java.sql.*;
 
 public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
+
+    @Override
+    public Tabela getTabela() {return Constants.TABELA_EVENTO_LOCAL;}
+
+    @Override
     public boolean isReadOnly() {
         return false;
-    }
-
-    /** Método que retorna o nome da tabela correspondente a entidade "EventoLocal"
-     * @return String com o nome da tabela
-     */
-    @Override
-    public String getNomeBanco() {
-        return "evento_local";
-    }
-
-    @Override
-    public String getNomeInterface() {
-        return "Locais dos eventos";
     }
 
     /** Método que retorna a entidade correspondente a tabela "evento_local"

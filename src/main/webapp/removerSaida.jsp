@@ -1,4 +1,5 @@
 <%@ page import="org.common.SqlExitDML" %>
+<%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,10 +7,13 @@
 </head>
 <body>
 <%
+    Tabela tabela = (Tabela) request.getAttribute("tabela");
+    String tabelaInterface = tabela.getNomeInterface();
+    String tabelaBanco = tabela.getNomeBanco();
+
     SqlExitDML saida = (SqlExitDML) request.getAttribute("saida");
-    String tabelaNome = request.getParameter("tabela");
 %>
-    <h1>Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=tabelaNome%>'</h1>
+    <h1>Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=tabelaInterface%>'</h1>
 
     <h2>Saída:</h2>
     <div class="saida">
@@ -23,6 +27,6 @@
         %>
     </div>
 
-    <a class="botao-voltar" href="visualizar?tabela=<%=tabelaNome%>">Voltar</a>
+    <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">Voltar</a>
 </body>
 </html>

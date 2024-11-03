@@ -55,6 +55,7 @@ public class InserirServlet extends HttpServlet {
             if (!dao.isReadOnly()) {
                 SqlExitDML saida = dao.inserir(criado);
 
+                request.setAttribute("tabela", dao.getTabela());
                 request.setAttribute("saida", saida);
                 RequestDispatcher rd = request.getRequestDispatcher("inserirSaida.jsp");
                 rd.forward(request, response);

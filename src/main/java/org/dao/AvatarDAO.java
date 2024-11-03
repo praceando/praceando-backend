@@ -1,4 +1,6 @@
 package org.dao;
+import org.common.Constants;
+import org.common.Tabela;
 import org.model.Avatar;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,18 +8,13 @@ import java.sql.SQLException;
 
 public class AvatarDAO extends DAOGeneric<Avatar> {
 
-    // Método que retorna se a entidade é somente leitura ou não
+    @Override
+    public Tabela getTabela() {return Constants.TABELA_AVATAR;}
+
+    @Override
     public boolean isReadOnly() {
         return false;
     }
-
-    @Override
-    public String getNomeBanco() {
-        return "avatar";
-    }
-
-    @Override
-    public String getNomeInterface() {return "Avatares";}
 
     /** Método que extrai uma entidade do ResultSet
      * @param rs ResultSet com os dados da entidade

@@ -1,4 +1,6 @@
 package org.dao;
+import org.common.Constants;
+import org.common.Tabela;
 import org.model.FraseSustentavel;
 import java.sql.*;
 
@@ -6,16 +8,9 @@ import java.sql.*;
 public class FraseSustentavelDAO extends DAOGeneric<FraseSustentavel> {
 
     @Override
-    public String getNomeBanco() {
-        return "frase_sustentavel";
-    }
+    public Tabela getTabela() {return Constants.TABELA_FRASE_SUSTENTAVEL;}
 
     @Override
-    public String getNomeInterface() {
-        return "Frases sustentáveis";
-    }
-
-
     public boolean isReadOnly() {
         return false;
     }

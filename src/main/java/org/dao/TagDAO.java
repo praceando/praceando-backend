@@ -1,16 +1,17 @@
 package org.dao;
+import org.common.Constants;
+import org.common.Tabela;
 import org.model.Tag;
 import java.sql.*;
 
 
 public class TagDAO extends DAOGeneric<Tag> {
-    public boolean isReadOnly() {
-        return false;
-    }
+    @Override
+    public Tabela getTabela() {return Constants.TABELA_TAG;}
 
     @Override
-    public String getNomeBanco() {
-        return "tag";
+    public boolean isReadOnly() {
+        return false;
     }
 
     /**

@@ -1,14 +1,16 @@
 <%@ page import="java.util.*" %>
 <%@ page import="org.model.Model" %>
 <%@ page import="org.common.html.HTMLGenerator" %>
+<%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <%
     // Pegar os parâmetros oriundos do Servlet
-    String tabelaInterface = (String) request.getAttribute("tabelaNome");
-    String tabelaBanco = request.getParameter("tabela");
+    Tabela tabela = (Tabela) request.getAttribute("tabela");
+    String tabelaInterface = tabela.getNomeInterface();
+    String tabelaBanco = tabela.getNomeBanco();
+    String[] colunas = tabela.getColunasInterface();
 
-    String[] colunas = HTMLGenerator.getColunasInterface(tabelaBanco);
     List<Model> saida = (List<Model>) request.getAttribute("saida");
     boolean canAlter = (boolean) request.getAttribute("canAlter");
 %>

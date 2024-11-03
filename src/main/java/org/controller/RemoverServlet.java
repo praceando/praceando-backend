@@ -33,6 +33,7 @@ public class RemoverServlet extends HttpServlet {
             assert dao != null;
             SqlExitDML saida = dao.remover(id);
 
+            request.setAttribute("tabela", dao.getTabela());
             request.setAttribute("saida", saida);
 
             RequestDispatcher rd = request.getRequestDispatcher("removerSaida.jsp");

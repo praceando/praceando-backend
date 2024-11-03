@@ -1,4 +1,5 @@
 <%@ page import="java.util.Map" %>
+<%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,9 +7,11 @@
 </head>
 <body>
   <%
-    String tabelaBanco = request.getParameter("tabela");
-    String tabelaInterface = (String) request.getAttribute("tabelaInterface");
-    Map<String, String> colunas = (Map<String, String>) request.getAttribute("colunas");
+    Tabela tabela = (Tabela) request.getAttribute("tabela");
+    String tabelaInterface = tabela.getNomeInterface();
+    String tabelaBanco = tabela.getNomeBanco();
+
+    Map<String, String> colunas = tabela.getColunas();
   %>
   <h1>Pesquisar: <%=tabelaInterface%></h1>
 

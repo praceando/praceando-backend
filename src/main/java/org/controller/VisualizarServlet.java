@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.common.Tabela;
 import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
@@ -28,11 +29,13 @@ public class VisualizarServlet extends HttpServlet {
         try {
             DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
             assert dao != null;
-            boolean canAlter = !dao.isReadOnly() && !dao.getNomeBanco().equals("admin");
+
+            Tabela tabela_dao = dao.getTabela();
+            boolean canAlter = !dao.isReadOnly() && !tabela_dao.getNomeBanco().equals("admin");
 
             List<Model> saida = dao.visualizar();
             if (saida != null) {
-                request.setAttribute("tabelaNome", dao.getNomeInterface());
+                request.setAttribute("tabela", tabela_dao);
                 request.setAttribute("saida", saida);
                 request.setAttribute("canAlter", canAlter);
 

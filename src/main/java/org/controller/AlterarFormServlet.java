@@ -36,7 +36,7 @@ public class AlterarFormServlet extends HttpServlet {
 
             // Adiciona o registro a ser alterado ao request
             request.setAttribute("model", model);
-            request.setAttribute("tabelaNome", dao.getNomeInterface());
+            request.setAttribute("tabela", dao.getTabela());
 
             // Encaminha o request para o JSP
             request.getRequestDispatcher("alterar.jsp").forward(request, response);

@@ -1,23 +1,18 @@
 package org.dao;
+import org.common.Constants;
+import org.common.Tabela;
 import org.model.Log;
 
 import java.sql.*;
 
 public class LogDAO extends DAOGeneric<Log> {
+    @Override
+    public Tabela getTabela() {return Constants.TABELA_LOG;}
+
+    @Override
     public boolean isReadOnly() {
         return true;
     }
-
-    /** Método que retorna o nome da tabela correspondente a entidade.
-     * @return Nome da tabela correspondente a entidade
-     */
-    @Override
-    public String getNomeBanco() {
-        return "log";
-    }
-
-    @Override
-    public String getNomeInterface() { return "Logs"; }
 
     /** Método que extrai uma entidade do ResultSet.
      * @param rs ResultSet com a entidade

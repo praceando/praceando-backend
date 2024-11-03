@@ -1,4 +1,5 @@
 <%@ page import="org.common.html.HTMLInput" %>
+<%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,8 +9,9 @@
 <body cz-shortcut-listen="true">
     <div id="linhaEnfeite"></div>
     <%
-        String tabelaBanco = request.getParameter("tabela");
-        String tabelaInterface = (String) request.getAttribute("tabelaNome");
+        Tabela tabela = (Tabela) request.getAttribute("tabela");
+        String tabelaInterface = tabela.getNomeInterface();
+        String tabelaBanco = tabela.getNomeBanco();
     %>
     <p>Formulário de inserção: <span id="gradiente"><%=tabelaInterface%></span></p>
     <div id="centralizar">

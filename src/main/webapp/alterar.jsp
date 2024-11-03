@@ -1,11 +1,14 @@
 <%@ page import="org.common.html.HTMLInput" %>
 <%@ page import="org.model.Model" %>
+<%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <%
-        String tabelaBanco = request.getParameter("tabela");
-        String tabelaInterface = (String) request.getAttribute("tabelaNome");
+        Tabela tabela = (Tabela) request.getAttribute("tabela");
+        String tabelaInterface = tabela.getNomeInterface();
+        String tabelaBanco = tabela.getNomeBanco();
+
         Model model = (Model) request.getAttribute("model");
     %>
 

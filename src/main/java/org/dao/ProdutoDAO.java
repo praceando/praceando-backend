@@ -1,21 +1,18 @@
 package org.dao;
 
+import org.common.Constants;
+import org.common.Tabela;
 import org.model.Produto;
 import java.sql.*;
 
 public class ProdutoDAO extends DAOGeneric<Produto> {
+
+    @Override
+    public Tabela getTabela() {return Constants.TABELA_PRODUTO;}
+
+    @Override
     public boolean isReadOnly() {
         return false;
-    }
-
-    @Override
-    public String getNomeInterface() {
-        return "Produtos";
-    }
-
-    @Override
-    public String getNomeBanco() {
-        return "produto";
     }
 
     /**

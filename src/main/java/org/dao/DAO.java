@@ -1,10 +1,15 @@
 package org.dao;
 import org.common.SqlExitDML;
+import org.common.Tabela;
 import org.model.Model;
 
 import java.util.List;
 
 public interface DAO<T extends Model> {
+    /**
+     * Pegar o objeto tabela relativa ao DAO
+     */
+    Tabela getTabela();
 
     /** Método para visualizar todos os registros de uma entidade
      * @return Lista de entidades de tipo T
