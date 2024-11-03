@@ -16,9 +16,17 @@ public abstract class Tabela {
 //        }
 //        throw new IllegalArgumentException("Tabela do banco " + nomeBanco + " não reconhecida para" + this.nomeInterface);
 //    }
+
+    /**Obtém as colunas da tabela usadas no banco.
+     * @return Array com as colunas da tabela
+     */
     public String[] getColunasBanco() {
         return this.getColunas().keySet().toArray(new String[]{});
     }
+
+    /**Obtém as colunas da tabela para ser utilizadas na interface HTML.
+     * @return Array com as colunas da tabela
+     */
     public String[] getColunasInterface() {
         return this.getColunas().values().toArray(new String[]{});
     }

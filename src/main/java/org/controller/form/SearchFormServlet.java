@@ -1,4 +1,4 @@
-package org.controller;
+package org.controller.form;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

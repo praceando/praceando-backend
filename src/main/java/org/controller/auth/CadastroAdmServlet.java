@@ -1,4 +1,4 @@
-package org.controller;
+package org.controller.auth;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

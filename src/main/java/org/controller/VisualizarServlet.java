@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.common.Tabela;
+import org.controller.util.ErrorRedirect;
 import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;

@@ -1,9 +1,10 @@
-package org.controller;
+package org.controller.form;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.controller.util.ErrorRedirect;
 import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
