@@ -21,6 +21,7 @@ public class Constants {
     // Formato de data definido como "dd/MM/yyyy"
     // Usado para formatar e analisar datas nesse padrão
     public static final SimpleDateFormat FORMATO_DATA = new SimpleDateFormat("dd/MM/yyyy");
+    public static final SimpleDateFormat FORMATO_DATA_AMERICANO = new SimpleDateFormat("yyyy-MM-dd");
 
     public static final String[] SELECT_CATEGORIA_TAGS = {
             "Esportes e Atividades Físicas",

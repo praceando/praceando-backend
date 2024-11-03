@@ -3,7 +3,7 @@ import org.common.Constants;
 import org.common.Tabela;
 
 import java.text.ParseException;
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,9 +27,10 @@ public class Produto implements Model {
      * @param categoria      Categoria do produto (ecobag)
      * @param estoque        Quantidade de produtos em estoque
      * @param dt_desativacao Data de desativação do Produto
+     * @param dt_atualizacao Data da última alteração do produto
      */
     public Produto(Integer id, String nome, String descricao, double preco,
-                   String categoria, int estoque, Date dt_desativacao) {
+                   String categoria, int estoque, Date dt_desativacao, Date dt_atualizacao) {
 
         this.id = id;
         this.estoque = estoque;
@@ -38,6 +39,7 @@ public class Produto implements Model {
         this.preco = preco;
         this.categoria = categoria;
         this.dt_desativacao = dt_desativacao;
+        this.dt_atualizacao = dt_atualizacao;
 
     }
 
@@ -53,8 +55,12 @@ public class Produto implements Model {
         this.descricao = params.get("descricao");
         this.preco = Double.parseDouble(params.get("preco"));
         this.categoria =  params.get("categoria");
-        this.dt_desativacao = Constants.FORMATO_DATA.parse(params.get("dt_desativacao"));
         this.estoque = Integer.parseInt(params.get("estoque"));
+
+        String dt_desativacao = params.get("dt_desativacao");
+        if (!dt_desativacao.isBlank()) {
+            this.dt_desativacao = new Date(Constants.FORMATO_DATA_AMERICANO.parse(dt_desativacao).getTime());
+        }
     }
 
     /**Getter para o estoque do produto
@@ -93,7 +99,9 @@ public class Produto implements Model {
         return this.categoria;
     }
 
-    /**Getter para a data de desativação do produto
+    /**
+     * Getter para a data de desativação do produto
+     *
      * @return Data de desativação do produto
      */
     public Date getDt_desativacao() {
@@ -129,7 +137,7 @@ public class Produto implements Model {
         params.put("descricao", this.descricao);
         params.put("preco", Double.toString(this.preco));
         params.put("estoque", Integer.toString(this.estoque));
-        params.put("dt_desativacao", this.dt_desativacao.toString());
+        params.put("dt_desativacao", this.dt_desativacao == null ? null : Constants.FORMATO_DATA.format(this.dt_desativacao));
         return params;
     }
 }

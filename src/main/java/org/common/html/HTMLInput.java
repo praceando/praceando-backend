@@ -114,6 +114,7 @@ public class HTMLInput {
                     new HTMLDecimalInput("preco", "Preço (R$)", ".01", true, false),
                     new HTMLInput("estoque", "Estoque", "number", true),
                     new HTMLInput("categoria", "Categoria", "text", true),
+                    new HTMLInput("dt_desativacao", "Data de Desativação", "date", false, false, "")
             };
 
             case "tag" -> inputs = new HTMLInput[]{
