@@ -4,6 +4,8 @@ import org.common.Tabela;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.sql.Time;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,6 +14,8 @@ public class EventoLocal implements Model {
     private String nome;
     private BigDecimal lat;
     private BigDecimal lon;
+    private Time dt_func_ini;
+    private Time dt_func_fim;
     private Date dt_atualizacao;
 
     /** Construtor que inicia os atributos da classe
@@ -21,24 +25,31 @@ public class EventoLocal implements Model {
      * @param lon Longitude do local do evento
      * @param dt_atualizacao Data da última alteração do local do evento
      */
-    public EventoLocal(Integer id, String nome, BigDecimal lat, BigDecimal lon, Date dt_atualizacao) {
+    public EventoLocal(Integer id, String nome, BigDecimal lat,
+                       BigDecimal lon, Time dt_func_ini, Time dt_func_fim,
+                       Date dt_atualizacao) {
         this.id = id;
         this.nome = nome;
         this.lat = lat;
         this.lon = lon;
+        this.dt_func_ini = dt_func_ini;
+        this.dt_func_fim = dt_func_fim;
         this.dt_atualizacao = dt_atualizacao;
     }
 
     /** Construtor que recebe um map de parâmetros e cria um objeto do tipo EventoLocal
      * @param params Map de parâmetros
      */
-    public EventoLocal(Map<String, String > params) {
+    public EventoLocal(Map<String, String > params) throws ParseException {
         if (params.containsKey("id")) {
             this.id = Integer.parseInt(params.get("id"));
         }
         this.nome = params.get("nome");
-        this.lat = new BigDecimal(params.get("latitude"));
-        this.lon = new BigDecimal(params.get("longitude"));
+        this.lat = new BigDecimal(params.get("lat"));
+        this.lon = new BigDecimal(params.get("lon"));
+
+        this.dt_func_ini = new Time(Constants.FORMATO_TEMPO.parse(params.get("dt_func_ini")).getTime());
+        this.dt_func_fim = new Time(Constants.FORMATO_TEMPO.parse(params.get("dt_func_fim")).getTime());
     }
 
     /** Getter do nome do evento
@@ -60,6 +71,20 @@ public class EventoLocal implements Model {
      */
     public BigDecimal getLon() {
         return this.lon;
+    }
+
+    /** Getter da data de início de funcionamento do local
+     * @return data de início de funcionamento
+     */
+    public Time getDt_func_ini() {
+        return this.dt_func_ini;
+    }
+
+    /** Getter da data de início de funcionamento do local
+     * @return data de fim de funcionamento
+     */
+    public Time getDt_func_fim() {
+        return this.dt_func_fim;
     }
 
     public Tabela getTabela() {
@@ -86,8 +111,8 @@ public class EventoLocal implements Model {
     public Map<String, String> getParams() {
         Map<String, String> params = new HashMap<>();
         params.put("nome", this.nome);
-        params.put("latitude", this.lat.toString());
-        params.put("longitude", this.lon.toString());
+        params.put("lat", this.lat.toString());
+        params.put("lon", this.lon.toString());
         return params;
     }
 }

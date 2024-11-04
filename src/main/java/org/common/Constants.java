@@ -22,6 +22,7 @@ public class Constants {
     // Usado para formatar e analisar datas nesse padrão
     public static final SimpleDateFormat FORMATO_DATA = new SimpleDateFormat("dd/MM/yyyy");
     public static final SimpleDateFormat FORMATO_DATA_AMERICANO = new SimpleDateFormat("yyyy-MM-dd");
+    public static final SimpleDateFormat FORMATO_TEMPO = new SimpleDateFormat("hh:mm");
 
     public static final String[] SELECT_CATEGORIA_TAGS = {
             "Esportes e Atividades Físicas",
@@ -175,6 +176,8 @@ public class Constants {
             colunas.put("nome", "Nome");
             colunas.put("lat", "Latitude");
             colunas.put("lon", "Longitude");
+            colunas.put("dt_func_ini", "Abre em");
+            colunas.put("dt_func_fim", "Fecha em");
             colunas.put("dt_atualizacao", "Data de Atualização");
             return colunas;
         }

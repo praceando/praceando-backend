@@ -28,8 +28,10 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
                 rs.getString("nome"),
                 rs.getBigDecimal("lat"),
                 rs.getBigDecimal("lon"),
+                rs.getTime("dt_func_ini"),
+                rs.getTime("dt_func_fim"),
                 rs.getDate("dt_atualizacao")
-        );
+                );
     }
 
     /** Método que retorna a query para inserir um novo registro na tabela "evento_local"
@@ -39,10 +41,12 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
      */
     @Override
     protected PreparedStatement getInserirQuery(EventoLocal local) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO evento_local (nome, lat, lon, dt_atualizacao) values (?,?,?,current_timestamp)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO evento_local (nome, lat, lon, dt_func_ini, dt_func_fim, dt_atualizacao) values (?,?,?,?,?,current_timestamp)");
         ps.setString(1, local.getNome());
         ps.setBigDecimal(2, local.getLat());
         ps.setBigDecimal(3, local.getLon());
+        ps.setTime(4, local.getDt_func_ini());
+        ps.setTime(5, local.getDt_func_fim());
         return ps;
     }
 
@@ -53,11 +57,13 @@ public class EventoLocalDAO extends DAOGeneric<EventoLocal> {
      */
     @Override
     protected PreparedStatement getAlterarQuery(EventoLocal local) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE evento_local SET nome = ?, lat = ?, lon = ? WHERE id_evento_local = ?");
+        PreparedStatement ps = Conexao.conn.prepareStatement("UPDATE evento_local SET nome = ?, lat = ?, lon = ?, dt_func_ini = ?, dt_func_fim = ?, dt_atualizacao = current_timestamp WHERE id_evento_local = ?");
         ps.setString(1, local.getNome());
         ps.setBigDecimal(2, local.getLat());
         ps.setBigDecimal(3, local.getLon());
-        ps.setInt(4, local.getId());
+        ps.setTime(4, local.getDt_func_ini());
+        ps.setTime(5, local.getDt_func_fim());
+        ps.setInt(6, local.getId());
         return ps;
     }
 }

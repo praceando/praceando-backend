@@ -22,7 +22,9 @@ public class HTMLGenerator {
                 Object value = field.get(model);
 
                 // Converter valor para cada caso
-                if (value instanceof java.util.Date) {
+                if (value instanceof java.sql.Time) {
+                    value = Constants.FORMATO_TEMPO.format(value);
+                } else if (value instanceof java.sql.Date) {
                     value = Constants.FORMATO_DATA.format(value);
                 } else if (value instanceof Senha) {
                     value = "************";

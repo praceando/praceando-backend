@@ -100,8 +100,10 @@ public class HTMLInput {
 
             case "evento_local" -> inputs = new HTMLInput[]{
                     new HTMLInput("nome", "Nome", "text", true),
-                    new HTMLDecimalInput("latitude", "Latitude", ".00000001", true, false),
-                    new HTMLDecimalInput("longitude", "Longitude", ".00000001", true, false)
+                    new HTMLDecimalInput("lat", "Latitude", ".00000001", true, false),
+                    new HTMLDecimalInput("lon", "Longitude", ".00000001", true, false),
+                    new HTMLInput("dt_func_ini", "Funcionamento início", "time", true),
+                    new HTMLInput("dt_func_fim", "Funcionamento fim", "time", true),
             };
 
             case "frase_sustentavel" -> inputs = new HTMLInput[]{
