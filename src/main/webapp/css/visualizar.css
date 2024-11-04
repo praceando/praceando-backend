@@ -1,0 +1,88 @@
+.box {
+    background-color: #F6E6E6;
+    border-radius: 40px;
+    padding: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    color: #333;
+    background-color: #FAF9F9;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: #E8BABA;
+    padding: 12px;
+    color: #4D4D4D;
+}
+
+td {
+    background-color: #F5DADA;
+    padding: 12px;
+    color: #4D4D4D;
+}
+
+.tabelaSaida {
+    border-spacing: 0 10px;
+    width: 100%;
+    border-radius: 40px;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    border-radius: 40px;
+    margin-top: 20px;
+}
+
+.visuBtn {
+    margin: 0 5px;
+}
+
+#novoBtn, #atualizarBtn, #removerBtn, #filtrarBtn, #voltarBtn {
+    background-color: #E8BABA;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#novoBtn:hover, #atualizarBtn:hover, #removerBtn:hover, #filtrarBtn:hover, #voltarBtn:hover {
+    background-color: #D48B8B;
+}
+
+img {
+    height: 30px;
+    width: 30px;
+}
+
+#atualizarBtn, #removerBtn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8BABA;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 50px;
+}

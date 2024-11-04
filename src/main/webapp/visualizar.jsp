@@ -17,48 +17,57 @@
 
 <head>
     <title>Visualizando: <%=tabelaInterface%></title>
+    <link rel="stylesheet" href="css/visualizar.css">
 </head>
 <body>
-    <h1>Visualizando: <%=tabelaInterface%></h1>
-    <h2><i><%=saida.size()%> Elementos listados...</i></h2>
+<div class="box">
+    <h1><%=tabelaInterface%></h1>
+    <h2><%=saida.size()%> Elementos listados</h2>
 
     <%if(canAlter) {
     %>
-        <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
+    <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
     <%}
     %>
-    <a href="search-form?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
-    <a href="home.html">Voltar para a Home</a>
+    <a class="visuBtn" id="filtrarBtn" href="search-form?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
+    <a class="visuBtn" id="voltarBtn" href="home.html">Voltar</a>
 
     <table class="tabelaSaida">
-        <tr>
-            <%if (canAlter) {
-            %>
-                <td>Ações</td>
-                <td>Ações</td>
-            <%}
-            %>
+        <div class="conteudo">
+            <tr>
+                <%if (canAlter) {
+                %>
+                <th>Ações</th>
+                <%}
+                %>
 
-            <%for (String coluna : colunas) {
+                <%for (String coluna : colunas) {
+                %>
+                <th><%=coluna%></th>
+                <%}
+                %>
+            </tr>
+            <%for (Model m : saida) {
             %>
-                    <td><%=coluna%></td>
-            <%}
+            <tr>
+                <%if (canAlter) {
+                %>
+                <td>
+                    <a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
+                        <img src="assets/editar.png" alt="editar">
+                    </a>
+                    <a class="visuBtn" id="removerBtn" href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
+                        <img src="assets/excluir.png" alt="excluir">
+                    </a>
+                </td>
+                <%}
+                %>
+                <%=HTMLGenerator.linhaFromModel(m)%>
+            </tr>
+            <%  }
             %>
-        </tr>
-        <%for (Model m : saida) {
-        %>
-              <tr>
-                  <%if (canAlter) {
-                  %>
-                  <td><a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">Alterar</a></td>
-                  <td><a class="visuBtn" id="removerBtn" href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">Excluir</a></td>
-                  <%}
-                  %>
-
-                  <%=HTMLGenerator.linhaFromModel(m)%>
-              </tr>
-        <%  }
-        %>
+        </div>
     </table>
+</div>
 </body>
 </html>
