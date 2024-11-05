@@ -15,15 +15,6 @@ body {
     justify-content: center;
 }
 
-#fundoIrregular {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 200px;
-    height: 130px;
-    background-color: #fff0f5;
-    clip-path: ellipse(61% 45% at 25% 42%);
-}
 
 img {
     position: absolute;
@@ -32,24 +23,20 @@ img {
     left: 10px;
 }
 
-#textoEnfeite {
-    position: absolute;
-    color: #FFFFFF;
-    font-size: 70px;
-    top: 550px;
-    left: 84%;
-}
-
 #caixaLogin {
     width: 55%;
     height: 65%;
-    background-color: #070709;
+    background-color: #020203;
     border-radius: 34px;
     position: relative;
     padding: 40px;
+    top: 0px;
 }
 
+
 #textoPrincipal {
+    display: flex;
+    justify-content: center;
     position: relative;
     top: 10px;
     color: #B6AAAA;
@@ -64,7 +51,7 @@ img {
     font-size: 30px;
     font-family: 'DM Sans', sans-serif;
     top: -32px;
-    left: 278px;
+    left: 525px;
     width: 10px;
     height: 10px;
 }
@@ -89,7 +76,7 @@ img {
     border-radius: 10px;
     color: #E5E7EB;
     padding: 10px;
-    background-color: #111112;
+    background-color: #1e1f22;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     height: 40px;
     width: 299px;
@@ -133,6 +120,11 @@ img {
 }
 
 form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
     color: #9CA3AF;
     font-size: 13px;
 }
@@ -290,4 +282,3 @@ div img {
         transition: 1s;
     }
 }
-
