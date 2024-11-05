@@ -23,7 +23,6 @@ public class Conexao {
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
-        System.out.println("Conexão é null? " + (conn == null));
         if (conn == null) {
             throw new ConnectionIsNullException("Não foi possível se conectar com o banco de dados do Praceando.");
         }

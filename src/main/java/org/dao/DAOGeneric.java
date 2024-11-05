@@ -23,7 +23,6 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
                     "SELECT * FROM \""
                     + this.getTabela().getNomeBanco() + "\" WHERE id_"
                     + this.getTabela().getNomeBanco() + " = ?");
-            System.out.println(ps.toString());
             ps.setObject(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -48,7 +47,6 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
 
         try {
             PreparedStatement ps = Conexao.conn.prepareStatement("SELECT * FROM \"" + this.getTabela().getNomeBanco() + "\"");
-            System.out.println(ps.toString());
 
             ResultSet rs = ps.executeQuery();
 
