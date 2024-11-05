@@ -54,7 +54,7 @@
                     <%if (canAlter) {
                     %>
                     <td>
-                        <a class="visuBtn" id="atualizarBtn" data-href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
+                        <a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
                             <img src="assets/editar.png" alt="editar">
                         </a>
                         <a class="visuBtn botao-excluir" id="removerBtn" data-href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
