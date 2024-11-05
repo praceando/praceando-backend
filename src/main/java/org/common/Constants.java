@@ -60,10 +60,9 @@ public class Constants {
         }
     };
 
-          /*==========================================================================================
-      ||                                 Retornando as tabelas                                     ||
-      ==========================================================================================*/
-
+    /**
+     * Objeto tabela do Avatar
+     */
     public static final Tabela TABELA_AVATAR = new Tabela() {
         @Override public String getNomeBanco() {
             return "avatar";
