@@ -13,14 +13,25 @@
     %>
 
     <title>Alterando ID <%=model.getId()%> da tabela <%=tabelaInterface%></title>
+
+    <link rel="stylesheet" href="./css/inserir.css">
 </head>
 <body>
 
-    <h1>Formulário de atualização: <%=tabelaInterface%></h1>
-    <form method="post" action="alterar-done">
-        <input type="hidden" name="tabelaNome" value="<%=tabelaBanco%>">
-        <%=HTMLInput.getForm(tabelaBanco, model)%>
-        <button type="submit">Alterar</button>
-    </form>
+    <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">
+        <img src="assets/voltar.png" alt="Voltar">
+    </a>
+
+    <p>Alterando ID <%=model.getId()%> da tabela <b><%=tabelaInterface%></b></p>
+
+    <div id="centralizar">
+        <div id="caixaInsert">
+            <form method="post" action="alterar-done">
+                <input type="hidden" name="tabelaNome" value="<%=tabelaBanco%>">
+                <%=HTMLInput.getForm(tabelaBanco, model)%>
+                <button type="submit" id="botaoInserir">Alterar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

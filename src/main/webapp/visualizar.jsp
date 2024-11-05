@@ -18,56 +18,72 @@
 <head>
     <title>Visualizando: <%=tabelaInterface%></title>
     <link rel="stylesheet" href="css/visualizar.css">
+    <link rel="stylesheet" href="css/removePopUp.css">
 </head>
 <body>
-<div class="box">
-    <h1><%=tabelaInterface%></h1>
-    <h2><%=saida.size()%> Elementos listados</h2>
+    <div class="box">
+        <h1><%=tabelaInterface%></h1>
+        <h2><%=saida.size()%> Elementos listados</h2>
 
-    <%if(canAlter) {
-    %>
-    <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
-    <%}
-    %>
-    <a class="visuBtn" id="filtrarBtn" href="search-form?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
-    <a class="visuBtn" id="voltarBtn" href="home.html">Voltar</a>
+        <%if(canAlter) {
+        %>
+        <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
+        <%}
+        %>
+        <a class="visuBtn" id="filtrarBtn" href="search-form?tabela=<%=tabelaBanco%>">Filtrar e pesquisar</a>
+        <a class="visuBtn" id="voltarBtn" href="home.html">Voltar</a>
 
-    <table class="tabelaSaida">
-        <div class="conteudo">
-            <tr>
-                <%if (canAlter) {
-                %>
-                <th>Ações</th>
-                <%}
-                %>
+        <table class="tabelaSaida">
+            <div class="conteudo">
+                <tr>
+                    <%if (canAlter) {
+                    %>
+                    <th>Ações</th>
+                    <%}
+                    %>
 
-                <%for (String coluna : colunas) {
+                    <%for (String coluna : colunas) {
+                    %>
+                    <th><%=coluna%></th>
+                    <%}
+                    %>
+                </tr>
+                <%for (Model m : saida) {
                 %>
-                <th><%=coluna%></th>
-                <%}
+                <tr>
+                    <%if (canAlter) {
+                    %>
+                    <td>
+                        <a class="visuBtn" id="atualizarBtn" data-href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
+                            <img src="assets/editar.png" alt="editar">
+                        </a>
+                        <a class="visuBtn botao-excluir" id="removerBtn" data-href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
+                            <img src="assets/excluir.png" alt="excluir">
+                        </a>
+                    </td>
+                    <%}
+                    %>
+                    <%=HTMLGenerator.linhaFromModel(m)%>
+                </tr>
+                <%  }
                 %>
-            </tr>
-            <%for (Model m : saida) {
-            %>
-            <tr>
-                <%if (canAlter) {
-                %>
-                <td>
-                    <a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
-                        <img src="assets/editar.png" alt="editar">
-                    </a>
-                    <a class="visuBtn" id="removerBtn" href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
-                        <img src="assets/excluir.png" alt="excluir">
-                    </a>
-                </td>
-                <%}
-                %>
-                <%=HTMLGenerator.linhaFromModel(m)%>
-            </tr>
-            <%  }
-            %>
+            </div>
+        </table>
+
+
+    </div>
+
+    <div id="modal-confirmacao" class="modal">
+        <div class="modal-conteudo">
+            <span id="fechar-modal" class="fechar">&times;</span>
+            <div class="corpo-modal">
+                <img src="assets/alert.png" alt="Imagem de Confirmação" class="imagem-confirmacao">
+                <p>Você deseja mesmo excluir esse registro em <strong><%=tabelaInterface%></strong>?</p>
+            </div>
+            <button id="confirmar-exclusao">Sim, excluir</button>
+            <button id="cancelar-exclusao">Cancelar</button>
         </div>
-    </table>
-</div>
+    </div>
+    <script src="js/removerPopUp.js"></script>
 </body>
 </html>
