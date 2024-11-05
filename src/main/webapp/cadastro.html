@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Administrador</title>
+    <link rel="stylesheet" href="./css/inserir.css">
 </head>
-<body>
-    <h1>Cadastrar um novo administrador</h1>
-    <form action="cadastro-adm" method="post">
+<body cz-shortcut-listen="true">
 
-        <div class="input-container" id="container-Nome">
-            <label for="nome" id="labelNome">Senha</label>
-            <input type="password" id="nome" name="senha" class="inputForm" placeholder="Nome do usuário" required/>
+    <a class="botao-voltar" href="home.html">
+        <img src="assets/voltar.png" alt="Voltar">
+    </a>
+
+    <p>Cadastro de um novo administrador</p>
+
+    <div id="centralizar">
+        <div id="caixaInsert">
+            <form action="cadastro-adm" method="post">
+
+                <div class="inputContainer" id="container-Nome">
+                    <label for="nome" id="labelNome">Nome</label>
+                    <input type="password" id="nome" name="senha" class="inputForm" placeholder="Nome do usuário" required/>
+                </div>
+
+
+                <div class="inputContainer" id="container-Email">
+                    <label for="email" id="labelEmail">E-mail</label>
+                    <input type="email" id="email" name="email" class="inputForm" placeholder="Digite seu e-mail" required/>
+                </div>
+
+                <div class="inputContainer" id="container-Senha">
+                    <label for="senha" id="labelSenha">Senha</label>
+                    <input type="password" id="senha" name="senha" class="inputForm" placeholder="Digite sua senha" required/>
+                </div>
+
+
+                <div class="inputContainer" id="container-BdCod">
+                    <label for="bdcod" id="labelBdCod">Acesso</label>
+                    <input type="password" id="bdcod" name="bdcod" class="inputForm" placeholder="Código de acesso do banco de dados" required/>
+                </div>
+                <button type="submit" id="botaoInserir">Cadastrar</button>
+            </form>
         </div>
-
-
-        <div class="input-container" id="container-Email">
-            <label for="email" id="labelEmail">E-mail</label>
-            <input type="email" id="email" name="email" class="inputForm" placeholder="Digite seu e-mail" required/>
-        </div>
-
-        <div class="input-container" id="container-Senha">
-            <label for="senha" id="labelSenha">Senha</label>
-            <input type="password" id="senha" name="senha" class="inputForm" placeholder="Digite sua senha" required/>
-        </div>
-
-
-        <div class="input-container" id="container-BdCod">
-            <label for="bdcod" id="labelBdCod">Código de acesso</label>
-            <input type="password" id="bdcod" name="bdcod" class="inputForm" placeholder="Código de acesso do banco de dados" required/>
-        </div>
-        <button type="submit">Entrar</button>
-    </form>
+    </div>
 </body>
 </html>
