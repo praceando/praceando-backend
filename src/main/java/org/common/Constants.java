@@ -196,7 +196,7 @@ public class Constants {
     /**
      * Com base no nome da tabela no banco de dados, retorne o objeto tabela
      * @param nomeBanco Nome do banco
-     * @return Objeto tabela relativo
+     * @return Objeto tabela relativo, se não encontrado retorna null
      */
     public static Tabela getTabela(String nomeBanco) {
         for (Tabela t : TABELAS) {

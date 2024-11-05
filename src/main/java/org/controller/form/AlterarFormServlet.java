@@ -35,6 +35,11 @@ public class AlterarFormServlet extends HttpServlet {
             // Recupera o registro a ser alterado
             Model model = dao.visualizar(id);
 
+            if (model == null) {
+                ErrorRedirect.handleRegistroIndisponivel(request, response, dao.getTabela().getNomeInterface(), id);
+                return;
+            }
+
             // Adiciona o registro a ser alterado ao request
             request.setAttribute("model", model);
             request.setAttribute("tabela", dao.getTabela());

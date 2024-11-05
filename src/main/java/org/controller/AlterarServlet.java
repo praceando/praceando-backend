@@ -54,10 +54,18 @@ public class AlterarServlet extends HttpServlet {
             Model criado = ModelCreator.createModel(tabelaNome, params);
             DAOGeneric<Model> dao = DAOManager.getDAO(tabelaNome);
 
+            assert dao != null && criado != null;
+
             // Verifica se a tabela é somente leitura
-            assert dao != null;
+
             if (!dao.isReadOnly()) {
                 SqlExitDML saida = dao.alterar(criado);
+
+                // Registro não encontrado no banco de dados
+                if (saida.getCodigo() == 0) {
+                    ErrorRedirect.handleRegistroIndisponivel(request, response, dao.getTabela().getNomeInterface(), criado.getId());
+                    return;
+                }
 
                 // Exibe saída da alteração
                 request.setAttribute("tabela", dao.getTabela());
@@ -68,7 +76,7 @@ public class AlterarServlet extends HttpServlet {
                 ErrorRedirect.redirect(request, response,"Operação inválida", "Tabela '%s' não aceita alterações por administradores");
             }
 
-        } catch (NullPointerException e) { // se o getDao() retornar null
+        } catch (NullPointerException e) { // se o getDao()  ou createModel() retornar null
             ErrorRedirect.handleTabelaIndisponivel(request, response, tabelaNome);
         } catch (ParseException e) {
             e.printStackTrace();
