@@ -61,7 +61,7 @@ public class Constants {
     };
 
     /**
-     * Objeto tabela do Avatar
+     * Objeto tabela dos Avatares
      */
     public static final Tabela TABELA_AVATAR = new Tabela() {
         @Override public String getNomeBanco() {
@@ -81,6 +81,10 @@ public class Constants {
         }
     };
 
+
+    /**
+     * Objeto tabela das Tags
+     */
     public static final Tabela TABELA_TAG = new Tabela() {
         @Override public String getNomeBanco() {
             return "tag";
@@ -89,6 +93,9 @@ public class Constants {
             return "Tags";
         }
 
+        /** Metodo para retornar o mapa de colunas com nomes e títulos para exibição na interface
+         * @return Mapa de colunas com nomes e títulos para exibição na interface
+         */
         @Override
         public LinkedHashMap<String, String> getColunas() {
             LinkedHashMap<String, String> colunas = new LinkedHashMap<>();
@@ -101,6 +108,9 @@ public class Constants {
         }
     };
 
+    /**
+     * Objeto tabela das Frases Sustentáveis
+     */
     public static final Tabela TABELA_FRASE_SUSTENTAVEL = new Tabela() {
         @Override public String getNomeBanco() {
             return "frase_sustentavel";
@@ -119,6 +129,9 @@ public class Constants {
         }
     };
 
+    /**
+     * Objeto tabela dos Administradores
+     */
     public static final Tabela TABELA_ADMIN = new Tabela() {
         @Override public String getNomeBanco() {
             return "admin";
@@ -140,6 +153,9 @@ public class Constants {
         }
     };
 
+    /**
+     * Objeto tabela dos Produtos
+     */
     public static final Tabela TABELA_PRODUTO = new Tabela() {
         @Override public String getNomeBanco() {
             return "produto";
@@ -164,6 +180,9 @@ public class Constants {
         }
     };
 
+    /**
+     * Objeto tabela dos Locais de Eventos
+     */
     public static final Tabela TABELA_EVENTO_LOCAL = new Tabela() {
         @Override public String getNomeBanco() {
             return "evento_local";
@@ -172,6 +191,10 @@ public class Constants {
             return "Locais de eventos";
         }
 
+        /**
+         * Metodo para retornar o mapa de colunas com nomes e títulos para exibição na interface
+         * @return Mapa de colunas com nomes e títulos para exibição na interface
+         */
         @Override
         public LinkedHashMap<String, String> getColunas() {
             LinkedHashMap<String, String> colunas = new LinkedHashMap<>();
@@ -186,6 +209,9 @@ public class Constants {
         }
     };
 
+    /**
+     * Objeto tabela dos Eventos
+     */
     public static final Tabela[] TABELAS = new Tabela[]{
             TABELA_LOG,
             TABELA_AVATAR,
