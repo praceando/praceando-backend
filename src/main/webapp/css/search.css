@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
-
 body {
     width: 100vw;
     height: 100vh;
-    background: #EEF9EF;
+    background: #FAF9F9;
     overflow: hidden;
     font-family: 'DM Sans', sans-serif;
     margin: 0px;
@@ -26,8 +24,9 @@ img {
     transition: 0.5s transform ease-in-out;
 }
 
-.botao-voltar:hover {
+img:hover {
     transform: scale(1.1);
+
 }
 
 .container {
@@ -39,9 +38,9 @@ img {
     flex-direction: column;
     width: 40%;
     height: 40%;
-    background-color: #ffffff;
+    background-color: #F6E6E6;
     border-radius: 20px;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 #texto1 {
@@ -62,6 +61,7 @@ img {
 #pesquisarNaColuna {
     position: relative;
     top: -125px;
+    left: -15px;
     font-size: 26px;
 }
 
@@ -73,12 +73,13 @@ img {
     border-radius: 8px;
     border: 2px solid black;
     text-align: center;
+    width: 205px;
 }
 
 #por {
     position: relative;
-    top: -75px;
-    left: -360px;
+    top: -105px;
+    left: -6px;
     font-size: 26px;
 }
 
@@ -86,8 +87,8 @@ img {
     font-size: 20px;
     position: relative;
     top: -103px;
-    width: 310px;
-    left: 20px;
+    width: 410px;
+    left: 12px;
     border-radius: 8px;
     border: 2px solid black;
     padding-left: 5px;
@@ -96,7 +97,7 @@ img {
 #EOrdenarPor {
     position: relative;
     top: -75px;
-    left: 71px;
+    left: -48px;
     font-size: 26px;
 }
 
@@ -104,24 +105,27 @@ img {
     font-size: 20px;
     position: relative;
     top: -75px;
-    left: 160px;
+    left: 55px;
     border-radius: 8px;
     border: 2px solid black;
     text-align: center;
+    width: 205px;
+
 }
+
 
 #emOrdem {
     position: relative;
-    top: -25px;
-    left: -220px;
+    top: -50px;
+    left: -108px;
     font-size: 26px;
 }
 
 #orderType {
     font-size: 20px;
     position: relative;
-    top: -25px;
-    left: -100px;
+    top: -50px;
+    left: 115px;
     border-radius: 8px;
     border: 2px solid black;
     text-align: center;
@@ -129,16 +133,16 @@ img {
 
 #NaoDefinidos {
     position: relative;
-    top: 0px;
-    left: -85px;
+    top: -25px;
+    left: -117px;
     font-size: 26px;
 }
 
 #incluirNDef {
     font-size: 20px;
     position: relative;
-    top: 0px;
-    left: 25px;
+    top: -25px;
+    left: 87px;
     width: 50px;
     border-radius: 8px;
     border: 2px solid black;
@@ -147,20 +151,20 @@ img {
 
 #pesquisar {
     position: relative;
-    width: 380px;
+    width: 480px;
     height: 40px;
     border-radius: 10px;
     border: none;
     color: #FFFFFF;
     cursor: pointer;
     font-size: 20px;
-    background-color: #F497B6;
-    top: 25px;
-    left: -20px;
+    left: 5px;
+    background-color: #E8BABA;
     transition: 0.25s transform ease-in-out;
 }
 
+
 #pesquisar:hover {
     transform: scale(1.01);
-    background-color: #E6679A;
+    background-color: #D48B8B;
 }

@@ -180,8 +180,8 @@ public class Constants {
             colunas.put("nome", "Nome"); // Nome do local
             colunas.put("lat", "Latitude"); // Latitude do local
             colunas.put("lon", "Longitude"); // Longitude do local
-            colunas.put("dt_func_ini", "Abre em"); // Data de abertura do local
-            colunas.put("dt_func_fim", "Fecha em"); // Data de fechamento do local
+            colunas.put("dt_func_ini", "Abre às"); // Data de abertura do local
+            colunas.put("dt_func_fim", "Fecha às"); // Data de fechamento do local
             colunas.put("dt_atualizacao", "Data de Atualização"); // Data de atualização do local
             return colunas;
         }
@@ -200,7 +200,7 @@ public class Constants {
     /**
      * Com base no nome da tabela no banco de dados, retorne o objeto tabela
      * @param nomeBanco Nome do banco
-     * @return Objeto tabela relativo
+     * @return Objeto tabela relativo, se não encontrado retorna null
      */
     public static Tabela getTabela(String nomeBanco) {
         for (Tabela t : TABELAS) {

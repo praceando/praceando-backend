@@ -102,8 +102,8 @@ public class HTMLInput {
                     new HTMLInput("nome", "Nome", "text", true),
                     new HTMLDecimalInput("lat", "Latitude", ".00000001", true, false),
                     new HTMLDecimalInput("lon", "Longitude", ".00000001", true, false),
-                    new HTMLInput("dt_func_ini", "Funcionamento início", "time", true),
-                    new HTMLInput("dt_func_fim", "Funcionamento fim", "time", true),
+                    new HTMLInput("dt_func_ini", "Abre às", "time", true),
+                    new HTMLInput("dt_func_fim", "Fecha às", "time", true),
             };
 
             case "frase_sustentavel" -> inputs = new HTMLInput[]{

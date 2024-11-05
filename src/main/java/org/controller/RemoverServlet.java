@@ -31,7 +31,9 @@ public class RemoverServlet extends HttpServlet {
 
         try {
             DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
+
             assert dao != null;
+
             SqlExitDML saida = dao.remover(id);
 
             request.setAttribute("tabela", dao.getTabela());

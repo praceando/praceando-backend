@@ -9,10 +9,11 @@
 body {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right, #0E0D10, #0E0D10, #121216);
+    background-color: #fffcf4;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #333;
 }
 
 
@@ -26,7 +27,7 @@ img {
 #caixaLogin {
     width: 55%;
     height: 65%;
-    background-color: #020203;
+    background-color: #E8BABA;
     border-radius: 34px;
     position: relative;
     padding: 40px;
@@ -39,7 +40,7 @@ img {
     justify-content: center;
     position: relative;
     top: 10px;
-    color: #B6AAAA;
+    color: #333;
     font-size: 40px;
     font-family: 'DM Sans', sans-serif;
     margin-bottom: 20px;
@@ -63,7 +64,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, #4158D0, #C850C0, #FFCC70);
+    background: #fffcf4;
     border-radius: 50%;
 }
 
@@ -74,9 +75,9 @@ img {
 
 .inputForm {
     border-radius: 10px;
-    color: #E5E7EB;
+    color: #333;
     padding: 10px;
-    background-color: #1e1f22;
+    background-color: #F5DADA;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     height: 40px;
     width: 299px;
@@ -99,7 +100,7 @@ img {
     border: 2px solid transparent;
     width: 297.5px;
     height: 39px;
-    background: linear-gradient(to right, #4158D0, #C850C0, #FFCC70);
+    background: #fffcf4;
     z-index: 0;
     opacity: 0;
     transition: opacity 0.3s;
@@ -114,9 +115,9 @@ img {
 .inputForm:focus {
     outline: none;
     box-shadow:
-            0 0 10px rgba(65, 88, 208, 0.9),
-            0 0 10px rgba(200, 80, 192, 0.9),
-            0 0 10px rgba(255, 204, 112, 0.9);
+            0 0 10px #fffcf4,
+            0 0 10px #fffcf4,
+            0 0 10px #fffcf4;
 }
 
 form {
@@ -125,7 +126,7 @@ form {
     justify-content: center;
     flex-direction: column;
     padding: 30px;
-    color: #9CA3AF;
+    color: #333;
     font-size: 13px;
 }
 
@@ -148,7 +149,8 @@ button {
     transition: background-color 0.3s;
     left: 1px;
     font-size: 20px;
-    background: linear-gradient(5deg, #4158D0, #C850C0, #FFCC70);
+    background: #fffcf4;
+    color: #333;
 }
 
 button:hover {

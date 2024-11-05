@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.common.Constants;
 import org.common.Tabela;
+import org.controller.util.ErrorRedirect;
 
 import java.io.IOException;
 
@@ -23,9 +24,14 @@ public class InsertFormServlet extends HttpServlet {
      * @throws IOException Caso haja algum problema na leitura ou escrita de dados de entrada/saída
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Tabela tabela = Constants.getTabela(request.getParameter("tabela"));
-        request.setAttribute("tabela", tabela);
-        RequestDispatcher rd = request.getRequestDispatcher("inserir.jsp");
-        rd.forward(request, response);
+        String tabelaNome = request.getParameter("tabela");
+        Tabela tabela = Constants.getTabela(tabelaNome);
+        if (tabela != null) {
+            request.setAttribute("tabela", tabela);
+            RequestDispatcher rd = request.getRequestDispatcher("inserir.jsp");
+            rd.forward(request, response);
+        } else {
+            ErrorRedirect.handleTabelaIndisponivel(request, response, tabelaNome);
+        }
     }
 }

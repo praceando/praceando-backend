@@ -5,8 +5,7 @@ public class SqlExitDML {
     private final int codigo;
     private Throwable erro;
 
-    /** Construtor padrão
-     * @param codigo Código de saída
+    /** Construtor padrão, inicializa o código com -1
      */
 
     public SqlExitDML() {

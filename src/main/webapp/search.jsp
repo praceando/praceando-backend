@@ -1,20 +1,20 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+  Tabela tabela = (Tabela) request.getAttribute("tabela");
+  String tabelaInterface = tabela.getNomeInterface();
+  String tabelaBanco = tabela.getNomeBanco();
+
+  Map<String, String> colunas = tabela.getColunas();
+%>
+
 <html>
 <head>
   <title>Pesquisar</title>
   <link rel="stylesheet" href="css/search.css">
 </head>
 <body cz-shortcut-listen="true">
-  <%
-    Tabela tabela = (Tabela) request.getAttribute("tabela");
-    String tabelaInterface = tabela.getNomeInterface();
-    String tabelaBanco = tabela.getNomeBanco();
-
-    Map<String, String> colunas = tabela.getColunas();
-  %>
-
   <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">
     <img src="assets/voltar.png" alt="Voltar">
   </a>
@@ -38,14 +38,16 @@
           %>
         </select>
 
-        <label for="filtro" id="por">por: </label>
+        <br>
 
+        <label for="filtro" id="por">por: </label>
         <input type="text" class="pesquisaTxt" name="filtro" id="filtro" placeholder="Filtro...">
 
         <br>
 
         <label for="orderBy" id="EOrdenarPor">E ordenar por: </label>
         <select name="orderBy" class="selecao" id="orderBy" required="">
+
           <%for (Map.Entry<String, String> coluna : colunas.entrySet()) {
             // colunas_banco     -> chaves
             // colunas_interface -> valores
@@ -53,7 +55,10 @@
           <option value="<%=coluna.getKey()%>"><%=coluna.getValue()%></option>
           <%}
           %>
+
         </select>
+
+        <br>
 
         <label for="orderType" id="emOrdem">em ordem</label>
         <select name="orderType" class="selecao" id="orderType">

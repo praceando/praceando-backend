@@ -41,4 +41,11 @@ public class ErrorRedirect {
                                        HttpServletResponse response, String tabelaNome) throws IOException, ServletException {
         redirect(request, response, "404 Não encontrado: " + tabelaNome, "Não foi possível encontrar essa tabela especificada na requisição, verifique se você está digitando a URL corretamente, ou tente de novo.");
     }
+
+    public static void handleRegistroIndisponivel(HttpServletRequest request,
+                                                  HttpServletResponse response,
+                                                  String tabelaNome, int id) throws IOException, ServletException {
+        redirect(request, response, "404 Não encontrado em " + tabelaNome + " o registro de ID " + id, "Não foi possível encontrar esse registro especificado na requisição, tente novamente, senão, o registro possivelmente fora excluído.");
+    }
+
 }
