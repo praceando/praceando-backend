@@ -16,16 +16,22 @@ public class HelloServlet extends HttpServlet {
         message = "Hello World!";
     }
 
+    /** Método para processar solicitações GET
+     * @param request Requisição HTTP
+     * @param response Resposta HTTP
+     * @throws IOException Exceção de I/O
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-        // Hello
+        // Escreve a mensagem no response
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
     }
 
+    // Método para processar solicitações POST
     public void destroy() {
     }
 }

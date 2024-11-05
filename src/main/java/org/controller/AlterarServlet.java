@@ -56,7 +56,7 @@ public class AlterarServlet extends HttpServlet {
 
             // Verifica se a tabela é somente leitura
             assert dao != null;
-            if (!dao.isReadOnly()) {
+            if (!dao.isReadOnly()) { // se a tabela não é somente leitura
                 SqlExitDML saida = dao.alterar(criado);
 
                 // Exibe saída da alteração
@@ -64,15 +64,15 @@ public class AlterarServlet extends HttpServlet {
                 request.setAttribute("saida", saida);
                 RequestDispatcher rd = request.getRequestDispatcher("inserirSaida.jsp");
                 rd.forward(request, response);
-            } else {
+            } else { // se a tabela é somente leitura
                 ErrorRedirect.redirect(request, response,"Operação inválida", "Tabela '%s' não aceita alterações por administradores");
             }
 
         } catch (NullPointerException e) { // se o getDao() retornar null
             ErrorRedirect.handleTabelaIndisponivel(request, response, tabelaNome);
-        } catch (ParseException e) {
+        } catch (ParseException e) { // se o parse do data retornar erro
             e.printStackTrace();
-        } catch (ConnectionIsNullException cne) {
+        } catch (ConnectionIsNullException cne) { // se a conexão com o banco de dados estiver indisponível
             ErrorRedirect.handleErroBanco(request, response);
         }
     }

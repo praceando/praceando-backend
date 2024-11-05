@@ -12,7 +12,16 @@ import org.common.Tabela;
 import java.io.IOException;
 
 @WebServlet(name="InsertFormServlet", value="/inserir")
+
 public class InsertFormServlet extends HttpServlet {
+
+    /**
+     * Método para tratar a requisição HTTP GET para a URL /inserir.
+     * @param request Requisição HTTP
+     * @param response Resposta HTTP
+     * @throws ServletException Caso haja algum problema ao processar a requisição
+     * @throws IOException Caso haja algum problema na leitura ou escrita de dados de entrada/saída
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Tabela tabela = Constants.getTabela(request.getParameter("tabela"));
         request.setAttribute("tabela", tabela);

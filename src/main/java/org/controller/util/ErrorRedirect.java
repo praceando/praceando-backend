@@ -18,11 +18,25 @@ public class ErrorRedirect {
         request.getRequestDispatcher("erroBanco.jsp").forward(request, response);
     }
 
+    /**
+     * Método para tratar exceções de conexão com o banco de dados
+     * @param request Requisição HTTP
+     * @param response Resposta HTTP
+     * @throws IOException Exceção de I/O
+     * @throws ServletException Exceção de servlet
+     */
     public static void handleErroBanco(HttpServletRequest request,
                                        HttpServletResponse response) throws IOException, ServletException {
         redirect(request, response, "Erro de conexão", "Não foi possível estabelecer conexão com o banco de dados. Você pode tentar:\n" + "-Verificar a URL e certificar-se de que está correta\n" + "-Limpar o cache e os cookies do navegador\n" + "-Reiniciar o navegador ou tentar em um navegador diferente");
     }
 
+    /** Método para tratar exceções de tabelas indisponíveis no banco de dados
+     * @param request Requisição HTTP
+     * @param response Resposta HTTP
+     * @param tabelaNome Nome da tabela indisponível
+     * @throws IOException Exceção de I/O
+     * @throws ServletException Exceção de servlet
+     */
     public static void handleTabelaIndisponivel(HttpServletRequest request,
                                        HttpServletResponse response, String tabelaNome) throws IOException, ServletException {
         redirect(request, response, "404 Não encontrado: " + tabelaNome, "Não foi possível encontrar essa tabela especificada na requisição, verifique se você está digitando a URL corretamente, ou tente de novo.");

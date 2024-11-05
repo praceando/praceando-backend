@@ -41,9 +41,9 @@ public class RemoverServlet extends HttpServlet {
             rd.forward(request, response);
         } catch (NullPointerException e) { // se o getDao() retornar null
             ErrorRedirect.handleTabelaIndisponivel(request, response, tabela);
-        } catch (ConnectionIsNullException cne) {
+        } catch (ConnectionIsNullException cne) { // se a conexão com o banco for null
             ErrorRedirect.handleErroBanco(request, response);
-        } catch (UnsupportedOperationException uoe) {
+        } catch (UnsupportedOperationException uoe) { // se a operação não for suportada
             ErrorRedirect.redirect(request, response, "Operação inválida", "Não é possível remover da tabela " + tabela);
         }
     }

@@ -27,7 +27,7 @@ public class VisualizarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tabela = request.getParameter("tabela");
 
-        try {
+        try { // verifica se a tabela está disponível
             DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
 
             assert dao != null;
@@ -36,7 +36,7 @@ public class VisualizarServlet extends HttpServlet {
             boolean canAlter = !dao.isReadOnly() && !tabela_dao.getNomeBanco().equals("admin");
 
             List<Model> saida = dao.visualizar();
-            if (saida != null) {
+            if (saida != null) { // se a saída não for null
                 request.setAttribute("tabela", tabela_dao);
                 request.setAttribute("saida", saida);
                 request.setAttribute("canAlter", canAlter);
@@ -44,12 +44,12 @@ public class VisualizarServlet extends HttpServlet {
 
                 RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
                 rd.forward(request, response);
-            } else {
+            } else { // se a saída for null
                 ErrorRedirect.redirect(request, response, "Saída nula.", "Saída retornou null, verifique a conexão com a internet.");
             }
         } catch (NullPointerException e) { // se o getDao() retornar null
             ErrorRedirect.handleTabelaIndisponivel(request, response, tabela);
-        } catch (ConnectionIsNullException cne) {
+        } catch (ConnectionIsNullException cne) { // se a conexão com o banco for null
             ErrorRedirect.handleErroBanco(request, response);
         }
     }

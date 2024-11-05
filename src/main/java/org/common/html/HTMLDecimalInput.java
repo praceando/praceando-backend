@@ -1,6 +1,5 @@
 package org.common.html;
 
-
 public class HTMLDecimalInput extends HTMLInput {
 
     public String step;

@@ -65,9 +65,9 @@ public class InserirServlet extends HttpServlet {
             }
         } catch (NullPointerException e) { // se o getDao() retornar null
             ErrorRedirect.handleTabelaIndisponivel(request, response, tabelaNome);
-        } catch (ConnectionIsNullException cne) {
+        } catch (ConnectionIsNullException cne) { // se a conexão com o banco estiver indisponível
             ErrorRedirect.handleErroBanco(request, response);
-        } catch (ParseException e) {
+        } catch (ParseException e) { // se o parser não conseguir converter os parâmetros
             e.printStackTrace();
         }
     }
