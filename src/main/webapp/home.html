@@ -1,57 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Home dos desenvolvedores</title>
-    <link rel="stylesheet" href="trsh/home.css"/>
-  </head>
-  <body>
-    <header class="menu">
-      <div class="dropdown">
-        <button class="dropbtn">Admin</button>
-        <div class="dropdown-content">
-          <a href="visualizar?tabela=admin">Visualizar</a>
-          <a href="cadastro.html">Cadastrar</a>
-          <a href="index.jsp">Sair</a>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home dos Desenvolvedores</title>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<div id="introducao">
+  <h1 id="bemvindo">Bem-vindo, Dev!</h1>
+  <h4 id="visualizar">Qual tabela deseja acessar?</h4>
+</div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Locais</button>
-        <div class="dropdown-content">
-          <a href="visualizar?tabela=evento_local">Visualizar</a>
-        </div>
+<div class="container">
+  <a href="visualizar?tabela=admin">
+    <div class="box">
+      <div class="imagem">
+        <img src="assets/adm.png" alt="Pessoas">
       </div>
-      <div class="dropdown">
-        <button class="dropbtn">Avatares</button>
-        <div class="dropdown-content">
-          <a href="visualizar?tabela=avatar">Visualizar</a>
-        </div>
+      <h3>Admin</h3>
+      <p>Acessar</p>
+    </div>
+  </a>
+  <a href="visualizar?tabela=evento_local">
+    <div class="box">
+
+      <div class="imagem">
+        <img src="assets/lugar.png" alt="Locais">
       </div>
-      <div class="dropdown">
-        <button class="dropbtn">Produto</button>
-        <div class="dropdown-content">
-          <a href="visualizar?tabela=produto">Visualizar</a>
-        </div>
+      <h3>Locais</h3>
+      <p>Acessar</p>
+    </div>
+  </a>
+  <a href="visualizar?tabela=avatar">
+    <div class="box">
+      <div class="imagem">
+        <img src="assets/avtr.png" alt="Avatar">
       </div>
-      <div class="dropdown">
-        <button class="dropbtn">Frase Sustentável</button>
-        <div class="dropdown-content">
-          <a href="visualizar?tabela=frase_sustentavel">Visualizar</a>
-        </div>
+      <h3>Avatares</h3>
+      <p>Acessar</p>
+    </div>
+  </a>
+
+  <a href="visualizar?tabela=produto">
+    <div class="box">
+      <div class="imagem">
+        <img src="assets/prod.png" alt="Produto">
       </div>
-      <div class="dropdown">
-        <button class="dropbtn">Tag</button>
-        <div class="dropdown-content">
-          <a href="visualizar?tabela=tag">Visualizar</a>
-        </div>
+      <h3>Produto</h3>
+      <p>Acessar</p>
+    </div>
+  </a>
+  <a href="visualizar?tabela=frase_sustentavel">
+    <div class="box">
+      <div class="imagem">
+        <img src="assets/sustent.png" alt="Frases">
       </div>
-      <div class="dropdown">
-        <button class="dropbtn">Log</button>
-        <div class="dropdown-content">
-            <a href="visualizar?tabela=log">Visualizar</a>
-        </div>
+      <h3>Frase Sustentável</h3>
+      <p>Acessar</p>
+    </div>
+  </a>
+  <a href="visualizar?tabela=tag">
+    <div class="box">
+      <div class="imagem">
+        <img src="assets/tagg.png" alt="Tags">
       </div>
-    </header>
-  </body>
+      <h3>Tag</h3>
+      <p>Acessar</p>
+    </div>
+  </a>
+  <!--
+  <a href="visualizar?tabela=log">
+    <div class="box">
+      <div class="imagem">
+        <img src="assets/log.png" alt="Log">
+      </div>
+      <h3>Log</h3>
+      <p>Acessar</p>
+    </div>
+  </a>
+  --->
+</div>
+</body>
 </html>
