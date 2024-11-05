@@ -176,8 +176,8 @@ public class Constants {
             colunas.put("nome", "Nome");
             colunas.put("lat", "Latitude");
             colunas.put("lon", "Longitude");
-            colunas.put("dt_func_ini", "Abre em");
-            colunas.put("dt_func_fim", "Fecha em");
+            colunas.put("dt_func_ini", "Abre às");
+            colunas.put("dt_func_fim", "Fecha às");
             colunas.put("dt_atualizacao", "Data de Atualização");
             return colunas;
         }
