@@ -29,6 +29,7 @@ public class VisualizarServlet extends HttpServlet {
 
         try {
             DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
+
             assert dao != null;
 
             Tabela tabela_dao = dao.getTabela();
@@ -46,8 +47,8 @@ public class VisualizarServlet extends HttpServlet {
             } else {
                 ErrorRedirect.redirect(request, response, "Saída nula.", "Saída retornou null, verifique a conexão com a internet.");
             }
-        } catch (NullPointerException e) {
-            e.printStackTrace();
+        } catch (NullPointerException e) { // se o getDao() retornar null
+            ErrorRedirect.handleTabelaIndisponivel(request, response, tabela);
         } catch (ConnectionIsNullException cne) {
             ErrorRedirect.handleErroBanco(request, response);
         }

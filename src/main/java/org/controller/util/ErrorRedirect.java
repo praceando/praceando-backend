@@ -22,4 +22,9 @@ public class ErrorRedirect {
                                        HttpServletResponse response) throws IOException, ServletException {
         redirect(request, response, "Erro de conexão", "Não foi possível estabelecer conexão com o banco de dados. Você pode tentar:\n" + "-Verificar a URL e certificar-se de que está correta\n" + "-Limpar o cache e os cookies do navegador\n" + "-Reiniciar o navegador ou tentar em um navegador diferente");
     }
+
+    public static void handleTabelaIndisponivel(HttpServletRequest request,
+                                       HttpServletResponse response, String tabelaNome) throws IOException, ServletException {
+        redirect(request, response, "404 Não encontrado: " + tabelaNome, "Não foi possível encontrar essa tabela especificada na requisição, verifique se você está digitando a URL corretamente, ou tente de novo.");
+    }
 }

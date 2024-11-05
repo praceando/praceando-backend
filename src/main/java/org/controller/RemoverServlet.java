@@ -39,6 +39,8 @@ public class RemoverServlet extends HttpServlet {
 
             RequestDispatcher rd = request.getRequestDispatcher("removerSaida.jsp");
             rd.forward(request, response);
+        } catch (NullPointerException e) { // se o getDao() retornar null
+            ErrorRedirect.handleTabelaIndisponivel(request, response, tabela);
         } catch (ConnectionIsNullException cne) {
             ErrorRedirect.handleErroBanco(request, response);
         } catch (UnsupportedOperationException uoe) {

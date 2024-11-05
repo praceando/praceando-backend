@@ -68,6 +68,8 @@ public class AlterarServlet extends HttpServlet {
                 ErrorRedirect.redirect(request, response,"Operação inválida", "Tabela '%s' não aceita alterações por administradores");
             }
 
+        } catch (NullPointerException e) { // se o getDao() retornar null
+            ErrorRedirect.handleTabelaIndisponivel(request, response, tabelaNome);
         } catch (ParseException e) {
             e.printStackTrace();
         } catch (ConnectionIsNullException cne) {

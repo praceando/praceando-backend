@@ -41,6 +41,8 @@ public class AlterarFormServlet extends HttpServlet {
 
             // Encaminha o request para o JSP
             request.getRequestDispatcher("alterar.jsp").forward(request, response);
+        } catch (NullPointerException e) { // se o getDao() retornar null
+            ErrorRedirect.handleTabelaIndisponivel(request, response, tabela);
         } catch (ConnectionIsNullException cne) {
             ErrorRedirect.handleErroBanco(request, response);
         }

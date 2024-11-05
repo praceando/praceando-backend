@@ -47,6 +47,8 @@ public class SearchServlet extends HttpServlet {
 
             RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
             rd.forward(request, response);
+        } catch (NullPointerException e) { // se o getDao() retornar null
+            ErrorRedirect.handleTabelaIndisponivel(request, response, tabela);
         } catch (ConnectionIsNullException cne) {
             cne.printStackTrace();
             ErrorRedirect.handleErroBanco(request, response);
@@ -95,7 +97,7 @@ public class SearchServlet extends HttpServlet {
             return;
         }
 
-        System.out.println("Filtrando: " + models.size());
+//        System.out.println("Filtrando: " + models.size());
 
         models.removeIf(model -> {
             try {
@@ -109,7 +111,7 @@ public class SearchServlet extends HttpServlet {
 
                 String valorStr = valor != null ? valor.toString() : "Não definido";
 
-                if (valorStr.toString().toLowerCase().contains(filterString.toLowerCase())) {
+                if (valorStr.toLowerCase().contains(filterString.toLowerCase())) {
                     return false;
                 }
             } catch (IllegalAccessException | NoSuchFieldException e) {
