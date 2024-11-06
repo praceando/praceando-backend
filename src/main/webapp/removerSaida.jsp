@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="front_core/styles/crud/inserirSaida.css">
 </head>
 <body>
 <%
@@ -14,20 +15,24 @@
 
     SqlExitDML saida = (SqlExitDML) request.getAttribute("saida");
 %>
-    <h1>Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=tabelaInterface%>'</h1>
+    <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">
+        <img src="assets/form/voltar.png" alt="Voltar">
+    </a>
 
-    <h2>Saída:</h2>
-    <div class="saida">
-        <p><%=saida.toString()%></p>
+    <div class="container">
+        <p id="titulo1">Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=tabelaInterface%>'</p>
 
-        <%if (saida.hasErro()) { //Se houver erro
-        %>
+        <h2>Saída:</h2>
+        <div class="saida">
+            <p id="subtitulo2"><%=saida.toString()%></p>
+
+            <%if (saida.hasErro()) { //Se houver erro
+            %>
             <br>
-            <p><%=saida.getErro()%></p>
-        <%}
-        %>
+            <p class="fracasso"><%=saida.getErro()%></p>
+            <%}
+            %>
+        </div>
     </div>
-
-    <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">Voltar</a>
 </body>
 </html>
