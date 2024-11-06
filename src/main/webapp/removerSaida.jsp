@@ -34,8 +34,5 @@
             %>
         </div>
     </div>
-
-
-    <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">Voltar</a>
 </body>
 </html>
