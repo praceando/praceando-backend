@@ -50,6 +50,19 @@ td {
     text-align: center;
 }
 
+.container thead {
+    width: 100%;
+}
+
+.container thead tr {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+.container thead tr th {
+    width: 50%;
+}
 #texto1 {
     top: 30px;
     display: flex;
@@ -108,9 +121,9 @@ p {
 }
 
 .sucesso {
-    color: green;
+    color: #56cb12;
 }
 
 .fracasso {
-    color: red;
+    color: #ff0000;
 }
