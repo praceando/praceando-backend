@@ -1,7 +1,5 @@
 # Padronização de Código
 
-<img src="preview-code.png">
-
 * Essas regras foram aplicadas no projeto para deixar o código _limpo_ e _fácil de se navegar_ para os **desenvolvedores** do grupo.
 ## HTML
 ### Espaçamento entre elementos HTML
