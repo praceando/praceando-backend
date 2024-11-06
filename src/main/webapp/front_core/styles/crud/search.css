@@ -17,7 +17,7 @@ body {
 
 .botao-voltar {
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 3%;
     height: 40px;
 
@@ -25,7 +25,7 @@ body {
 }
 
 img {
-    width: 75px;
+    width: 60px;
 
     transition: 0.5s transform ease-in-out;
 }
@@ -90,7 +90,7 @@ img:hover {
 #por {
     position: relative;
     top: -105px;
-    left: -6px;
+    left: -110px;
 
     font-size: 26px;
 }
@@ -98,8 +98,8 @@ img:hover {
 #filtro {
     position: relative;
     top: -103px;
-    left: 12px;
-    width: 410px;
+    left: 115px;
+    width: 205px;
     padding-left: 5px;
 
     font-size: 20px;
@@ -132,7 +132,7 @@ img:hover {
 #emOrdem {
     position: relative;
     top: -50px;
-    left: -108px;
+    left: -74px;
 
     font-size: 26px;
 }
@@ -140,7 +140,8 @@ img:hover {
 #orderType {
     position: relative;
     top: -50px;
-    left: 115px;
+    left: 80px;
+    width: 205px;
 
     font-size: 20px;
 
@@ -160,7 +161,7 @@ img:hover {
 #incluirNDef {
     position: relative;
     top: -25px;
-    left: 87px;
+    left: 55px;
     width: 50px;
 
     font-size: 20px;

@@ -28,7 +28,7 @@
       <input hidden="hidden" name="tabela" value="<%=tabelaBanco%>">
 
       <div class="input-container">
-        <label for="colunaFiltro" id="pesquisarNaColuna">Pesquisar na coluna </label>
+        <label for="colunaFiltro" id="pesquisarNaColuna">Pesquisar na coluna: </label>
         <select name="colunaFiltro" class="selecao" id="colunaFiltro" required="">
 
           <%for (Map.Entry<String, String> coluna : colunas.entrySet()) {
@@ -42,7 +42,7 @@
 
         <br>
 
-        <label for="filtro" id="por">por: </label>
+        <label for="filtro" id="por">Por: </label>
         <input type="text" class="pesquisaTxt" name="filtro" id="filtro" placeholder="Filtro...">
 
         <br>
@@ -62,7 +62,7 @@
 
         <br>
 
-        <label for="orderType" id="emOrdem">em ordem</label>
+        <label for="orderType" id="emOrdem">Em ordem:</label>
         <select name="orderType" class="selecao" id="orderType">
           <option class="crescente" value="asc">crescente</option>
           <option class="decrescente" value="desc">decrescente</option>
@@ -70,7 +70,7 @@
 
         <br>
 
-        <label for="incluirNDef" id="NaoDefinidos">Não definidos?</label>
+        <label for="incluirNDef" id="NaoDefinidos">Não definidos:</label>
         <input type="checkbox" class="checkbox-arredondado" name="incluirNDef" id="incluirNDef" value="sim" checked="">
 
         <input type="submit" value="Pesquisar" id="pesquisar">
