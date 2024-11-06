@@ -37,7 +37,7 @@ public class AvatarDAO extends DAOGeneric<Avatar> {
      */
     @Override
     protected PreparedStatement getInserirQuery(Avatar avatar) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO avatar (b64_avatar, dt_atualizacao) VALUES (?, current_timestamp)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO avatar (url_avatar, dt_atualizacao) VALUES (?, current_timestamp)");
 
         ps.setString(1, avatar.getUrl_avatar());
         return ps;
