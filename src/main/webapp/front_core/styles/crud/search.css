@@ -5,14 +5,15 @@
 body {
     width: 100vw;
     height: 100vh;
-    background: #FAF9F9;
-    overflow: hidden;
-    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: center;
     margin: 0px;
     padding: 0px;
 
-    display: flex;
-    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    background: #FAF9F9;
+
+    overflow: hidden;
 }
 
 .botao-voltar {
@@ -44,7 +45,7 @@ img:hover {
     align-items: center;
     padding-top: 150px;
 
-    background-color: #F6E6E6;
+        background-color: #F6E6E6;
 
     border-radius: 20px;
     text-align: center;
