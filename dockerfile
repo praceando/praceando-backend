@@ -16,6 +16,7 @@ FROM tomcat:10.1.19-jdk11
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy the built war file to the Tomcat webapps directory
+# Make sure this line clearly specifies the source and destination
 COPY --from=build /app/target/ProjetoPraceando-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/app.war
 
 # Expose port 8080 for the Tomcat server
