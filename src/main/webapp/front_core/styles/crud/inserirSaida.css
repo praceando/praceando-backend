@@ -1,129 +1,78 @@
-/*                                               CSS Dos Elementos da Saída do Inserir                                                            */
+/*                                                         CSS Dos Elementos de Saída                                                            */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 body {
     width: 100vw;
     height: 100vh;
-    margin: 0px;
-    padding: 0px;
+    background: #F6E6E6;
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-
-    font-family: 'DM Sans', sans-serif;
-    background: #EEF9EF;
-
-    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
 }
 
 .botao-voltar {
     position: absolute;
     top: 40px;
     left: 3%;
-    width: 100px;
     height: 40px;
-
     border-radius: 10px;
 }
 
-.botao-voltar:hover {
-    transform: scale(1.1);
-}
-
 img {
-    width: 75px;
-}
-
-td {
-    left: 0%;
-
-    font-size: 24px;
-    color: #000000;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-}
-
-.container thead {
-    width: 100%;
-}
-
-.container thead tr {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-    width: 100%;
-}
-.container thead tr th {
-    width: 50%;
-}
-#texto1 {
-    top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-th {
-    padding: 20px;
-
-    background-color: #E6679A;
-
-    border-radius: 5px;
-}
-
-td {
-    padding: 20px;
-
-    background-color: #F8CCE0;
-
-    border-radius: 5px;
-}
-
-table {
-    height: 500px;
-    margin-top: 200px;
-    padding: 5px;
-
-    background-color: #ffffff;
-
-    border-radius: 5px;
-}
-
-p {
     position: absolute;
-
-    font-size: 50px;
-    color: #000000;
+    top: 15px;
+    width: 60px;
 }
 
 #titulo1 {
     position: absolute;
     top: 0px;
-
-    font-size: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     color: #000000;
+    font-size: 50px;
 }
 
 #subtitulo2 {
-    top: 75px;
-
-    font-size: 50px;
-
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
+    font-size: 30px;
 }
 
 .sucesso {
-    color: #56cb12;
+    color: green;
 }
 
-.fracasso {
-    color: #ff0000;
+.container {
+    width: 60%;
+    max-height: 400px;
+    overflow-y: auto;
+    border-collapse: collapse;
+    margin-top: 500px;
+}
+
+thead th {
+    padding: 12px;
+    color: #4D4D4D;
+    background-color: #E8BABA;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+tbody td {
+    padding: 12px;
+    color: #4D4D4D;
+    background-color: #F5DADA;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    text-align: left;
 }
