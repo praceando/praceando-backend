@@ -7,7 +7,7 @@ body {
     height: 100vh;
 
     font-family: 'DM Sans', sans-serif;
-    background: #EEF9EF;
+    background: #FAF9F9;
 
     overflow: hidden;
 }
@@ -30,7 +30,7 @@ p {
 
     font-size: 20px;
     color: #FFFFFF;
-    background-color: #F497B6;
+    background-color: #E8BABA;
 
     transition: 0.25s transform ease-in-out;
     border-radius: 10px;
@@ -39,7 +39,7 @@ p {
 }
 
 #botaoInserir:hover {
-    background-color: #E6679A;
+    background-color: #D48B8B;
     transform: scale(1.01);
 }
 
@@ -51,7 +51,7 @@ p {
     justify-content: center;
     align-items: center;
 
-    background-color: #FFFFFF;
+    background-color: #F6E6E6;
 
     border-radius: 34px;
 }
@@ -118,5 +118,5 @@ label {
 }
 
 img {
-    width: 75px;
+    width: 60px;
 }
