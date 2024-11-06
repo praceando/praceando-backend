@@ -1,6 +1,19 @@
 # Padronização de Código
 
 * Essas regras foram aplicadas no projeto para deixar o código _limpo_ e _fácil de se navegar_ para os **desenvolvedores** do grupo.
+
+## Java
+- Nomeação de classes CamelCase
+- Nomeação de atributos
+  - Models: seguindo tabela do banco
+  - Estáticos finais (Constantes): LETRA_MAIUSCULA
+  - Pacotes: Letras minúsculas sem underlines
+
+- Servlets
+  - Todas as classes terminam em `Servlet`
+  - Pasta `auth` contém autenticação e cadastro
+  - Pasta `form` contém servlets que geram formulários
+  - Pasta `util` contém classes de utilidades
 ## HTML
 ### Espaçamento entre elementos HTML
 Regras para espaçamentos entre elementos HTML
