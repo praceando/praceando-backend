@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Erro no Banco de Dados</title>
-  <link rel="stylesheet" href="front_core/styles/crud/comum.css">
+  <link rel="stylesheet" href="front_core/styles/crud/erroNoBanco.css">
 </head>
 <body>
   <%
