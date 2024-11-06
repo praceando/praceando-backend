@@ -22,8 +22,11 @@ document.getElementById("cancelar-exclusao").onclick = function() {
 document.getElementById("confirmar-exclusao").onclick = function() {
     const url = this.getAttribute("data-href");
     // Pensa ao contrário, o == nem o === não funciona.
-    if (url != null) {} else {
+    if (url !== "null") {
+        console.log(url);
         window.location.href = url;
+    } else {
+        console.log("não")
     }
 };
 
