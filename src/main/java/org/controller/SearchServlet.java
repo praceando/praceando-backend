@@ -28,25 +28,33 @@ public class SearchServlet extends HttpServlet {
         String orderType = request.getParameter("orderType");
         boolean incluirNDef = request.getParameter("incluirNDef") != null;
 
-        DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
-
-        assert dao != null;
         try {
+            DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
+            assert dao != null;
+
             Tabela tabela_dao = dao.getTabela();
 
-            List<Model> models = dao.visualizar(); // Lidar em caso de models ser null ou vazio
 
-            TableOperations.filterByColumn(models, colunaFiltro.trim(), filtro.trim(), incluirNDef);
-            TableOperations.orderBy(models, colunaOrderBy, orderType);
+            List<Model> models = dao.visualizar();
+
+            if (models != null) {
+                // Aplica a filtragem e ordenação
+                TableOperations.filterByColumn(models, colunaFiltro.trim(), filtro.trim(), incluirNDef);
+                TableOperations.orderBy(models, colunaOrderBy, orderType);
 
 
-            boolean canAlter = !dao.isReadOnly() && !tabela_dao.matches("admin");
-            request.setAttribute("tabela", dao.getTabela());
-            request.setAttribute("saida", models);
-            request.setAttribute("canAlter", canAlter);
+                boolean canAlter = !dao.isReadOnly(); // Verifica se o DAO não é readOnly
 
-            RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
-            rd.forward(request, response);
+                // Passa a saída para a página JSP
+                request.setAttribute("tabela", tabela_dao);
+                request.setAttribute("saida", models);
+                request.setAttribute("canAlter", canAlter);
+
+                RequestDispatcher rd = request.getRequestDispatcher("visualizar.jsp");
+                rd.forward(request, response);
+            } else {
+                ErrorRedirect.redirect(request, response, "Saída nula.", "Não foi possível produzir uma saída, verifique a conexão com a internet.");
+            }
         } catch (NullPointerException e) { // se o getDao() retornar null
             ErrorRedirect.handleTabelaIndisponivel(request, response, tabela);
         } catch (ConnectionIsNullException cne) {

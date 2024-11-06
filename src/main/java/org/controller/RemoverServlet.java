@@ -26,16 +26,19 @@ public class RemoverServlet extends HttpServlet {
      * @throws IOException Exceção ocorrida no I/O
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Pega parâmetros da request
         int id = Integer.parseInt(request.getParameter("id"));
-        String tabela = request.getParameter("tabela");
+        String tabela = request.getParameter("tabela"); // tabela com nome do banco
 
         try {
             DAOGeneric<Model> dao = DAOManager.getDAO(tabela);
 
             assert dao != null;
 
+            // Chama o remover do DAO
             SqlExitDML saida = dao.remover(id);
 
+            // Passa saída
             request.setAttribute("tabela", dao.getTabela());
             request.setAttribute("saida", saida);
 
