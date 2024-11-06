@@ -33,7 +33,7 @@ public class VisualizarServlet extends HttpServlet {
             assert dao != null;
 
             Tabela tabela_dao = dao.getTabela();
-            boolean canAlter = !dao.isReadOnly() && !tabela_dao.getNomeBanco().equals("admin");
+            boolean canAlter = !dao.isReadOnly();
 
             List<Model> saida = dao.visualizar();
             if (saida != null) { // se a saída não for null

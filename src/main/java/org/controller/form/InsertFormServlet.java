@@ -27,6 +27,13 @@ public class InsertFormServlet extends HttpServlet {
         String tabelaNome = request.getParameter("tabela");
         Tabela tabela = Constants.getTabela(tabelaNome);
         if (tabela != null) {
+
+            // Caso especial: tabela admin tem página própria de cadastro
+            if (tabela.matches("admin")) {
+                response.sendRedirect("cadastro.html");
+                return;
+            }
+
             request.setAttribute("tabela", tabela);
             RequestDispatcher rd = request.getRequestDispatcher("inserir.jsp");
             rd.forward(request, response);
