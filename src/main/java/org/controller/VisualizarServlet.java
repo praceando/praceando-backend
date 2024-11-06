@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.common.Tabela;
 import org.controller.util.ErrorRedirect;
+import org.controller.util.TableOperations;
 import org.dao.ConnectionIsNullException;
 import org.dao.DAOGeneric;
 import org.dao.DAOManager;
@@ -37,6 +38,11 @@ public class VisualizarServlet extends HttpServlet {
 
             List<Model> saida = dao.visualizar();
             if (saida != null) { // se a saída não for null
+
+                // Ordenar por id em ordem decrescente
+                TableOperations.orderBy(saida, "id", "asc");
+
+                // Aplicar parâmetros
                 request.setAttribute("tabela", tabela_dao);
                 request.setAttribute("saida", saida);
                 request.setAttribute("canAlter", canAlter);
