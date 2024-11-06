@@ -20,7 +20,7 @@
     <div id="linhaEnfeite"></div>
 
     <div id="fundoIrregular"></div>
-    <img src="assets/logo/Icone.png" alt="Praceando">
+    <img src="assets/logo/icone.png" alt="Praceando">
 
     <p id="titulo">Erro no Banco de Dados:</p>
     <p class="sublinhar"><%=tipoErro%></p>
