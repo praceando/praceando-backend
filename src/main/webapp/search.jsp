@@ -2,6 +2,7 @@
 <%@ page import="org.common.Tabela" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
+  //Getters
   Tabela tabela = (Tabela) request.getAttribute("tabela");
   String tabelaInterface = tabela.getNomeInterface();
   String tabelaBanco = tabela.getNomeBanco();

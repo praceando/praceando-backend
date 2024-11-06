@@ -7,6 +7,7 @@
 </head>
 <body>
 <%
+    //Getters
     Tabela tabela = (Tabela) request.getAttribute("tabela");
     String tabelaInterface = tabela.getNomeInterface();
     String tabelaBanco = tabela.getNomeBanco();
@@ -19,7 +20,7 @@
     <div class="saida">
         <p><%=saida.toString()%></p>
 
-        <%if (saida.hasErro()) {
+        <%if (saida.hasErro()) { //Se houver erro
         %>
             <br>
             <p><%=saida.getErro()%></p>

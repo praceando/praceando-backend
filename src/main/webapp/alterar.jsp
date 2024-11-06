@@ -5,19 +5,20 @@
 <html>
 <head>
     <%
+        //Getters
         Tabela tabela = (Tabela) request.getAttribute("tabela");
         String tabelaInterface = tabela.getNomeInterface();
         String tabelaBanco = tabela.getNomeBanco();
 
         Model model = (Model) request.getAttribute("model");
     %>
-
     <title>Alterando ID <%=model.getId()%> da tabela <%=tabelaInterface%></title>
 
     <link rel="stylesheet" href="./css/inserir.css">
 </head>
 <body>
 
+    <!-- Voltar para a página de visualização -->
     <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">
         <img src="assets/voltar.png" alt="Voltar">
     </a>

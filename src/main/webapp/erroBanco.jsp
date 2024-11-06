@@ -11,9 +11,10 @@
     </head>
   <body>
   <%
-    String tipoErro = (String) request.getAttribute("tipoErro");
-    String mensagemErro = (String) request.getAttribute("mensagemErro");
+    String tipoErro = (String) request.getAttribute("tipoErro"); // Tipo do erro
+    String mensagemErro = (String) request.getAttribute("mensagemErro"); // Mensagem do erro
   %>
+
     <div id="linhaEnfeite"></div>
 
     <div id="fundoIrregular"></div>

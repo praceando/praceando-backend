@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <%
+        // Recuperando os dados da tabela
         Tabela tabela = (Tabela) request.getAttribute("tabela");
         String tabelaInterface = tabela.getNomeInterface();
         String tabelaBanco = tabela.getNomeBanco();
@@ -16,6 +17,7 @@
         <img src="assets/voltar.png" alt="Voltar">
     </a>
 
+    <!-- Cabeçalho -->
     <p>Inserindo um novo registro em: <b><%=tabelaInterface%></b></p>
     <div id="centralizar">
         <div id="caixaInsert">
