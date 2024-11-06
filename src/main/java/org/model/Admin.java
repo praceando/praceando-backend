@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Admin implements Model {
     private int id;
-    private final String nome;
+    private final String usuario;
     private final String email;
     private final boolean is_ativo;
     private final Senha senha;
@@ -19,8 +19,8 @@ public class Admin implements Model {
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(int id, String nome, String email, Senha senha, boolean is_ativo, Date dt_atualizacao) {
-        this(nome, email, senha, is_ativo);
+    public Admin(int id, String usuario, String email, Senha senha, boolean is_ativo, Date dt_atualizacao) {
+        this(usuario, email, senha, is_ativo);
         this.dt_atualizacao = dt_atualizacao;
         this.id = id;
     }
@@ -29,8 +29,8 @@ public class Admin implements Model {
      * @param email E-mail do administrador
      * @param senha Senha do administrador
      */
-    public Admin(String nome, String email, Senha senha, boolean is_ativo) {
-        this.nome = nome;
+    public Admin(String usuario, String email, Senha senha, boolean is_ativo) {
+        this.usuario = usuario;
         this.email = email;
         this.senha = senha;
         this.is_ativo = is_ativo;
@@ -60,8 +60,8 @@ public class Admin implements Model {
     /** Getter do nome do administrador
      * @return Nome do administrador
      */
-    public String getNome() {
-        return this.nome;
+    public String getUsuario() {
+        return this.usuario;
     }
 
     /** Getter para o status do administrador

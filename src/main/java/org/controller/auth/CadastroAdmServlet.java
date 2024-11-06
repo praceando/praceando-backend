@@ -9,7 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.common.Constants;
 import org.common.Senha;
 import org.common.SqlExitDML;
+import org.controller.util.ErrorRedirect;
 import org.dao.AdminDAO;
+import org.dao.ConnectionIsNullException;
 import org.model.Admin;
 
 import java.io.IOException;
@@ -33,32 +35,36 @@ public class CadastroAdmServlet extends HttpServlet {
 
         AdminDAO adminDAO = new AdminDAO();
 
-        boolean[] status = validarUsuario(email, senha);
 
-        boolean temAcessoValido = temCodAcessoValido(adminDAO, access);
+        try {
+            boolean[] status = validarUsuario(email, senha);
 
-        SqlExitDML saida = new SqlExitDML();
+            boolean temAcessoValido = temCodAcessoValido(adminDAO, access);
 
-
-        // Adiciona os dados de entrada e validação para a página de saída
-        request.setAttribute("status", status);
-        // Adiciona os dados de acesso ao banco de dados para a página de saída
-        request.setAttribute("dbAccessValido", temAcessoValido);
+            SqlExitDML saida = new SqlExitDML();
 
 
-        // Se os dados forem válidos, insere o usuário no banco de dados
-        if (Arrays.equals(status, new boolean[]{false, false, false}) && temAcessoValido) {
-            Admin admin = new Admin(nome, email, new Senha(senha), false);
-            saida = adminDAO.inserir(admin);
+            // Adiciona os dados de entrada e validação para a página de saída
+            request.setAttribute("status", status);
+            // Adiciona os dados de acesso ao banco de dados para a página de saída
+            request.setAttribute("dbAccessValido", temAcessoValido);
+
+
+            // Se os dados forem válidos, insere o usuário no banco de dados
+            if (Arrays.equals(status, new boolean[]{false, false, false}) && temAcessoValido) {
+                Admin admin = new Admin(nome, email, new Senha(senha), false);
+                saida = adminDAO.inserir(admin);
+            }
+
+            // Envia os dados para a página de saída
+            request.setAttribute("saidaInsert", saida);
+
+            // Envia a página de saída
+            RequestDispatcher dispatcher = request.getRequestDispatcher("cadastroADMSaida.jsp");
+            dispatcher.forward(request, response);
+        } catch (ConnectionIsNullException cne) { // em caso de erro no banco
+            ErrorRedirect.handleErroBanco(request, response);
         }
-
-        // Envia os dados para a página de saída
-        request.setAttribute("saidaInsert", saida);
-
-        // Envia a página de saída
-        RequestDispatcher dispatcher = request.getRequestDispatcher("cadastroADMSaida.jsp");
-        dispatcher.forward(request, response);
-
     }
 
     /**

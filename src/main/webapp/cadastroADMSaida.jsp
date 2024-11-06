@@ -4,9 +4,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Cadastro do adm</title>
+    <title>Saída do cadastro</title>
+    <link rel="stylesheet" href="front_core/styles/crud/inserirSaida.css">
 </head>
-<body>
+<body cz-shortcut-listen="true">
     <%
         // Pegando dados que saíram do Servlet
         boolean[] status = (boolean[]) request.getAttribute("status");
@@ -25,33 +26,37 @@
         };
     %>
 
-    <h1>Tentou cadastrar '<%=email%>', com senha '<%="*".repeat(senha.length())%>' </h1>
 
-    <!-- Avisos de erros -->
-    <div class="avisos-container">
+
+    <div class="container">
+        <p id="titulo1">Tentou cadastrar '<%=email%>', com senha '<%="*".repeat(senha.length())%>' </p>
+
+        <!-- Saída e avisos -->
         <% // Se o código de acesso fornecido for inválido
             if (dbAccessValido) { // Se o código de acesso fornecido for inválido
 
 
                 if (Arrays.equals(status, new boolean[]{false, false, false})) { // Se tudo estiver OK, mostre a mensagem de saída
         %>
-        <p><%=saidaInsert.toString()%></p>
+        <p class="subtitulo2"><%=saidaInsert.toString()%></p>
         <%
         } else { // Se houver algum aviso, exibe-os
             for (String av : avisos) {
                 if (av != null) {
         %>
-        <p style="color: red"><%=av%></p>
+        <p class="subtitulo2 fracasso" style="color: red"><%=av%></p>
         <%
                     }
                 }
             }
         } else {%> <!-- Se o código de acesso fornecido for inválido -->
-        <p>Código de acesso inválido</p>
-        <%
-            }
+        <p class="subtitulo2 fracasso">Código de acesso inválido</p>
+        <%}
         %>
     </div>
-    <a class="botao-voltar" href="home.html">Voltar</a>
+
+    <a class="botao-voltar" href="visualizar?tabela=admin">
+        <img src="assets/form/voltar.png" alt="Voltar">
+    </a>
 </body>
 </html>

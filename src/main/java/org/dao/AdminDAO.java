@@ -33,11 +33,12 @@ public class AdminDAO extends DAOGeneric<Admin> {
 
     @Override
     protected PreparedStatement getInserirQuery(Admin admin) throws SQLException {
-        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO admin (usuario, senha, dt_atualizacao) VALUES (?,?, current_timestamp)");
+        PreparedStatement ps = Conexao.conn.prepareStatement("INSERT INTO admin (usuario, email, senha, dt_atualizacao) VALUES (?,?,?, current_timestamp)");
 
         //Setando valor
-        ps.setString(1, admin.getEmail() );
-        ps.setString(2, admin.getSenha() );
+        ps.setString(1, admin.getUsuario());
+        ps.setString(2, admin.getEmail() );
+        ps.setString(3, admin.getSenha() );
         return ps;
     }
 
