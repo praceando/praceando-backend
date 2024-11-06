@@ -9,7 +9,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right, #0E0D10, #0E0D10, #121216);
+    background: #fffcf4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@ body {
 
 #descricao {
     position: relative;
-    color: #B6AAAA;
+    color: #333;
     font-size: 30px;
     font-family: 'DM Sans', sans-serif;
     max-width: 80%;
@@ -49,7 +49,7 @@ body {
     right: 0;
     bottom: 0;
     border: 3px solid;
-    border-image: linear-gradient(to right, #4158D0, #C850C0, #FFCC70) 1;
+    border-image: linear-gradient(to right, #fbc9c9, #f9c5d1, #fbc9c9) 1;
     z-index: -1;
 }
 
@@ -79,8 +79,7 @@ img {
 }
 
 .sublinhar {
-    /*GAMIBARRA MUITO FORTE*/
-    background: linear-gradient(30deg, #4158D0, #C850C0, #FFCC70);
+    background: linear-gradient(30deg, #fbc9c9, #f9c5d1, #fbc9c9);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -146,7 +145,7 @@ button:hover {
     border: 2px solid transparent;
     width: 297.5px;
     height: 39px;
-    background: linear-gradient(to right, #4158D0, #C850C0, #FFCC70);
+    background: linear-gradient(to right, #fbc9c9, #f9c5d1, #fbc9c9);
     z-index: 0;
     opacity: 0;
     transition: opacity 0.3s;
