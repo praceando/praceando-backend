@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erro no Banco de Dados</title>
-    <link rel="stylesheet" href="css/comum.css">
-    <link rel="stylesheet" href="css/erroNoBanco.css">
+    <link rel="stylesheet" href="front_core/styles/crud/comum.css">
+    <link rel="stylesheet" href="front_core/styles/crud/erroNoBanco.css">
     </head>
   <body>
   <%
@@ -20,7 +20,7 @@
     <div id="linhaEnfeite"></div>
 
     <div id="fundoIrregular"></div>
-    <img src="assets/Icone.png" alt="Praceando">
+    <img src="assets/logo/Icone.png" alt="Praceando">
 
     <p id="titulo">Erro no Banco de Dados:</p>
     <p class="sublinhar"><%=tipoErro%></p>

@@ -1,0 +1,208 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 675 ~ 691 do Index.html)                                 */
+
+#pagina13 {
+    position: absolute;
+    top: 11750px;
+    width: 100vw;
+    height: 700px;
+
+    background-color: #FFF6F9;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo13 {
+    position: relative;
+    top: 25px;
+    left: 10%;
+
+    font-size: 84px;
+}
+
+#subtituloTitulo13 {
+    position: relative;
+    top: 40px;
+    left: 15%;
+
+    font-size: 60px;
+}
+
+#alinharTexto13 {
+    display: flex;
+}
+
+#texto13 {
+    position: relative;
+    top: 100px;
+    max-width: 630px;
+    margin-left: 14%;
+    text-align: right;
+
+    font-size: 26px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                          ELEMENTOS DE IMAGEM                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#ImgEcobag {
+    position: relative;
+    top: 50px;
+    width: 400px;
+    margin-right: 14%;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    float: right;
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+#ImgEcobag:hover {
+    transform: scale(1.025) translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1450px) {
+    #texto13 {
+        max-width: 500px;
+        margin-left: 10%;
+
+        font-size: 26px;
+
+        transition: 1s;
+    }
+} 
+
+@media (max-width: 1300px) {
+    #pagina13 {
+        top: 11350px;
+
+        transition: 1s;
+    }
+
+    #circulo6 {
+        z-index: 1;
+        position: relative;
+        top: -100px;
+        left: -20%;
+        width: 500px;
+        height: 500px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1200px) {
+    #pagina13 {
+        top: 11200px;
+
+        transition: 1s;
+    }
+
+    #circulo6 {
+        z-index: 1;
+        position: relative;
+        top: -150px;
+        left: -40%;
+        width: 500px;
+        height: 500px;
+
+        transition: 1s;
+    }
+
+    #texto13 {
+        margin-left: 5%;
+
+        font-size: 22px;
+        
+        transition: 1s;
+    }
+
+    #ImgEcobag {
+        top: 100px;
+        width: 300px;
+        margin-right: 15%;
+        
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1000px) {
+    #texto13 {
+        max-width: 400px;
+        margin-left: 3%;
+        text-align: start;
+
+        font-size: 18px;
+
+        transition: 1s;
+    }
+
+    #circulo6 {
+        position: relative;
+        z-index: 1;
+        top: -200px;
+        left: -60%;
+        width: 500px;
+        height: 500px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo13 {
+        top: 50px;
+
+        font-size: 68px;
+
+        transition: 1s;
+    }
+    
+    #subtituloTitulo13 {
+        top: 50px;
+
+        font-size: 52px;
+
+        transition: 1s;
+    }
+
+    #ImgEcobag {
+        margin-right: 10%;
+    }
+
+    #circulo6 {
+        z-index: 0;
+        position: relative;
+        top: -250px;
+        left: -90%;
+        width: 500px;
+        height: 500px;
+
+        transition: 1s;
+    }
+}

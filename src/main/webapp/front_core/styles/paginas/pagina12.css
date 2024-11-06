@@ -1,0 +1,183 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 608 ~ 668 do Index.html)                                 */
+
+#pagina12 {
+    position: absolute;
+    top: 11050px;
+    width: 100vw;
+    height: 700px;
+
+    background-color: #FFF6F9;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo12 {
+    position: relative;
+    top: 25px;
+    left: 40%;
+    
+    font-size: 84px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                         ELEMENTOS DO CARROSSEL                                                                ||
+===================================================================================================================================================
+*/
+
+
+
+.carousel-container2 {
+    position: relative;
+    top: 100px;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+
+    overflow: hidden;
+}
+  
+.carousel2 { 
+    width: 100%;
+
+    overflow: hidden;
+}
+  
+.carousel-track2 {
+    display: flex;
+
+    transition: transform 0.5s ease;
+
+    cursor: grab;
+}
+  
+.carousel-card2 {
+    display: flex;
+    padding: 20px;
+    flex: 0 0 calc(100% / 3); 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+  
+.carousel-card2 img {
+    width: 400px;
+    height: 300px;
+
+    object-fit: cover;
+    border-radius: 20px;
+}
+  
+.carousel-card2 h3 {
+    margin: 20px 0 10px;
+}
+  
+.carousel-card2 p {
+    margin: 5px 0;
+}
+  
+.carousel-btn2 {
+    top: 38%;
+    position: absolute;
+
+    font-size: 24px;
+
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transform: translateY(-75%);
+}
+
+.right-btn2 {
+    right: 30px;
+}
+  
+#avancar {
+    position: relative;
+    width: 50px;
+    top: 3px;
+    left: 2px;
+}
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1300px) {
+    #pagina12 {
+        top: 10650px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1200px) {
+    #pagina12 {
+        top: 10500px;
+
+        transition: 1s;
+    }
+
+    #titulo12 {
+        left: 30%;
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1100px) {
+    #titulo12 {
+        transition: 1s;
+        left: 17.5%;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo12 {
+        left: 15%;
+
+        font-size: 68px;
+
+        transition: 1s;
+    }
+
+    .carousel-container2 {
+        top: 80px;
+    }
+}
+
+@media (max-width: 700px) {
+    #titulo12 {
+        left: 7.5%;
+
+        font-size: 56px;
+
+        transition: 1s;
+    }
+
+    .carousel-container2 {
+        top: 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    #pagina12 {
+        top: 10650px;
+        height: 650px;
+    }
+}

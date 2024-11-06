@@ -1,0 +1,277 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 347 ~ 462 do Index.html)                                 */
+
+#pagina7 {
+    z-index: -1;
+    position: absolute;
+    top: 6750px;
+    width: 100vw;
+    height: 1500px;
+
+    background-color: #EEF9EF;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo7 {
+    position: relative;
+    top: 50px;
+    text-align: center; 
+
+    font-size: 84px;
+}
+
+#sublinhar {
+    color: transparent;
+    background: linear-gradient(#e66465, #FF6CA2);
+    background-clip: text; 
+    -webkit-background-clip: text; 
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                        ELEMENTOS DA TABELA                                                                    ||
+===================================================================================================================================================
+*/
+
+
+
+#headerTabela {
+    position: relative;
+    top: 50px;
+    display: flex;
+    margin-right: 22.5%;
+    gap: 100px;
+    justify-content: flex-end;
+}
+
+#corpoTabela::before {
+    z-index: -1;
+    position: relative;
+    top: 50%;
+    left: 20%; 
+    display: block;
+    width: 60%;
+    height: 2px;
+
+    background-color: #DDDDDD;
+
+    content: "";
+}
+
+#corpoTabela {
+    top: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.LinhaTabela {
+    position: relative;
+    display: flex;
+    margin-left: 20%;
+    justify-content: space-between;
+}
+
+#divisoriaTabela {
+    z-index: -1;
+    position: relative;
+    top: 50%;
+    left: 20%; 
+    display: block;
+    width: 60%;
+    height: 2px;
+
+    background-color: #DDDDDD;
+
+    content: "";
+}
+
+.TextoLinha {
+    font-size: 26px;
+    color: #222222;
+}
+
+#headerTexto {
+    font-size: 22px;
+    color: #222222;
+}
+
+.certinho {
+    width: 30px;
+}
+
+.erradinho {
+    width: 30px;
+}
+
+.certoErrado {
+    display: flex;
+    width: 20%;
+    height: 30px;
+    margin-right: 32%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                        ELEMENTOS DA TABELA                                                                    ||
+===================================================================================================================================================
+*/
+
+
+
+.popup {
+    display: none; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.fechar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#mostrarImagem {
+    z-index: 3;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1500px) {
+    #headerTabela {
+        margin-right: 22%;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1450px) {
+    #headerTabela {
+        margin-right: 22%;
+        gap: 90px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1400px) {
+    #headerTabela {
+        margin-right: 21%;
+
+        transition: 1s;
+    }
+    
+}
+
+@media (max-width: 1350px) {
+    #headerTabela {
+        margin-right: 22%;
+        gap: 70px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1350px) {
+    #headerTabela {
+        margin-right: 21%;
+        gap: 40px;
+
+        transition: 1s;
+    }
+
+    .TextoLinha {
+        width: 300px;
+
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 1300px) {
+    #pagina7 {
+        top: 6400px;
+    }
+
+    .TextoLinha {
+        width: 250px;
+
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo7 {
+        font-size: 68px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #pagina7 {
+        top: 6200px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1000px) {
+    #pagina7 {
+        top: 6250px;
+
+        height: 1700px;
+        
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1000px) {
+    #headerTabela {
+        margin-right: 21%;
+        gap: 20px;
+
+        transition: 1s;
+    }
+
+    #headerTexto {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,108 @@
+/*                                                      CSS Dos Elementos das abelhas                                                             */
+
+.circulo {
+    z-index: -1;
+    position: relative;
+
+    border: 5px dotted #333;
+    border-radius: 50%;
+}
+
+.abelha {
+    z-index: 0;
+    position: relative;
+    top: -3000px; 
+    width: 75px;
+
+    transform: translate(-50%, -50%);
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                         CÍRCULOS ESPECÍFICOS                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#circulo1 {
+    z-index: 0;
+    position: relative;
+    top: 50px;
+    left: 90%;
+    width: 400px;
+    height: 400px;
+
+    transform: translate(-50%, -50%);
+
+}
+
+#circulo3 {
+    z-index: 1;
+    position: relative;
+    top: -425px;
+    left: 3%;
+    width: 400px;
+    height: 400px;
+
+    transform: translate(-50%, -50%);
+}
+
+#circulo4 {
+    z-index: 1;
+    position: relative;
+    top: 50px;
+    left: 60%;
+    width: 400px;
+    height: 400px;
+}
+
+#circulo5 {
+    z-index: 1;
+    position: relative;
+    top: 0px;
+    left: 80%;
+    width: 400px;
+    height: 400px;
+}
+
+#circulo6 {
+    z-index: 1;
+    position: relative;
+    top: 50px;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                         ABELHAS ESPECÍFICAS                                                                   ||
+===================================================================================================================================================
+*/
+
+
+
+#abelha1 {
+    z-index: 1;
+}
+
+#abelha4 {
+    z-index: 2;
+}
+
+#abelha3 {
+    z-index: 2;
+}
+
+#abelha5 {
+    z-index: 2;
+}
+
+#abelha6 {
+    z-index: 2;
+}

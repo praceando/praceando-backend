@@ -1,0 +1,221 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 731 ~ 859 do Index.html)                                 */
+
+#pagina15 {
+    position: absolute;
+    top: 13200px;
+    display: flex;
+    width: 100vw;
+    height: 1350px;
+
+    background-color: #FFF6F9;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo15 {
+    text-align: center; 
+
+    font-size: 62px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DO FAQ                                                                    ||
+===================================================================================================================================================
+*/
+
+
+
+.containerFAQ {
+    width: 48rem;
+    margin: 0 auto;
+    padding: 4rem;
+}
+  
+.caixaFAQ {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.caixaFAQ-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.caixaFAQ-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #FF6CA2;
+}
+
+.caixaFAQ .caixaFAQ-texto {
+  opacity: 0;
+  max-height: 0;
+
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.caixaFAQ .caixaFAQ-texto p {
+  margin: 0.5em 0;
+
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                    ELEMENTOS DOS BOTÕES DO FAQ                                                                ||
+===================================================================================================================================================
+*/
+
+
+
+.caixaFAQ button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  text-align: left;
+
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #777777;
+  background: none;
+
+  border: none;
+  outline: none;
+}
+
+.caixaFAQ button:hover,
+.caixaFAQ button:focus {
+  color: #FF6CA2;
+
+  cursor: pointer;
+}
+
+.caixaFAQ button .caixaFAQ-titulo {
+  padding: 1em 1.5em 1em 0;
+}
+
+.caixaFAQ button .icone {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+
+  color: #e84f75;
+
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.caixaFAQ button .icone ::before {
+  position: absolute;
+  top: 10px;
+  left: 6.25px;
+  display: block;
+  width: 10px;
+  height: 2px;
+
+  background: currentColor;
+
+  content: '';
+}
+
+.caixaFAQ button .icone ::after {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  display: block;
+  width: 2px;
+  height: 10px;
+
+  background: currentColor;
+
+  content: '';
+}
+
+.caixaFAQ button[aria-expanded='true'] {
+  color: #FF6CA2;
+}
+
+.caixaFAQ button[aria-expanded='true'] .icone ::after {
+  width: 0;
+}
+
+.caixaFAQ button[aria-expanded='true'] + .caixaFAQ-texto {
+  max-height: 9em;
+
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+  opacity: 1;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1300px) {
+    #pagina15 {
+        top: 12900px;
+        height: 1605px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1200px) {
+    #pagina15 {
+        transition: 1s;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo15 {
+      top: -100px;
+
+      font-size: 52px;
+
+      transition: 1s;
+    }
+}
+
+@media (max-width: 850px) {
+    #titulo15 {
+      font-size: 42px;
+
+      transition: 1s;
+    }
+}
+
+@media (max-width: 800px) {
+    #titulo15 {
+      font-size: 36px;
+
+      transition: 1s;
+    }
+}
+
+@media (max-width: 700px) {
+    #pagina15 {
+        height: 1705px;
+    }
+}

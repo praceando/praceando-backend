@@ -17,8 +17,8 @@
 
 <head>
     <title>Visualizando: <%=tabelaInterface%></title>
-    <link rel="stylesheet" href="css/visualizar.css">
-    <link rel="stylesheet" href="css/removePopUp.css">
+    <link rel="stylesheet" href="front_core/styles/crud/visualizar.css">
+    <link rel="stylesheet" href="front_core/styles/crud/removePopUp.css">
 </head>
 <body>
     <div class="box">
@@ -55,10 +55,10 @@
                     %>
                     <td>
                         <a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
-                            <img src="assets/editar.png" alt="editar">
+                            <img src="assets/visu/editar.png" alt="editar">
                         </a>
                         <a class="visuBtn botao-excluir" id="removerBtn" data-href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
-                            <img src="assets/excluir.png" alt="excluir">
+                            <img src="assets/visu/excluir.png" alt="excluir">
                         </a>
                     </td>
                     <%}
@@ -77,13 +77,13 @@
         <div class="modal-conteudo">
             <span id="fechar-modal" class="fechar">&times;</span>
             <div class="corpo-modal">
-                <img src="assets/alert.png" alt="Imagem de Confirmação" class="imagem-confirmacao">
+                <img src="assets/visu/alert.png" alt="Imagem de Confirmação" class="imagem-confirmacao">
                 <p>Você deseja mesmo excluir esse registro em <strong><%=tabelaInterface%></strong>?</p>
             </div>
             <button id="confirmar-exclusao">Sim, excluir</button>
             <button id="cancelar-exclusao">Cancelar</button>
         </div>
     </div>
-    <script src="js/removerPopUp.js"></script>
+    <script src="front_core/scripts/removerPopUp.js"></script>
 </body>
 </html>

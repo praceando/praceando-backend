@@ -1,0 +1,204 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 508 ~ 525 do Index.html)                                 */
+
+#pagina10 {
+    position: absolute;
+    top: 9450px;
+
+    width: 100vw;
+    height: 850px;
+
+    background-color: #FFF6F9;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo10 {
+    position: relative;
+    top: 25px;
+    left: 57.5%;
+
+    font-size: 84px;
+}
+
+#subtituloTitulo10 {
+    position: relative;
+    top: 40px;
+    left: 65%;
+
+    font-size: 60px;
+}
+
+#texto10 {
+    position: relative;
+    top: 100px;
+    max-width: 630px;
+    margin-left: 37.5%;
+
+    font-size: 26px;
+
+    text-align: right;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                          ELEMENTOS DE IMAGEM                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#ImgSP {
+    position: relative;
+    top: -150px;
+    left: 15%;
+    width: 375px;
+    
+    float: inline-start;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1300px) {
+    #pagina10 {
+        top: 9100px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1100px) {
+    #pagina10 {
+        height: 650px;
+
+        transition: 1s;
+    }
+
+    #circulo5 {
+        left: 90%;
+
+        top: -150px;
+
+        transition: 1s;
+
+    }
+
+    #titulo10 {
+        left: 50%;
+
+        transition: 1s;
+    }
+    
+    #subtituloTitulo10 {
+        left: 60%;
+
+        transition: 1s;
+    }
+
+    #texto10 {
+        max-width: 500px;
+
+        font-size: 22px;
+
+        transition: 1s;
+    }
+
+    #ImgSP {
+        width: 325px;
+        top: -150px;
+        left: 15%;
+
+        float: inline-start;
+        
+        transition: 1s;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo10 {
+        left: 40%;
+
+        font-size: 68px;
+
+        transition: 1s;
+    }
+    
+    #subtituloTitulo10 {
+        top: 20px;
+        left: 50%;
+
+        font-size: 52px;
+
+        transition: 1s;
+    }
+
+    #texto10 {
+        left: -10%;
+        max-width: 500px;
+
+        font-size: 20px;
+
+        transition: 1s;
+    }
+
+    #ImgSP {
+        top: -100px;
+        left: 5%;
+        width: 275px;
+
+        transition: 1s;
+    }
+}
+
+
+@media (max-width: 800px) {
+    #titulo10 {
+        left: 25%;
+
+        transition: 1s;
+    }
+    
+    #subtituloTitulo10 {
+        left: 35%;
+
+        transition: 1s;
+    }
+
+    #texto10 {
+        left: -20%;
+        max-width: 500px;
+
+        transition: 1s;
+    }
+
+    #ImgSP {
+        top: -40px;
+        left: 3%;
+        width: 200px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 600px) {
+    #pagina10 {
+        top: 9350px;
+    }
+}

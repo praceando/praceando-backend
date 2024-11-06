@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #EEF9EF;
+    overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+}
+
+p {
+    margin-top: 50px;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+#botaoInserir {
+    position: relative;
+    width: 380px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #F497B6;
+    top: 25px;
+    left: 100px;
+
+    transition: 0.25s transform ease-in-out;
+}
+
+#botaoInserir:hover {
+    transform: scale(1.01);
+    background-color: #E6679A;
+}
+
+#caixaInsert {
+    width: 50%;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 34px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#centralizar {
+    display: flex;
+    justify-content: center;
+    height: 70%;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    width: 550px;
+    justify-content: space-between;
+    margin-top: 5%;
+    right: 10%;
+}
+
+
+label {
+    position: relative;
+    width: 300px;
+    text-align: end;
+    top: 7.5px;
+    font-size: 26px;
+    margin-top: -10px;
+    margin-right: 20px;
+}
+
+
+.inputForm {
+    border-radius: 10px;
+    padding-top: 2px;
+    text-align: center;
+    height: 30px;
+    width: 299px;
+    cursor: pointer;
+    position: relative;
+    left: 1px;
+    border: 2px solid black;
+}
+
+#combo {
+    z-index: 10;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 40px;
+    left: 3%;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    transition: 0.5s transform ease-in-out;
+}
+
+.botao-voltar:hover {
+    transform: scale(1.1);
+}
+
+img {
+    width: 75px;
+}

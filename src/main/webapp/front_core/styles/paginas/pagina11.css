@@ -1,0 +1,171 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 531 ~ 602 do Index.html)                                 */
+
+#pagina11 {
+    position: absolute;
+    top: calc(10300px);
+    width: 100vw;
+    height: 750px;
+
+    background-color: #FFF6F9;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo11 {
+    position: relative;
+    top: 25px;
+    left: 15%;
+
+    font-size: 84px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                         ELEMENTOS DO CARROSSEL                                                                ||
+===================================================================================================================================================
+*/
+
+
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    top: 100px;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+
+    overflow: hidden;
+}
+  
+.carousel {
+    width: 100%;
+
+    overflow: hidden;
+}
+  
+.carousel-track {
+    display: flex;
+
+    transition: transform 0.5s ease;
+
+    cursor: grab;
+}
+  
+.carousel-card {
+    display: flex;
+    padding: 20px;
+    flex: 0 0 calc(100% / 3); 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+  
+.carousel-card img {
+    width: 400px;
+    height: 300px;
+
+    border-radius: 20px;
+    object-fit: cover;
+}
+  
+.carousel-card h3 {
+    margin: 20px 0 10px;
+}
+  
+.carousel-card p {
+    margin: 5px 0;
+}
+  
+.carousel-btn {
+    position: absolute;
+    top: 38%;
+    padding: 10px;
+    
+    font-size: 24px;
+
+    background-color: #e03157;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transform: translateY(-10%);
+}
+
+.right-btn {
+    right: 30px;
+}
+  
+#avancar {
+    width: 50px;
+}
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1300px) {
+    #pagina11 {
+        top: 9900px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1200px) {
+  #pagina11 {
+      top: 9750px;
+
+      transition: 1s;
+  }
+}
+
+@media (max-width: 900px) {
+  #titulo11 {
+    left: 20%;
+
+    font-size: 68px;
+
+    transition: 1s;
+  }
+
+  .carousel-container {
+    top: 80px;
+  }
+}
+
+@media (max-width: 700px) {
+  #titulo11 {
+    left: 7.5%;
+
+    font-size: 56px;
+
+    transition: 1s;
+  }
+
+  .carousel-container {
+    top: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  #pagina11 {
+      top: 10000px;
+      height: 650px;
+  }
+}

@@ -1,0 +1,132 @@
+/*                          CSS Dos Elementos da <section id="animacaoInicial">  (Linhas 113 ~ 116 do Index.html)                                */
+
+#animacaoInicial {
+    position: absolute;
+    width: 100vw;
+    height: 75vh;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                                 ÍCONE                                                                         ||
+===================================================================================================================================================
+*/
+
+
+
+#logoAnimacao {
+    position: relative;
+    top: 25px;
+    left: 0px;
+    width: 33.5%;
+
+    animation: icone 4s;
+}
+
+@keyframes icone {
+    from {
+        width: 40%;
+        top: 50px;
+        left: 600px;
+    }
+    to {
+        width: 33.5%;
+        top: 25px;
+        left: 0px;
+    }
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                                 TEXTO                                                                         ||
+===================================================================================================================================================
+*/
+
+
+
+#slogan {
+    position: absolute;
+    top: 200px;
+    left: 33.5%;
+    width: 55%;
+
+    animation: slogan 5s forwards;
+
+    clip-path: inset(0 0 0 100%);
+}
+
+@keyframes slogan {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1250px) {
+    #slogan {
+        top: 150px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 950px) {
+    #logoAnimacao {
+        top: 10px;
+        left: 30%;
+        width: 300px;
+
+        transition: 1s;
+    }
+
+    #slogan {
+        top: 275px;
+        left: 20%;
+        width: 500px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 750px) {
+    #logoAnimacao {
+        left: 22.5%;
+
+        transition: 1s;
+    }
+    #slogan {
+        left: 10%;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 625px) {
+    #logoAnimacao {
+        left: 17.5%;
+
+        transition: 1s;
+    }
+    #slogan {
+        left: 5%;
+        width: 450px;
+
+        transition: 1s;
+    }
+}

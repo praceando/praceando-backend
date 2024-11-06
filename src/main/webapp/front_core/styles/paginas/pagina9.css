@@ -1,0 +1,118 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 492 ~ 501 do Index.html)                                 */
+
+#pagina9 {
+    position: absolute;
+    top: 8900px;
+    width: 100vw;
+    height: 550px;
+
+    background-color: #EEF9EF;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo9 {
+    position: relative;
+    left: 100px;
+
+    font-size: 84px;
+}
+
+#texto9 {
+    position: relative;
+    top: 100px;
+    left: 15%;
+    max-width: 700px;
+
+    font-size: 26px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1300px) {
+    #pagina9 {
+        top: 8550px;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    #titulo9 {
+        left: 35%;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo9 {
+        left: 30%;
+
+        font-size: 68px;
+
+        transition: 1s;
+    }
+
+    #texto9 {
+        top: 100px;
+        left: 5%;
+        max-width: 600px;
+
+        font-size: 22px;
+
+        transition: 1s;
+    }
+}
+
+
+@media (max-width: 800px) {
+    #titulo9 {
+        left: 20%;
+
+        transition: 1s;
+    }
+
+    #texto9 {
+        max-width: 500px;
+
+        transition: 1s;
+
+    }
+}
+
+@media (max-width: 600px) {
+    #pagina9 {
+        top: 8800px;
+    }
+
+    #titulo9 {
+        top: 50px;
+        left: 6%;
+
+        transition: 1s;
+    }
+
+    #texto9 {
+        max-width: 450px;
+
+        font-size: 20px;
+
+        transition: 1s;
+    }
+}

@@ -1,0 +1,349 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 254 ~ 294 do Index.html)                                 */
+
+#pagina5 {
+    position: absolute;
+    top: 3800px;
+    width: 100vw;
+    height: 700px;
+
+    background-color: #FFFBF1;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo5 {
+    position: relative;
+    left: 10%;
+
+    font-size: 84px;
+}
+
+#subtituloTitulo5 {
+    position: relative;
+    top: -15px;
+    left: 15%;
+
+    font-size: 60px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                        ESTILO DAS IMAGENS                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+#suporte1 {
+    position: relative;
+    top: 0px;
+    left: 32.5%;
+    width: 200px;
+}
+
+#suporte2 {
+    position: relative;
+    top: -205px;
+    left: 55%;
+    width: 200px;
+}
+
+#suporte3 {
+    position: relative;
+    top: -175px;
+    left: 70%;
+    width: 200px;
+}
+
+#suporte4 {
+    position: relative;
+    top: -385px;
+    left: 17.5%;
+    width: 200px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                       ELEMENTOS DA DESCRIÇÃO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#descricaoCamilla {
+    z-index: 2;
+    position: absolute;
+    top: 220px;
+    left: -33%;
+    display: none;
+    width: 350px;
+    height: 55px;
+    padding: 5px;
+
+    background-color: #FFCD4D;
+
+    border-radius: 10px;
+}
+
+#suporte1 img:hover {
+    transform: scale(1.1); 
+    transition: 1s ease-in-out;
+}
+
+#suporte1 img:hover + #descricaoCamilla {
+    display: block;
+}
+
+
+#descricaoFernanda {
+    z-index: 2;
+    position: absolute;
+    top: 220px;
+    left: -33%;
+    display: none;
+    width: 330px;
+    height: 55px;
+    padding: 5px;
+
+    background-color: #FFCD4D;
+
+    border-radius: 10px;
+}
+
+#suporte2 img:hover {
+    transform: scale(1.1); 
+}
+
+#suporte2 img:hover + #descricaoFernanda {
+    display: block;
+}
+
+
+#descricaoGuilherme {
+    z-index: 2;
+    position: absolute;
+    top: -75px;
+    left: -43%;
+    display: none;
+    width: 370px;
+    height: 55px;
+    padding: 5px;
+
+    background-color: #FFCD4D;
+
+    border-radius: 10px;
+}
+
+#suporte3 img:hover {
+    transform: scale(1.1); 
+}
+
+#suporte3 img:hover + #descricaoGuilherme {
+    display: block;
+}
+
+
+#descricaoMayla {
+    z-index: 2;
+    position: absolute;
+    top: -75px;
+    left: -23%;
+    display: none;
+    width: 300px;
+    height: 55px;
+    padding: 5px;
+
+    background-color: #FFCD4D;
+
+    border-radius: 10px;
+}
+
+#suporte4 img:hover {
+    transform: scale(1.1); 
+}
+
+#suporte4 img:hover + #descricaoMayla {
+    display: block;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1200px) {
+    #pagina5 {
+        top: 3600px;
+
+        transition: 1s;
+    }
+    #circulo3 {
+        left: -13%;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1000px) {
+    #pagina5 {
+        top: 3800px;
+
+        transition: 1s;
+    }
+
+    #suporte1 {
+        left: 20%;
+
+        transition: 1s;
+    }
+
+    #suporte2 {
+        left: 60%;
+
+        transition: 1s;
+    }
+    
+    #suporte3 {
+        left: 70%;
+
+        transition: 1s;
+    }
+
+    #suporte4 {
+        left: 10%;
+
+        transition: 1s;
+    }
+
+    #circulo3 {
+        left: -18%;
+
+        transition: 1s;
+    }
+
+    #descricaoGuilherme {
+        left: -93%;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo5 {
+        top: 10px;
+
+        font-size: 68px;
+
+        transition: 1s;
+    }
+
+    #subtituloTitulo5 {
+        top: -5px;
+
+        font-size: 48px;
+
+        transition: 1s;
+    } 
+    #suporte1 {
+        top: 20px;
+
+        transition: 1s;
+    }
+
+    #suporte2 {
+        top: -185px;
+
+        transition: 1s;
+    }
+    
+    #suporte3 {
+        top: -155px;
+
+        transition: 1s;
+    }
+
+    #suporte4 {
+        top: -365px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 750px) {
+    #suporte1 {
+        left: 15%;
+
+        transition: 1s;
+    }
+
+    #suporte2 {
+        left: 50%;
+
+        transition: 1s;
+    }
+    
+    #suporte3 {
+        left: 60%;
+
+        transition: 1s;
+    }
+
+    #suporte4 {
+        left: 5%;
+
+        transition: 1s;
+    }
+
+    #descricaoCamilla {
+        left: -13%;
+    }
+
+    #descricaoFernanda {
+        left: -58%;
+    }
+
+    #descricaoMayla {
+        left: -3%;
+    }
+}
+
+@media (max-width: 550px) {    
+    #suporte1 {
+        left: 8%;
+
+        transition: 1s;
+    }
+
+    #suporte2 {
+        left: 52%;
+
+        transition: 1s;
+    }
+    
+    #suporte3 {
+        left: 55%;
+
+        transition: 1s;
+    }
+
+    #suporte4 {
+        left: 2.5%;
+
+        transition: 1s;
+    }
+}

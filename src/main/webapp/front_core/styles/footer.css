@@ -1,0 +1,339 @@
+/*                          CSS Dos Elementos da <section id="animacaoInicial">  (Linhas 134 ~ 140 do Main.html)                                  */
+
+footer {
+    position: absolute;
+    display: flex;
+    top: 14600px;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           FOOTER SUPERIOR                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+#fundoFooter {
+    position: absolute;
+    width: 100vw;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #F3C4C7;
+}
+
+#tituloFooter {
+    position: relative;
+    top: 15px;
+
+    font-size: 52px;
+}
+
+#textoFooter {
+    position: relative;
+    top: 15px;
+
+    font-size: 32px;
+}
+
+#ImgGP {
+    position: relative;
+    top: 40px;
+    width: 210px;
+    height: 60px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           FOOTER INFERIOR                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+#redesSociaisFooter {
+    position: relative;
+    top: 150px;
+    display: flex;
+    width: 100vw;
+    height: 55px;
+    padding: 0 100px;
+    align-items: center;
+    justify-content: space-between; 
+
+    background-color: #4B8F56;
+
+    box-sizing: border-box; 
+}
+
+#facebookFooter {
+    width: 50px;
+    height: 40px;
+    margin-left: -20px;
+}
+
+#instagramFooter {
+    width: 54px;
+    height: 54px;
+}
+
+#youtubeFooter {
+    width: 36px;
+    height: 36px;
+    margin-left: 15px;
+}
+
+#e-mailFooter {
+    width: 36px;
+    height: 36px;
+    margin-left: 25px;
+}
+
+#CopyrightFooter {
+    position: relative;
+    left: 7%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                                  BOTÕES                                                                       ||
+===================================================================================================================================================
+*/
+
+
+
+#AcessoRestrito {
+    z-index: 1;
+    position: relative;
+    top: 93px;
+    left: -45%;
+
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#Crud {
+    z-index: 1;
+    position: relative;
+    top: 70px;
+    left: -35%;
+ 
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1200px) {
+    #CopyrightFooter {
+        left: 5%;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1100px) {
+    #CopyrightFooter {
+        left: 0%;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 900px) {
+    #tituloFooter {
+        font-size: 46px;
+
+        transition: 1s;
+    }
+
+        
+    #AcessoRestrito {
+        top: 33px;
+        left: -40%;
+
+        transition: 1s;
+    }
+
+    #Crud {
+        top: 10px;
+        left: -20%;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 850px) {
+    #redesSociaisFooter {
+        padding: 0 50px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 810px) {
+    #tituloFooter {
+        font-size: 40px;
+
+        transition: 1s;
+    }
+
+    #textoFooter {
+        top: 20px;
+
+        font-size: 26px;
+
+        transition: 1s;
+    }
+    
+    #ImgGP {
+        position: relative;
+        top: 50px;
+        width: 178px;
+        height: 51px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 750px) {
+    #tituloFooter {
+        font-size: 34px;
+
+        transition: 1s;
+    }
+
+    #textoFooter {
+        top: 20px;
+        font-size: 24px;
+
+        transition: 1s;
+    }
+    
+    #ImgGP {
+        position: relative;
+        top: 40px;
+        width: 178px;
+        height: 51px;
+
+        transition: 1s;
+    }
+
+    #fundoFooter {
+        animation: diminuirTela 2s forwards;
+    }
+
+    @keyframes diminuirTela {
+        50% {
+            height: 210px;
+        }
+        100% {
+            top: -40px;
+            height: 190px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #tituloFooter {
+        top: 10px;
+        left: -10px;
+
+        font-size: 28px;
+
+        transition: 1s;
+    }
+
+    #textoFooter {
+        top: 15px;
+        left: -20px;
+
+        font-size: 20px;
+
+        transition: 1s;
+    }
+    
+    #ImgGP {
+        position: relative;
+        top: 30px;
+        left: -10px;
+        width: 170px;
+        height: 48px;
+
+        transition: 1s;
+    }
+
+    #fundoFooter {
+        animation: diminuirTela 2s forwards;
+    }
+
+    @keyframes diminuirTela {
+        50% {
+            height: 190px;
+        }
+        100% {
+            top: -20px;
+            height: 170px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    #redesSociaisFooter {
+        padding: 20px;
+        justify-content: flex-start; 
+
+        transition: 1s;
+    }
+
+    #CopyrightFooter {
+        width: 100%;
+        padding-right: 0;
+
+        font-size: 17px;
+
+        transition: 1s;
+    }
+
+    #facebookFooter, #instagramFooter {
+        order: -1; 
+        
+        transition: 1s;
+    }
+} 

@@ -1,0 +1,131 @@
+/*                                 CSS Dos Elementos da <section id="pagina3">  (Linhas 468 ~ 486 do Index.html)                                 */
+
+#pagina8 {
+    position: absolute;
+    top: 8250px;
+    width: 100vw;
+    height: 750px;
+
+    background-color: #EEF9EF;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo8 {
+    position: relative;
+    left: 100px;
+
+    font-size: 84px;
+}
+
+#texto8 {
+    position: relative;
+    max-width: 700px;
+    top: 100px;
+    left: 15%;
+
+    font-size: 26px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1300px) {
+    #pagina8 {
+        top: 7900px;
+
+        transition: 1s;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    #pagina8 {
+        top: 7700px;
+        height: 850px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1100px) {
+    #texto8 {
+        left: 25%;
+
+        font-size: 26px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 1000px) {
+    #texto8 {
+        left: 20%;
+
+        transition: 1s;
+    }
+
+    #circulo4 {
+        top: 100px;
+        left: 15%;
+        width: 350px;
+        height: 350px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 900px) {
+    #titulo8 {
+        top: 10px;
+        left: 10%;
+
+        font-size: 68px;
+
+        transition: 1s;
+    }
+    #texto8 {
+        max-width: 600px;
+        left: 15%;
+
+        font-size: 22px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 725px) {
+
+    #texto8 {
+        max-width: 400px;
+        top: 50px;
+        left: 15%;
+
+        font-size: 20px;
+
+        transition: 1s;
+    }
+}
+
+@media (max-width: 600px) {
+    #pagina8 {
+        top: 7950px;
+
+        transition: 1s;
+    }
+}

@@ -15,13 +15,13 @@
     %>
     <title>Alterando ID <%=model.getId()%> da tabela <%=tabelaInterface%></title>
 
-    <link rel="stylesheet" href="./css/inserir.css">
+    <link rel="stylesheet" href="./front_core/styles/crud/inserir.css">
 </head>
 <body>
 
     <!-- Voltar para a página de visualização -->
     <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">
-        <img src="assets/voltar.png" alt="Voltar">
+        <img src="assets/form/voltar.png" alt="Voltar">
     </a>
 
     <p>Alterando ID <%=model.getId()%> da tabela <b><%=tabelaInterface%></b></p>

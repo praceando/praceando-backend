@@ -15,13 +15,13 @@
 
     <head>
         <title>Saída de Inserção</title>
-        <link rel="stylesheet" href="css/inserirSaida.css">
+        <link rel="stylesheet" href="front_core/styles/crud/inserirSaida.css">
     </head>
 
     <body cz-shortcut-listen="true">
 
     <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">
-        <img src="assets/voltar.png" alt="Voltar">
+        <img src="assets/form/voltar.png" alt="Voltar">
     </a>
 
     <div class="saida">

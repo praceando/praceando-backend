@@ -1,0 +1,175 @@
+/*                                 CSS Dos Elementos da <section id="pagina1">  (Linhas 123 ~ 153 do Index.html)                                 */
+
+#pagina1 {
+    position: absolute;
+    top: 725px;
+    width: 100vw;
+    height: 1050px;
+
+    background-color: #FFFBF1;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DE TEXTO                                                                  ||
+===================================================================================================================================================
+*/
+
+
+
+#titulo1 {
+    position: relative;
+    top: 100px;
+    left: 100px;
+
+    font-size: 84px;
+}
+
+#texto1 {
+    position: relative;
+    max-width: 700px;
+    top: 200px;
+    left: 10%;
+
+    font-size: 26px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                           ELEMENTOS DOS DADOS                                                                 ||
+===================================================================================================================================================
+*/
+
+
+
+/*Div para colocar o texto com Flex*/
+#caixaDados {
+    position: relative;
+    top: -75px;
+    left: 10%;
+    display: flex;
+    width: 80%;
+    height: 175px;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    background-color: #FFFFFF;
+
+
+    
+    border: 3px, solid, #FFCD4D;
+    border-radius: 20px;
+}
+
+
+/*Textos e números dos dados*/
+.dadoos {
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.num {
+    color: #413752;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.DescNum {
+    color: #9C9C9C;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1200px) {
+    #pagina1 {
+        top: 600px;
+
+        transition: 1s;
+    }
+    #circulo1 {
+        left: 100%;
+
+        transition: 1s;
+    }
+} 
+ 
+@media (max-width: 1000px) {
+    #titulo1 {
+        left: 5%;
+
+        transition: 1s;
+    } 
+
+    #texto1 {
+        font-size: 20px;
+
+        transition: 1s;
+    }
+
+    #circulo1 {
+        left: 110%;
+
+        transition: 1s;
+    }
+
+    #pagina1 {
+        height: 850px;
+
+        transition: 1s;
+    }
+
+    #caixaDados {
+        top: -250px;
+        
+        transition: 1s;
+    }
+
+} 
+
+@media (max-width: 900px) {
+    #titulo1 {
+        top: 25px;
+        left: 10%;
+
+        font-size: 68px;
+
+        transition: 1s;
+    } 
+
+    #circulo1 {
+        left: 120%;
+
+        transition: 1s;
+    }
+
+    #texto1 {
+        top: 75px;
+        max-width: 500px;
+
+        transition: 1s;
+    }
+} 
+
+@media (max-width: 750px) {
+    #texto1 {
+        max-width: 400px;
+
+        transition: 1s;
+    }
+}

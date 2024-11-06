@@ -1,0 +1,176 @@
+/*                                           Formatações do Header (Linhas 48 ~ 98 do Index.html)                                                */
+
+header {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    background-color: #ffdeea;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                   ELEMENTOS NÃO VISÍVEIS DO HEADER                                                            ||
+===================================================================================================================================================
+*/
+
+
+
+#flex {
+    height: 100px;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+#segundoElemento { 
+    padding-right: 50px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                      ELEMENTOS VISÍVEIS DO HEADER                                                             ||
+===================================================================================================================================================
+*/
+
+
+
+#logoPraceando {
+    width: 250px;
+    height: auto;
+}
+
+#links a {
+    font-size: 18px;
+    color: #313131;
+
+    text-decoration: none;
+}
+
+#links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+/*
+===================================================================================================================================================
+||                                                  ESTILIZAÇÃO DO MENU DA RESPONSIVIDADE                                                        ||
+===================================================================================================================================================
+*/
+
+
+
+#imgMenu {
+    display: none;
+    width: 35px;
+    height: 25px;
+
+    cursor: pointer; 
+}
+
+#inputDoMenu:checked ~ #menu {
+    transform: translateX(0);
+}
+
+#inputDoMenu:checked #sobreposicao {
+    display: block;
+}
+
+#inputDoMenu:checked #imgMenu {
+    transform: rotate(90deg); 
+}
+
+#menu {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+
+    background-color: #1D1E20;
+
+    transition: transform 0.3s ease;
+
+    transform: translateX(-100%); 
+}
+
+#menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#menu a {
+    padding: 10px 0; 
+
+    font-size: 18px;
+    color: #FFFFFF;
+
+    transition: color 0.3s ease, border-color 0.3s ease;
+
+    text-decoration: none;
+    border-bottom: 1px solid #DDDDDD; 
+}
+
+#menu a:hover {
+    color: #D4456C; 
+    border-color: #D4456C;
+}
+
+#fecharMenu {
+    width: 30px; 
+    margin-bottom: 20px;
+
+    cursor: pointer; 
+}
+
+
+
+
+/*
+===================================================================================================================================================
+||                                                            RESPONSIVIDADE                                                                     ||
+===================================================================================================================================================
+*/
+
+
+
+@media (max-width: 1250px) {
+    #labelDoMenu {
+        display: block; 
+    }
+    #links {
+        display: none;
+    }
+    #imgMenu {
+        display: block;
+    }
+}
+
+@media (max-width: 1350px) {
+    #flex {
+        padding-right: 15px; 
+    }
+}
+
+@media (min-width: 1500px) {
+    #flex {
+        padding-right: 0; 
+    }
+}

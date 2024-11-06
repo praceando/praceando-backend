@@ -10,11 +10,11 @@
     %>
     <head>
         <title>Inserindo um novo registro em <%=tabelaInterface%></title>
-        <link rel="stylesheet" href="./css/inserir.css">
+        <link rel="stylesheet" href="./front_core/styles/crud/inserir.css">
     </head>
     <body cz-shortcut-listen="true">
     <a class="botao-voltar" href="visualizar?tabela=<%=tabelaBanco%>">
-        <img src="assets/voltar.png" alt="Voltar">
+        <img src="assets/form/voltar.png" alt="Voltar">
     </a>
 
     <!-- Cabeçalho -->
