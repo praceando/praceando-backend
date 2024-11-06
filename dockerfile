@@ -9,7 +9,7 @@ RUN mvn clean package -DskipTests
 
 FROM tomcat:10.1.19-jdk11
 
-COPY --from=build /app/target/ServletsIndespensa-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/app.war
+COPY --from=build /app/target/ProjetoPraceando-1.0-SNAPSHOT/usr/local/tomcat/webapps/app.war
 
 EXPOSE 8080
 
