@@ -27,7 +27,7 @@ public class ErrorRedirect {
      */
     public static void handleErroBanco(HttpServletRequest request,
                                        HttpServletResponse response) throws IOException, ServletException {
-        redirect(request, response, "Erro de conexão", "Não foi possível estabelecer conexão com o banco de dados. Você pode tentar:\n" + "-Verificar a URL e certificar-se de que está correta\n" + "-Limpar o cache e os cookies do navegador\n" + "-Reiniciar o navegador ou tentar em um navegador diferente");
+        redirect(request, response, "Erro de conexão", "Não foi possível estabelecer conexão com o banco de dados. Você pode tentar " + "verificar a URL e certificar-se de que está correta, " + "ou limpar o cache e os cookies do navegador e, se não funcionar," + "reiniciar o navegador ou tentar em um navegador diferente.");
     }
 
     /** Método para tratar exceções de tabelas indisponíveis no banco de dados
