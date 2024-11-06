@@ -25,7 +25,7 @@
         <h1><%=tabelaInterface%></h1>
         <h2><%=saida.size()%> Elementos listados</h2>
 
-        <%if(canAlter) {
+        <%if(canAlter) { // Se o usuário tem permissão para alterar a tabela
         %>
         <a class="visuBtn" id="novoBtn" href="inserir?tabela=<%=tabelaBanco%>">Novo</a>
         <%}
@@ -36,22 +36,22 @@
         <table class="tabelaSaida">
             <div class="conteudo">
                 <tr>
-                    <%if (canAlter) {
+                    <%if (canAlter) { // Se o usuário tem permissão para alterar a tabela
                     %>
                     <th>Ações</th>
                     <%}
                     %>
 
-                    <%for (String coluna : colunas) {
+                    <%for (String coluna : colunas) { // Para cada coluna da tabela
                     %>
                     <th><%=coluna%></th>
                     <%}
                     %>
                 </tr>
-                <%for (Model m : saida) {
+                <%for (Model m : saida) { // Para cada linha da tabela
                 %>
                 <tr>
-                    <%if (canAlter) {
+                    <%if (canAlter) { // Se o usuário tem permissão para alterar a tabela
                     %>
                     <td>
                         <a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
@@ -63,7 +63,7 @@
                     </td>
                     <%}
                     %>
-                    <%=HTMLGenerator.linhaFromModel(m)%>
+                    <%=HTMLGenerator.linhaFromModel(m)%> <!-- Chama o método linhaFromModel da classe HTMLGenerator para gerar a linha da tabela -->
                 </tr>
                 <%  }
                 %>

@@ -4,6 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <%
+        //Getters
     Tabela tabela = (Tabela) request.getAttribute("tabela");
     String tabelaInterface = tabela.getNomeInterface();
     String tabelaBanco = tabela.getNomeBanco();
@@ -27,7 +28,7 @@
         <h2>Saída:</h2>
         <p id="subtitulo2" class="<%=saida.getCodigo() == 1 ? "sucesso" : "erro"%>"><%=saida.toString()%></p>
 
-        <%if (saida.hasErro()) {
+        <%if (saida.hasErro()) { //Se hover erro, exibe o erro
         %>
         <br>
         <p><%=saida.getErro()%></p>
@@ -47,7 +48,7 @@
         </tr>
         </thead>
         <tbody>
-        <%for (Map.Entry<String, String> linha : params.entrySet()) {
+        <%for (Map.Entry<String, String> linha : params.entrySet()) { //Percorre as linhas da tabela
         %>
         <tr>
             <td>

@@ -7,7 +7,7 @@
     <title>Cadastro do adm</title>
 </head>
 <body>
-    <%
+    <% //Getters
         boolean[] status = (boolean[]) request.getAttribute("status");
         boolean dbAccessValido = (boolean) request.getAttribute("dbAccessValido");
         SqlExitDML saidaInsert = (SqlExitDML) request.getAttribute("saidaInsert");
@@ -16,6 +16,7 @@
         String senha = request.getParameter("senha");
 
 
+        // Verificando se a senha e o email são válidos
         String[] avisos = new String[]{
                 status[0] ? "Senha inválida, precisa ter 8 caracteres E uma letra maiúscula" : null,
                 status[1] ? "E-mail inválido, precisa ser um e-mail válido da Germinare" : null,
@@ -25,16 +26,17 @@
 
     <h1>Tentou cadastrar '<%=email%>', com senha '<%="*".repeat(senha.length())%>' </h1>
 
+    <!-- Avisos de erros -->
     <div class="avisos-container">
-        <%
-            if (dbAccessValido) {
+        <% // Verificando se a conexão com o banco de dados foi válida
+            if (dbAccessValido) { // Se a conexão com o banco de dados foi válida
 
 
-                if (Arrays.equals(status, new boolean[]{false, false, false})) {
+                if (Arrays.equals(status, new boolean[]{false, false, false})) { // Se todos os avisos estiverem ok, insere o usuário no banco de dados
         %>
         <p><%=saidaInsert.toString()%></p>
         <%
-        } else {
+        } else { // Se houver algum aviso, exibe-os
             for (String av : avisos) {
                 if (av != null) {
         %>
@@ -43,7 +45,7 @@
                     }
                 }
             }
-        } else {%>
+        } else {%> <!-- Se a conexão com o banco de dados não foi válida -->
         <p>Código de acesso inválido</p>
         <%
             }
