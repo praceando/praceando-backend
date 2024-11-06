@@ -23,7 +23,6 @@ public class LoginDevServlet extends HttpServlet {
         int saida = adminDAO.usuarioExiste(email, senha);
 
         // Verifica o tipo de retorno do método
-        System.out.println(saida);
         // Define a página a ser redirecionada dependendo do retorno do método
 
         // Verifica em caso de erros na saída

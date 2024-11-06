@@ -36,7 +36,6 @@ public class SearchServlet extends HttpServlet {
 
             List<Model> models = dao.visualizar(); // Lidar em caso de models ser null ou vazio
 
-            System.out.println("ha! AQUIBOM");
             TableOperations.filterByColumn(models, colunaFiltro.trim(), filtro.trim(), incluirNDef);
             TableOperations.orderBy(models, colunaOrderBy, orderType);
 

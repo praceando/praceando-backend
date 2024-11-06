@@ -32,9 +32,7 @@ public class AlterarServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tabelaNome = request.getParameter("tabelaNome");
-        System.out.println(tabelaNome);
         HTMLInput[] inputs = HTMLInput.getInputs(tabelaNome);
-        System.out.println(inputs.length);
 
         Map<String, String> params = new LinkedHashMap<>(); // Dicionário que mantém ordem de inserção
 

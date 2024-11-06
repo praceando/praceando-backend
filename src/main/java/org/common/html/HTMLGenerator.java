@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 
 public class HTMLGenerator {
 
-    /** Método para retornar o HTML da linha de um Model
+    /** Método para gerar um HTML da linha de um Model utilizado na página de visualizar
      * Utilizado na página de visualização
      * @param model Model para gerar o HTML
      * @return HTML da linha do objeto
@@ -14,10 +14,12 @@ public class HTMLGenerator {
     public static String linhaFromModel(Model model) {
         StringBuilder linhaHTML = new StringBuilder();
 
+        // Pega todos os fields da classe
         Field[] fields = model.getClass().getDeclaredFields();
 
+        // Itera os fields
         for (Field field : fields) {
-            field.setAccessible(true);
+            field.setAccessible(true); // faz acessível
             try {
                 Object value = field.get(model);
 
@@ -37,11 +39,13 @@ public class HTMLGenerator {
                         .append(value != null ? value.toString() : "<i>Não definido</i>")
                         .append("</td>");
 
+                // Em caso de ser incessível mostra um erro
             } catch (IllegalAccessException iae) {
                 iae.printStackTrace();
                 linhaHTML.append(String.format("<td>Inaccessible: '%s'</td>", field.getName()));
             }
         }
+        // Retorna string contendo o HTML gerado
         return linhaHTML.toString();
     }
 }

@@ -42,7 +42,6 @@ public class InserirServlet extends HttpServlet {
             System.out.printf("%s : %s", input.getName(), request.getParameter(input.getName()));
             params.put(input.getName(), request.getParameter(input.getName()));
         }
-        System.out.println(params.size());
 
         // Cria o objeto Model a partir dos parâmetros do formulário
         try {
