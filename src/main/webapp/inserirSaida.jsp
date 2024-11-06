@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <%
-        //Getters
+    // Pegando dados que saíram do Servlet
     Tabela tabela = (Tabela) request.getAttribute("tabela");
     String tabelaInterface = tabela.getNomeInterface();
     String tabelaBanco = tabela.getNomeBanco();

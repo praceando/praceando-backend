@@ -11,6 +11,8 @@
     </head>
   <body>
   <%
+    // Pegando dados que saíram do Servlet
+
     String tipoErro = (String) request.getAttribute("tipoErro"); // Tipo do erro
     String mensagemErro = (String) request.getAttribute("mensagemErro"); // Mensagem do erro
   %>

@@ -42,13 +42,13 @@
                     <%}
                     %>
 
-                    <%for (String coluna : colunas) { // Para cada coluna da tabela
+                    <%for (String coluna : colunas) {
                     %>
                     <th><%=coluna%></th>
                     <%}
                     %>
                 </tr>
-                <%for (Model m : saida) { // Para cada linha da tabela
+                <%for (Model m : saida) {
                 %>
                 <tr>
                     <%if (canAlter) { // Se o usuário tem permissão para alterar a tabela

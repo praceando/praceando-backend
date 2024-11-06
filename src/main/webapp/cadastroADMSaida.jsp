@@ -7,7 +7,8 @@
     <title>Cadastro do adm</title>
 </head>
 <body>
-    <% //Getters
+    <%
+        // Pegando dados que saíram do Servlet
         boolean[] status = (boolean[]) request.getAttribute("status");
         boolean dbAccessValido = (boolean) request.getAttribute("dbAccessValido");
         SqlExitDML saidaInsert = (SqlExitDML) request.getAttribute("saidaInsert");
@@ -28,11 +29,11 @@
 
     <!-- Avisos de erros -->
     <div class="avisos-container">
-        <% // Verificando se a conexão com o banco de dados foi válida
-            if (dbAccessValido) { // Se a conexão com o banco de dados foi válida
+        <% // Se o código de acesso fornecido for inválido
+            if (dbAccessValido) { // Se o código de acesso fornecido for inválido
 
 
-                if (Arrays.equals(status, new boolean[]{false, false, false})) { // Se todos os avisos estiverem ok, insere o usuário no banco de dados
+                if (Arrays.equals(status, new boolean[]{false, false, false})) { // Se tudo estiver OK, mostre a mensagem de saída
         %>
         <p><%=saidaInsert.toString()%></p>
         <%
@@ -45,7 +46,7 @@
                     }
                 }
             }
-        } else {%> <!-- Se a conexão com o banco de dados não foi válida -->
+        } else {%> <!-- Se o código de acesso fornecido for inválido -->
         <p>Código de acesso inválido</p>
         <%
             }

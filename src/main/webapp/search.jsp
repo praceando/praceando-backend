@@ -20,6 +20,7 @@
     <img src="assets/voltar.png" alt="Voltar">
   </a>
 
+  <!-- Cabeçalho -->
   <p id="titulo">Pesquisar: <b><%=tabelaInterface%></b></p>
 
   <div class="container">

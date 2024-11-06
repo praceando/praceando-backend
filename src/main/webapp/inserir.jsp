@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <%
-        // Recuperando os dados da tabela
+        // Pegando dados que saíram do Servlet
         Tabela tabela = (Tabela) request.getAttribute("tabela");
         String tabelaInterface = tabela.getNomeInterface();
         String tabelaBanco = tabela.getNomeBanco();

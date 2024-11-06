@@ -5,11 +5,12 @@
 <html>
 <head>
     <%
-        //Getters
+        // Pegando dados que saíram do Servlet
         Tabela tabela = (Tabela) request.getAttribute("tabela");
         String tabelaInterface = tabela.getNomeInterface();
         String tabelaBanco = tabela.getNomeBanco();
 
+        // Model encontrado para alteração
         Model model = (Model) request.getAttribute("model");
     %>
     <title>Alterando ID <%=model.getId()%> da tabela <%=tabelaInterface%></title>
@@ -29,6 +30,7 @@
         <div id="caixaInsert">
             <form method="post" action="alterar-done">
                 <input type="hidden" name="tabelaNome" value="<%=tabelaBanco%>">
+                <!--Gerando formulário de alterar com base no nome da tabela e no model-->
                 <%=HTMLInput.getForm(tabelaBanco, model)%>
                 <button type="submit" id="botaoInserir">Alterar</button>
             </form>

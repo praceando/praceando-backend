@@ -7,7 +7,7 @@
 </head>
 <body>
 <%
-    //Getters
+    // Pegando dados que saíram do Servlet
     Tabela tabela = (Tabela) request.getAttribute("tabela");
     String tabelaInterface = tabela.getNomeInterface();
     String tabelaBanco = tabela.getNomeBanco();
