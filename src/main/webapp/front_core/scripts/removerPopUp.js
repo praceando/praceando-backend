@@ -1,4 +1,4 @@
-console.log('hello')
+console.log("url");
 
 const botoesExcluir = document.getElementsByClassName("botao-excluir");
 
@@ -21,7 +21,10 @@ document.getElementById("cancelar-exclusao").onclick = function() {
 
 document.getElementById("confirmar-exclusao").onclick = function() {
     const url = this.getAttribute("data-href");
-    window.location.href = url;
+    // Pensa ao contrário, o == nem o === não funciona.
+    if (url != null) {} else {
+        window.location.href = url;
+    }
 };
 
 window.onclick = function(event) {

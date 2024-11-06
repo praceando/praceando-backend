@@ -51,18 +51,17 @@
                 <%for (Model m : saida) {
                 %>
                 <tr>
-                    <%if (canAlter) { // Se o usuário tem permissão para alterar a tabela
-                    %>
                     <td>
-                        <a class="visuBtn" id="atualizarBtn" href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
+                        <%if (canAlter) { // Se o usuário tem permissão para alterar a tabela
+                        %>
+                        <a class="visuBtn" id="atualizarBtn" <%=tabelaBanco.equals("admin") ? "disabled-" : ""%>href="alterar?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
                             <img src="assets/visu/editar.png" alt="editar">
                         </a>
-                        <a class="visuBtn botao-excluir" id="removerBtn" data-href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
+                        <a class="visuBtn botao-excluir" id="removerBtn" <%=tabelaBanco.equals("admin") ? "disabled-" : ""%>data-href="remover?tabela=<%=tabelaBanco%>&id=<%=m.getId()%>">
                             <img src="assets/visu/excluir.png" alt="excluir">
                         </a>
+                        <%} %>
                     </td>
-                    <%}
-                    %>
                     <%=HTMLGenerator.linhaFromModel(m)%> <!-- Chama o método linhaFromModel da classe HTMLGenerator para gerar a linha da tabela -->
                 </tr>
                 <%  }
