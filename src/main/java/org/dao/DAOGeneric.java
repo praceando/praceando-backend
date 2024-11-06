@@ -7,6 +7,12 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Classe genérica contendo a lógica JDBC dos métodos de visualizar, criar, remover e alterar
+ * Os comandos SQL específicos de cada tabela recebem um próprio DAO e implementam os métodos
+ * restantes da interface DAO e os métodos abstratos de DAOGeneric
+ * @param <T> A qual Model esse DAO se refere?
+ */
 public abstract class DAOGeneric<T extends Model> implements DAO<T> {
 
 

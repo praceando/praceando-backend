@@ -1,5 +1,10 @@
 package org.common;
 
+/**
+ * Para ser possível esconder o hash da senha do usuário
+ * é utilizada para discernir uma String normal de uma que
+ * requira proteção.
+ */
 public class Senha {
     private final String pwd;
 

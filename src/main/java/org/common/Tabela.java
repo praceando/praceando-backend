@@ -2,21 +2,11 @@ package org.common;
 
 import java.util.LinkedHashMap;
 
+/**
+ * Classe utilizada para intermediar o nome de uma tabela tanto quanto
+ * as colunas delas no banco de Dados e na interface do usuário nas páginas do CRUD
+ */
 public abstract class Tabela {
-//    public String getNomeBanco(String nomeInterface) {
-//        if (this.getNomeInterface().equals(nomeInterface)) {
-//            return this.getNomeBanco();
-//        }
-//        throw new IllegalArgumentException("Tabela do banco " + nomeBanco + " não reconhecida para" + this.nomeBanco);
-//    }
-//
-//    public String getInterface(String nomeBanco) {
-//        if (this.getNomeBanco().equals(nomeBanco)) {
-//            return this.getNomeInterface();
-//        }
-//        throw new IllegalArgumentException("Tabela do banco " + nomeBanco + " não reconhecida para" + this.nomeInterface);
-//    }
-
     /**Obtém as colunas da tabela usadas no banco.
      * @return Array com as colunas da tabela
      */
@@ -31,6 +21,11 @@ public abstract class Tabela {
         return this.getColunas().values().toArray(new String[]{});
     }
 
+    /**
+     * Dado o nome da tabela, verifica se esse objeto contém mesmo nome.
+     * @param nome Nome a ser verificado
+     * @return true se sim, false senão
+     */
     public boolean matches(String nome) {
         return this.getNomeBanco().equals(nome) || this.getNomeInterface().equals(nome);
     }

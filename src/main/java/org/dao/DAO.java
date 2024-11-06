@@ -5,6 +5,11 @@ import org.model.Model;
 
 import java.util.List;
 
+/**
+ * Interface representante de um Data Access Object (DAO)
+ * que força a implementação de todos os métodos do CRUD
+ * @param <T> A qual Model esse DAO se refere?
+ */
 public interface DAO<T extends Model> {
     /**
      * Pegar o objeto tabela relativa ao DAO

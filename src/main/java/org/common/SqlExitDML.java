@@ -1,5 +1,12 @@
 package org.common;
 
+/**
+ * Classe utilizada para produzir mensagens de saída de
+ * comandos DML (insert, update, delete) com base em um código dado
+ * pela saída dos métodos `inserir` `alterar` e `remover` do DAOGeneric entre outros.
+ * Em caso de exceções, a classe pode receber o objeto da exceção e incluir os seus dados na
+ * mensagem de erro gerada.
+ */
 public class SqlExitDML {
 
     private final int codigo;
