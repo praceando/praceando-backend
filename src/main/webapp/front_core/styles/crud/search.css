@@ -1,3 +1,7 @@
+/*                                                     CSS Dos Elementos do Pesquisar                                                             */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
 body {
     width: 100vw;
     height: 100vh;
@@ -16,116 +20,130 @@ body {
     top: 40px;
     left: 3%;
     height: 40px;
+
     border-radius: 10px;
 }
 
 img {
     width: 75px;
+
     transition: 0.5s transform ease-in-out;
 }
 
 img:hover {
     transform: scale(1.1);
-
 }
 
 .container {
-    margin-top: 200px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
     width: 40%;
     height: 40%;
-    background-color: #F6E6E6;
-    border-radius: 20px;
+    margin-top: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-top: 150px;
+
+    background-color: #F6E6E6;
+
+    border-radius: 20px;
+    text-align: center;
 }
 
 #texto1 {
+    top: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-direction: column;
-    top: 30px;
 }
 
 #titulo {
-    top: 0px;
     position: absolute;
-    color: #000000;
+    top: 0px;
+
     font-size: 50px;
+    color: #000000;
 }
 
 #pesquisarNaColuna {
     position: relative;
     top: -125px;
     left: -15px;
+
     font-size: 26px;
 }
 
 #colunaFiltro {
-    font-size: 20px;
     position: relative;
     top: -125px;
     left: 20px;
+    width: 205px;
+
+    font-size: 20px;
+
     border-radius: 8px;
     border: 2px solid black;
     text-align: center;
-    width: 205px;
 }
 
 #por {
     position: relative;
     top: -105px;
     left: -6px;
+
     font-size: 26px;
 }
 
 #filtro {
-    font-size: 20px;
     position: relative;
     top: -103px;
-    width: 410px;
     left: 12px;
+    width: 410px;
+    padding-left: 5px;
+
+    font-size: 20px;
+
     border-radius: 8px;
     border: 2px solid black;
-    padding-left: 5px;
 }
 
 #EOrdenarPor {
     position: relative;
     top: -75px;
     left: -48px;
+
     font-size: 26px;
 }
 
 #orderBy {
-    font-size: 20px;
     position: relative;
     top: -75px;
     left: 55px;
+    width: 205px;
+
+    font-size: 20px;
+
     border-radius: 8px;
     border: 2px solid black;
     text-align: center;
-    width: 205px;
-
 }
-
 
 #emOrdem {
     position: relative;
     top: -50px;
     left: -108px;
+
     font-size: 26px;
 }
 
 #orderType {
-    font-size: 20px;
     position: relative;
     top: -50px;
     left: 115px;
+
+    font-size: 20px;
+
     border-radius: 8px;
     border: 2px solid black;
     text-align: center;
@@ -135,36 +153,41 @@ img:hover {
     position: relative;
     top: -25px;
     left: -117px;
+
     font-size: 26px;
 }
 
 #incluirNDef {
-    font-size: 20px;
     position: relative;
     top: -25px;
     left: 87px;
     width: 50px;
-    border-radius: 8px;
+
+    font-size: 20px;
+
     border: 2px solid black;
+    border-radius: 8px;
     text-align: center;
 }
 
 #pesquisar {
     position: relative;
+    left: 5px;
     width: 480px;
     height: 40px;
-    border-radius: 10px;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
+
     font-size: 20px;
-    left: 5px;
+    color: #FFFFFF;
     background-color: #E8BABA;
+
     transition: 0.25s transform ease-in-out;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-
 #pesquisar:hover {
-    transform: scale(1.01);
     background-color: #D48B8B;
+
+    transform: scale(1.01);
 }

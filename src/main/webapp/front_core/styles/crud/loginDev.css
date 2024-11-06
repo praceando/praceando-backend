@@ -1,71 +1,83 @@
+/*                                          CSS Dos Elementos do Log in do Desenvolvedor                                                         */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box
+    padding: 0;
+
+    font-family: 'DM Sans', sans-serif;
+
+    box-sizing: border-box;
 }
 
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #fffcf4;
     display: flex;
     align-items: center;
     justify-content: center;
+
     color: #333;
+    background-color: #fffcf4;
 }
 
 
 img {
     position: absolute;
     top: 10px;
-    width: 100px;
     left: 10px;
+    width: 100px;
 }
 
 #caixaLogin {
+    position: relative;
+    top: 0px;
     width: 55%;
     height: 65%;
-    background-color: #E8BABA;
-    border-radius: 34px;
-    position: relative;
     padding: 40px;
-    top: 0px;
+
+    background-color: #E8BABA;
+
+    border-radius: 34px;
 }
 
 
 #textoPrincipal {
-    display: flex;
-    justify-content: center;
     position: relative;
     top: 10px;
-    color: #333;
-    font-size: 40px;
-    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 40px;
+    color: #333;
 }
 
 #pontoGradiente {
     position: relative;
-    color: transparent;
-    font-size: 30px;
-    font-family: 'DM Sans', sans-serif;
     top: -32px;
     left: 525px;
     width: 10px;
     height: 10px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 30px;
+    color: transparent;
 }
 
 #pontoGradiente::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
     background: #fffcf4;
+
     border-radius: 50%;
+    content: '';
 }
 
 .input-container {
@@ -74,37 +86,41 @@ img {
 }
 
 .inputForm {
-    border-radius: 10px;
-    color: #333;
-    padding: 10px;
-    background-color: #F5DADA;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    height: 40px;
-    width: 299px;
-    cursor: pointer;
     z-index: 1;
-    border: none;
     position: relative;
     left: 1px;
+    width: 299px;
+    height: 40px;
+    padding: 10px;
+
+    color: #333;
+    background-color: #F5DADA;
+
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .input-container::before {
-    content: '';
+    z-index: 0;
     position: absolute;
     top: 21px;
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 10px;
-    background: transparent;
-    border: 2px solid transparent;
     width: 297.5px;
     height: 39px;
+
     background: #fffcf4;
-    z-index: 0;
-    opacity: 0;
+
+
     transition: opacity 0.3s;
     transition: box-shadow 0.3s;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    opacity: 0;
+    content: '';
 }
 
 .input-container:hover::before,
@@ -113,27 +129,24 @@ img {
 }
 
 .inputForm:focus {
+    box-shadow: 0 0 10px #fffcf4, 0 0 10px #fffcf4, 0 0 10px #fffcf4;
     outline: none;
-    box-shadow:
-            0 0 10px #fffcf4,
-            0 0 10px #fffcf4,
-            0 0 10px #fffcf4;
 }
 
 form {
+    padding: 30px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 30px;
-    color: #333;
+
     font-size: 13px;
+    color: #333;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    font-family: 'DM Sans', sans-serif;
 }
 
 button {
@@ -142,15 +155,15 @@ button {
     height: 40px;
     margin-top: 30px;
     padding: 9px 19px;
-    border-radius: 10px;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    left: 1px;
+
     font-size: 20px;
-    background: #fffcf4;
     color: #333;
+    background: #fffcf4;
+
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 button:hover {
@@ -159,18 +172,30 @@ button:hover {
 
 div img {
     position: relative;
-    float: right;
-    height: 410px;
-    width: 50%;
     top: -345px;
     left: 30px;
-    box-shadow: inset 0 4px 100px rgba(0, 0, 0, 1);
+    width: 50%;
+    height: 410px;
+
     overflow: hidden;
+    float: right;
+    box-shadow: inset 0 4px 100px rgba(0, 0, 0, 1);
 }
+
+
+
+/*
+===================================================================================================================================================
+||                                                              RESPONSIVIDADE                                                                   ||
+===================================================================================================================================================
+*/
+
+
 
 @media (max-width: 1200px) {
     #caixaLogin {
         width: 60%;
+
         transition: 1s;
     }
 }
@@ -178,11 +203,14 @@ div img {
 @media (max-width: 1175px) {
     #textoEnfeite {
         left: 82%;
+
         transition: 1s;
     }
+
     #caixaLogin {
-        width: 65%;
         left: -50px;
+        width: 65%;
+
         transition: 1s;
     }
 }
@@ -190,11 +218,14 @@ div img {
 @media (max-width: 1000px) {
     #textoEnfeite {
         left: 80%;
+
         transition: 1s;
     }
+
     #caixaLogin {
-        width: 70%;
         left: -100px;
+        width: 70%;
+
         transition: 1s;
     }
 }
@@ -203,84 +234,108 @@ div img {
     #caixaLogin {
         width: 75%;
         left: -80px;
+
         transition: 1s;
+
     }
 
     #textoEnfeite {
         font-size: 65px;
+
         transition: 1s;
     }
 }
 
 @media (max-width: 900px) {
     #caixaLogin {
-        width: 75%;
         left: -80px;
+        width: 75%;
+
         transition: 1s;
     }
 
     div img {
         width: 40%;
+
         transition: 1s;
     }
+
     #textoEnfeite {
         font-size: 60px;
+
         transition: 1s;
     }
 }
 
 @media (max-width: 800px) {
     #caixaLogin {
-        width: 85%;
         left: -50px;
+        width: 85%;
+
         transition: 1s;
     }
+
     div img {
         width: 35%;
+
         transition: 1s;
     }
+
     #textoEnfeite {
         top: 625px;
+
         font-size: 50px;
+
         transition: 1s;
     }
 }
 
 @media (max-width: 800px) {
     #caixaLogin {
-        width: 90%;
         left: -25px;
+        width: 90%;
+
         transition: 1s;
     }
+
     div img {
         width: 35%;
+
         transition: 1s;
     }
 }
 
 @media (max-width: 800px) {
     #caixaLogin {
-        width: 95%;
         left: -10px;
+        width: 95%;
+
         transition: 1s;
     }
+
     div img {
         width: 32.5%;
+
         transition: 1s;
     }
+
     #textoEnfeite {
         left: 77%;
+
         transition: 1s;
     }
 }
 @media (max-width: 800px) {
     #caixaLogin {
-        width: 97.5%;
         left: 0px;
+        width: 97.5%;
+
         transition: 1s;
     }
+
     div img {
         width: 30%;
+
         transition: 1s;
     }
 }

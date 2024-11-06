@@ -1,22 +1,28 @@
+/*                                                    CSS Dos Elementos do Visualizar                                                             */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 .box {
-    background-color: #F6E6E6;
-    border-radius: 40px;
-    padding: 50px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 80%;
+    padding: 50px;
+
+    background-color: #F6E6E6;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
 }
 
 body {
-    font-family: sans-serif;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    min-height: 100vh;
+
+    font-family: 'DM Sans', sans-serif;
     color: #333;
     background-color: #FAF9F9;
+
+    text-align: center;
 }
 
 h1, h2 {
@@ -24,30 +30,34 @@ h1, h2 {
 }
 
 th {
-    background-color: #E8BABA;
     padding: 12px;
+
     color: #4D4D4D;
+    background-color: #E8BABA;
 }
 
 td {
-    background-color: #F5DADA;
     padding: 12px;
+
     color: #4D4D4D;
+    background-color: #F5DADA;
 }
 
 .tabelaSaida {
-    border-spacing: 0 10px;
     width: 100%;
+
+    border-spacing: 0 10px;
     border-radius: 40px;
 }
 
 .conteudo {
     display: flex;
     align-items: center;
-    text-align: center;
     justify-content: space-between;
-    border-radius: 40px;
     margin-top: 20px;
+
+    text-align: center;
+    border-radius: 40px;
 }
 
 .visuBtn {
@@ -55,12 +65,14 @@ td {
 }
 
 #novoBtn, #atualizarBtn, #removerBtn, #filtrarBtn, #voltarBtn {
-    background-color: #E8BABA;
-    border: none;
     padding: 8px 16px;
-    border-radius: 20px;
+
     color: white;
+    background-color: #E8BABA;
+
     transition: background-color 0.3s;
+    border: none;
+    border-radius: 20px;
 }
 
 #novoBtn:hover, #atualizarBtn:hover, #removerBtn:hover, #filtrarBtn:hover, #voltarBtn:hover {
@@ -68,16 +80,18 @@ td {
 }
 
 img {
-    height: 30px;
     width: 30px;
+    height: 30px;
 }
 
 #atualizarBtn, #removerBtn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #E8BABA;
     padding: 8px;
+
+    background-color: #E8BABA;
+
     border-radius: 20px;
 }
 

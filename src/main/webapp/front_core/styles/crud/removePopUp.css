@@ -1,51 +1,60 @@
+/*                                                      CSS Dos Elementos do Excluir                                                             */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 body {
     font-family: 'DM Sans', sans-serif;
 }
 
-
 .imagem-excluir {
-    cursor: pointer;
     width: 50px;
     height: auto;
+
+    cursor: pointer;
 }
 
 .modal {
-    display: none;
-    position: fixed;
     z-index: 1;
-    left: 0;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    display: none;
+
     background-color: rgba(0, 0, 0, 0.5);
+
+    overflow: auto;
 }
 
 .modal-conteudo {
-    border-radius: 20px;
-    background-color: #fff;
+    width: 300px;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 300px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #888888;
+    border-radius: 20px;
     text-align: center;
 }
 
 .fechar {
     position: relative;
-    color: #aaa;
-    float: right;
-    font-size: 38px;
     top: -24px;
     left: 8px;
+
+    font-size: 38px;
     font-weight: bold;
+    color: #aaaaaa;
+
+    float: right;
 }
 
 .fechar:hover,
 .fechar:focus {
     color: red;
+
     text-decoration: none;
     cursor: pointer;
 }
@@ -54,6 +63,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+
     font-size: 20px;
 }
 
@@ -65,10 +75,12 @@ body {
 button {
     margin: 5px;
     padding: 10px 15px;
+
     border-radius: 6px;
 }
 
 button:hover {
-    background-color: #934E50;
     transform: scale(1.1);
+
+    background-color: #934E50;
 }

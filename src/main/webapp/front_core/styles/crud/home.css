@@ -1,28 +1,34 @@
+/*                                                          CSS Dos Elementos da home                                                            */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
     display: flex;
-    align-items: center;
     min-height: 100vh;
+    align-items: center;
+
+    font-family: 'DM Sans', sans-serif;
     background-color: #FAF9F9;
 }
 
 #introducao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: absolute;
     top: 40px;
+    display: flex;
     margin-left: 30px;
-    color: #4D4D4D;
-    font-size: larger;
-}
+    flex-direction: column;
+    align-items: center;
 
+    font-size: larger;
+    color: #4D4D4D;
+}
 
 .container {
     display: flex;
@@ -34,20 +40,21 @@ body {
     gap: 20px;
 }
 
-
 .box {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
     width: 25vh;
     height: 25vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     margin: 10px;
+
     background-color: #F6E6E6;
-    border-radius: 8px;
     transition: transform 0.3s;
+
+    text-align: center;
+    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 

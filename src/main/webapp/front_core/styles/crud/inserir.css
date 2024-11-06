@@ -1,16 +1,22 @@
+/*                                                        CSS Dos Elementos do Inserir                                                            */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 body {
     width: 100vw;
     height: 100vh;
-    background: #EEF9EF;
-    overflow: hidden;
+
     font-family: 'DM Sans', sans-serif;
+    background: #EEF9EF;
+
+    overflow: hidden;
 }
 
 p {
     margin-top: 50px;
+
     font-size: 50px;
+
     text-align: center;
 }
 
@@ -19,85 +25,92 @@ p {
     position: relative;
     width: 380px;
     height: 40px;
-    border-radius: 10px;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-size: 20px;
-    background-color: #F497B6;
     top: 25px;
     left: 100px;
 
+    font-size: 20px;
+    color: #FFFFFF;
+    background-color: #F497B6;
+
     transition: 0.25s transform ease-in-out;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 #botaoInserir:hover {
-    transform: scale(1.01);
     background-color: #E6679A;
+    transform: scale(1.01);
 }
 
 #caixaInsert {
+    position: relative;
     width: 50%;
     height: 100%;
-    background-color: #FFFFFF;
-    border-radius: 34px;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: #FFFFFF;
+
+    border-radius: 34px;
 }
 
 #centralizar {
+    height: 70%;
     display: flex;
     justify-content: center;
-    height: 70%;
 }
 
 .inputContainer {
     position: relative;
-    display: flex;
     width: 550px;
-    justify-content: space-between;
-    margin-top: 5%;
     right: 10%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
 }
 
 
 label {
     position: relative;
     width: 300px;
-    text-align: end;
     top: 7.5px;
-    font-size: 26px;
     margin-top: -10px;
     margin-right: 20px;
+
+    font-size: 26px;
+
+    text-align: end;
 }
 
 
 .inputForm {
-    border-radius: 10px;
-    padding-top: 2px;
-    text-align: center;
-    height: 30px;
-    width: 299px;
-    cursor: pointer;
     position: relative;
+    width: 299px;
+    height: 30px;
     left: 1px;
+    padding-top: 2px;
+
     border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
 }
 
 #combo {
-    z-index: 10;
+    z-index: 2;
 }
 
 .botao-voltar {
     position: absolute;
-    top: 40px;
-    left: 3%;
     width: 100px;
     height: 40px;
-    border-radius: 10px;
+    top: 40px;
+    left: 3%;
+
     transition: 0.5s transform ease-in-out;
+    border-radius: 10px;
 }
 
 .botao-voltar:hover {
