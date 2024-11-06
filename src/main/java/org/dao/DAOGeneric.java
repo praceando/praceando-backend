@@ -44,8 +44,8 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
         return null;
     }
 
-    /** Método para visualizar todos os registros do banco de dados
-     * @return Retorna uma lista com todos os registros do banco de dados
+    /** Método para visualizar todos os registros da tabela no banco
+     * @return Retorna uma lista de models com todos os registros da tabela no banco
      */
     public List<T> visualizar() {
         Conexao.conectar();
@@ -77,9 +77,12 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
      */
     public SqlExitDML inserir(T entidade) throws ConnectionIsNullException {
         Conexao.conectar();
-        Throwable throwable;
+        Throwable throwable;  // Objeto de erro usado para saída
         try {
+            // Utiliza a query de inserir vinda do método
             PreparedStatement ps = getInserirQuery(entidade);
+
+            // Executa e produz a saída
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);
         } catch (SQLException sqle) {
             sqle.printStackTrace();
@@ -97,10 +100,13 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
      */
     public SqlExitDML alterar(T entidade) throws ConnectionIsNullException {
         Conexao.conectar();
+        Throwable throwable; // Objeto de erro usado para saída
 
-        Throwable throwable;
         try {
+            // Utiliza a query de alterar vinda do método
             PreparedStatement ps = getAlterarQuery(entidade);
+
+            // Executa e produz a saída
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);
         } catch (SQLException sqle) {
             sqle.printStackTrace();
@@ -118,13 +124,15 @@ public abstract class DAOGeneric<T extends Model> implements DAO<T> {
      */
     public SqlExitDML remover(int id) throws ConnectionIsNullException {
         Conexao.conectar();
-        Throwable throwable;
+        Throwable throwable; // Objeto de erro usado para saída
         try {
+            // Cria a query de delete
             PreparedStatement ps = Conexao.conn.prepareStatement(
                     "DELETE FROM \""
                     + this.getTabela().getNomeBanco() + "\" WHERE id_"
                     + this.getTabela().getNomeBanco() +" = ?");
             ps.setInt(1, id);
+            // Executa e produz a saída
             return new SqlExitDML(ps.executeUpdate() > 0 ? 1 : 0);
         } catch (SQLException sqle) {
             sqle.printStackTrace();
