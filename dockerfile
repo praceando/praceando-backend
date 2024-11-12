@@ -4,7 +4,6 @@ FROM maven:3.8.3-openjdk-21 AS build
 WORKDIR /app
 
 COPY pom.xml .
-COPY src ./src
 
 # Package the application without running tests
 RUN mvn clean package -DskipTests
