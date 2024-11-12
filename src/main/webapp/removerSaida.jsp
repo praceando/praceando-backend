@@ -20,9 +20,8 @@
     </a>
 
     <div class="container">
-        <p id="titulo1">Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=tabelaInterface%>'</p>
+        <p id="titulo3">Tentou remover ID:<%=request.getParameter("id")%> na tabela '<%=tabelaInterface%>'</p>
 
-        <h2>Saída:</h2>
         <div class="saida">
             <p id="subtitulo2"><%=saida.toString()%></p>
 

@@ -1,4 +1,3 @@
-console.log("url");
 
 const botoesExcluir = document.getElementsByClassName("botao-excluir");
 
@@ -21,7 +20,9 @@ document.getElementById("cancelar-exclusao").onclick = function() {
 
 document.getElementById("confirmar-exclusao").onclick = function() {
     const url = this.getAttribute("data-href");
-    // Pensa ao contrário, o == nem o === não funciona.
+
+    // Evitar em caso da url na JSP ser "null"
+    // Admin, por exemplo, não permite exclusão, portanto a url vira null
     if (url !== "null") {
         console.log(url);
         window.location.href = url;
