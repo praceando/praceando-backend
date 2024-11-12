@@ -1,5 +1,5 @@
 # Stage 1: Build the project
-FROM maven:3.8.3-openjdk-17 AS build
+FROM maven:3.8.3-openjdk-21 AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Setup Tomcat to run the application
-FROM tomcat:10.1.19-jdk11
+FROM tomcat:11.0.1-jdk21
 
 # Remove default Tomcat web applications
 RUN rm -rf /usr/local/tomcat/webapps/*
